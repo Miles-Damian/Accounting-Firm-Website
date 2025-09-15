@@ -24,10 +24,21 @@
 
   header{
     display: flex;
-    background-color: rgb(31, 118, 172);
+    justify-content: center;
+    background-color: rgb(18, 153, 18);
     padding-top: 20px;
     padding-bottom: 20px;
     width: 100%;
+  }
+
+  .phone-number{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .links{
+    margin-left: 20rem;
   }
 
   .p1{
@@ -37,13 +48,27 @@
   }
 
   .p1 li{
+    display: flex;
+    align-items: center;
     font-size: 20px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     color: white;
-    margin-left: 10px;
+    margin-left: 15px;
   }
 
   .p1 li a{
     text-decoration: none;
     color: white;
   }
+
+
+  li button{
+    display: flex;
+    align-items: center;
+    font-family: sans-serif;
+    border: #f5f5f5;
+    padding: 8px;
+    border-radius: 3%;
+    font-size: 15px;
+    color: rgb(18, 153, 18);
+}
