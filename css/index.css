@@ -24,26 +24,44 @@
 
   header{
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    background-color: rgb(18, 153, 18);
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-bottom: 18px;
     width: 100%;
   }
 
-  .phone-number{
+  .top-header{
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    background-color: rgb(18, 153, 18);
+    width: 100%;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    overflow-x: hidden;
   }
 
-  .links{
+  nav{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    /* overflow-x: hidden; */
+  }
+
+  /* .links{
     margin-left: 20rem;
+  } */
+
+  .phone1{
+    margin-right: 10rem;
   }
 
   .p1{
     display: flex;
-    margin-left: 20px;
+    margin-left: 10px;
     list-style: none;
   }
 
@@ -71,4 +89,37 @@
     border-radius: 3%;
     font-size: 15px;
     color: rgb(18, 153, 18);
+}
+
+@media (max-width: 1012px) {
+    header {
+      width: 100%;
+    }
+  
+    html,
+    body {
+      overflow-x: hidden;
+    }
+  
+    .top-header {
+        padding-left: 5rem;
+        padding-right: 5rem;
+      width: 100%;
+    }
+}
+
+@media (max-width: 766px) {
+    header {
+
+      width: 100%;
+    }
+  
+    html,
+    body {
+      overflow-x: hidden;
+    }
+  
+    .top-header {
+      display: none;
+    }
 }
