@@ -21,31 +21,33 @@
                 </div>
 
                 <div class="links">
-                    <ul class="links1">
-                        <ul class="p1">
+                        <ul class="l1">
                             <li> <a href="tel:+63459821726"></a><img src="images/social.png" alt="b srcset=" width="30px" height="30px" fill="white"></a></li>
     
                             <li> <a href="tel:+63459821726"></a><img src="images/facebook.png" alt="" srcset="" width="30px" height="30px" fill="white"></a></li>
     
                             <li> <button><img src="images/calendar.png" alt="" width="18px" height="18 px" >&nbsp;Inquire now</button></li>
                         </ul>
-                    </ul>
                 </div>
         </div>
 
         <nav>
             <img src="images/Tala-Buluran-and-Co.-2x-Website-Logo.png" alt="" id="logo">
 
-            <ul id="sideNav">
-                <li><a href="">Home</a></li>
+            <ul id="sideNav" class="sidenav">
+                <li class="no-hover"><a href="javascript:void(0)" class="closebtn" onclick="closeNav()" id="cross">&times;</a></li>
+                <li class="active"><a href="">Home</a></li>
                 <li><a href="">About</a></li>
                 <li><a href="">Services</a></li>
                 <li><a href="">Solutions</a></li>
                 <li><a href="">Contact Us</a></li>
             </ul>
+            <span id="hamburger" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span> 
         </nav>
     </header>
 
     
 </body>
+
+<script src="js/script.js"></script>
 </html>
