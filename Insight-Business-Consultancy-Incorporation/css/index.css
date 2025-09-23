@@ -38,7 +38,7 @@
     width: 100%;
     padding-top: 10px;
     padding-bottom: 10px;
-    background: linear-gradient(to top, #cbf6bb, #99e39d,#70c974, #40d557, #1ebe58);
+    background: linear-gradient(to top, #b0e2ac, #8bca9b,#7fc595, #6fba8d, #5fb086);
   }
 
   nav #logo{
@@ -94,19 +94,22 @@
   nav ul li #search_bar{
     display: flex;
     align-items: center;
+    background-color: #7fc595;
+    border-radius: 15px;
+    border: solid 2px;
+    width: 220px;
+    height: 30px;
   }
 
   nav ul li #search_bar #search_border{
-    border-radius: 15px;
-    border: solid 2px;
-    padding: 4px;
-    background-color: #6bdd7c;
-    width: 300px;
+    background-color: #7fc595;
+    border: none;
   }
 
   nav ul li #search_bar #search_bar_logo{
     width: 20px;
     height: 20px;
+    margin-left: 2px;
   }
 
   ::placeholder{
