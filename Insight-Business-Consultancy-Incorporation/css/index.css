@@ -133,13 +133,60 @@
     font-size: 15px;
     border: none;
   }
-/* 
+
   main{
     display: flex;
-    height: 10px;
-    width: 100px;
+    width: 100%;
     background-color: #00765a;
-  } */
+    margin-top: 130px;
+  }
+  
+  main .first_section{
+    display: flex;
+    padding: 0px 0px 80px 20px; /*Top-Right-Bottom-Left*/
+  }
+
+  main .first_section .welcome_div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Montserrat";
+  }
+
+  main .first_section .welcome_div h1{
+    color: #bfecac;
+    font-size:38px;
+    padding: 160px 20px 20px 20px; /*Top-Right-Bottom-Left*/
+  }
+
+  main .first_section .welcome_div p{
+    color: white;
+    font-size:28px;
+    margin-top: 20px;
+    padding: 20px;
+  }
+
+  main .first_section .welcome_div .book{
+    background-color:#99e17a;
+    font-weight: bolder;
+    border-radius: 25px;
+    border: 2px solid #003d20;
+    color: #003d20;
+    font-family: "Montserrat";
+    font-size:18px;
+    padding: 10px 40px 10px 40px; /*Top-Right-Bottom-Left*/
+    margin-top: 40px;
+    margin-bottom: 200px;
+    box-shadow: 4px 4px 0px #004d2c; 
+    cursor: pointer;
+  }
+
+  main .first_section .welcome_div .book:hover{
+    box-shadow: 6px 6px 0px #003a22;
+  }
+
+
+
 
   @media(max-width:1654px){
     header {
