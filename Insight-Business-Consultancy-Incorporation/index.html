@@ -25,16 +25,28 @@
     <main>
         <section class="first_section">
             <div class="welcome_div">
+                <br><br><br>
                 <h1>Welcome to Insight Business Consultancy Inc.</h1><br>
                 <p>Your One-Stop Partner for Business Growth</p> <br>
                 <button class="book">Book an Appointment</button>
             </div>
 
             <div class="carousel_container">
+                <div class="carousel">
+                    <button class="arrow left" onclick="prevSlide()">&#10094;</button>
+                    <img src="images/carousel-img-1.png">
+                    <img src="images/carousel-img-2.png">
+                    <img src="images/carousel-img-1.png">
+                    <img src="images/carousel-img-2.png">
+                    <img src="images/carousel-img-1.png">
+                    <button class="arrow right" onclick="nextSlide()">&#10095;</button>
+                  </div>
                 
+                  <button class="read-more">Read More</button>
             </div>
         </section>
     </main>
 
+<script src="scripts/carousel.js"></script>
 </body>
 </html>

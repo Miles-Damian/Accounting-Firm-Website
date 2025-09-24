@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3-Image Carousel</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      min-height: 100vh;
+      background: #00795c;
+    }
+
+    .carousel {
+      position: relative;
+      width: 600px;
+      height: 900px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .carousel img {
+      position: absolute;
+      width: 200px;
+      height: 500px;
+      object-fit: cover;
+      border-radius: 10px;
+      transition: all 0.5s ease-in-out;
+      opacity: 0;
+      transform: scale(0.8);
+    }
+
+    .carousel img.active {
+      opacity: 1;
+      z-index: 3;
+      transform: scale(1);
+      left: 50%;
+      transform: translateX(-50%) scale(1);
+    }
+
+    .carousel img.left {
+      opacity: 0.5;
+      z-index: 2;
+      left: 20%;
+      transform: translateX(-50%) scale(0.9);
+    }
+
+    .carousel img.right {
+      opacity: 0.5;
+      z-index: 2;
+      left: 80%;
+      transform: translateX(-50%) scale(0.9);
+    }
+
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.6);
+      color: white;
+      border: none;
+      font-size: 24px;
+      padding: 20px;
+      cursor: pointer;
+      border-radius: 30px;
+      z-index: 4;
+    }
+    .arrow.left { left: 100px; }
+    .arrow.right { right: 10px; }
+
+    .read-more {
+      margin-top: 20px;
+      background: #00b894;
+      color: white;
+      font-weight: bold;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .read-more:hover { background: #019874; }
+  </style>
+</head>
+<body>
+
+  <div class="carousel">
+    <button class="arrow left" onclick="prevSlide()">&#10094;</button>
+    <img src="../images/carousel-img-1.png">
+    <img src="../images/carousel-img-2.png">
+    <img src="../images/carousel-img-1.png">
+    <img src="../images/carousel-img-2.png">
+    <img src="../images/carousel-img-1.png">
+    <button class="arrow right" onclick="nextSlide()">&#10095;</button>
+  </div>
+
+  <button class="read-more">Read More</button>
+
+  <script>
+    let currentIndex = 0;
+    const slides = document.querySelectorAll(".carousel img");
+    const total = slides.length;
+
+    function updateSlides() {
+      slides.forEach(slide => slide.className = "");
+      let leftIndex = (currentIndex - 1 + total) % total;
+      let rightIndex = (currentIndex + 1) % total;
+
+      slides[currentIndex].className = "active";
+      slides[leftIndex].className = "left";
+      slides[rightIndex].className = "right";
+    }
+
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % total;
+      updateSlides();
+    }
+
+    function prevSlide() {
+      currentIndex = (currentIndex - 1 + total) % total;
+      updateSlides();
+    }
+
+    updateSlides();
+  </script>
+
+</body>
+</html>
