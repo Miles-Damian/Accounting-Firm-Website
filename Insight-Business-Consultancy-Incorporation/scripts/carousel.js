@@ -1,25 +1,26 @@
-    let currentIndex = 0;
-    const slides = document.querySelectorAll(".carousel img");
-    const total = slides.length;
+let currentIndex = 0;
+const slides = document.querySelectorAll(".carousel-img");
+const total = slides.length;
 
-    function updateSlides() {
-      slides.forEach(slide => slide.className = "");
-      let leftIndex = (currentIndex - 1 + total) % total;
-      let rightIndex = (currentIndex + 1) % total;
+function updateSlides() {
+  slides.forEach(slide => slide.classList.remove("active", "left", "right"));
 
-      slides[currentIndex].className = "active";
-      slides[leftIndex].className = "left";
-      slides[rightIndex].className = "right";
-    }
+  let leftIndex = (currentIndex - 1 + total) % total;
+  let rightIndex = (currentIndex + 1) % total;
 
-    function nextSlide() {
-      currentIndex = (currentIndex + 1) % total;
-      updateSlides();
-    }
+  slides[currentIndex].classList.add("active");
+  slides[leftIndex].classList.add("left");
+  slides[rightIndex].classList.add("right");
+}
 
-    function prevSlide() {
-      currentIndex = (currentIndex - 1 + total) % total;
-      updateSlides();
-    }
+function nextSlide() {
+  currentIndex = (currentIndex + 1) % total;
+  updateSlides();
+}
 
-    updateSlides();
+function prevSlide() {
+  currentIndex = (currentIndex - 1 + total) % total;
+  updateSlides();
+}
+
+updateSlides();

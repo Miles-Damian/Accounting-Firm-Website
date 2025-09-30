@@ -1,0 +1,328 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="output.css" rel="stylesheet">
+
+</head>
+<body class="flex flex-col items-center w-full overflow-x-hidden">
+
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v23.0&appId=APP_ID"></script>
+  
+    <!-- Header -->
+    <header class="flex flex-col justify-between items-center w-full text-[18px] fixed top-0 z-50 bg-gradient-to-t from-[#b0e2ac] via-[#8bca9b] to-[#5fb086]">
+      <nav class="flex items-center justify-around flex-wrap w-full py-5 pr-2 bg-gradient-to-t from-[#b0e2ac] via-[#8bca9b] to-[#5fb086]">
+        <!-- Logo -->
+        <img src="images/Picture1.png" id="logo" class="2xl:w-[130px] 2xl:h-[25px] mt-4 2xl:mr-0 2xl:ml-5  
+        xl:w-[128px] xl:h-[23px] xl:mr-0 xl:ml-5
+        
+        lg:w-[128px] lg:h-[23px] lg:mr-0 lg:ml-5" alt="">
+        <!-- navbar -->
+        <ul class="flex items-center mt-5 2xl:ml-40 xl:ml-10 lg:ml-5">
+          <li class="flex items-center justify-center ml-5">
+            <a href="" class="flex items-center text-black lg:text-[13px] 2xl:text-[15px]">
+              <img src="images/Picture2.png" class="w-6 mr-1"> HOME
+            </a>
+          </li>
+          <li class="flex items-center justify-center ml-5">
+            <a href="" class="flex items-center text-black lg:text-[13px] 2xl:text-[15px]">
+              <img src="images/Picture3.png" class="w-6 mr-1"> ABOUT US <img src="images/Picture9.png" class="w-[15px] ml-1">
+            </a>
+          </li>
+          <li class="flex items-center justify-center ml-5">
+            <a href="" class="flex items-center text-black lg:text-[13px] 2xl:text-[15px]">
+              <img src="images/Picture10.png" class="w-6 mr-1"> SERVICES <img src="images/Picture9.png" class="w-[15px] ml-1">
+            </a>
+          </li>
+          <li class="flex items-center justify-center ml-5">
+            <a href="" class="flex items-center text-black lg:text-[13px] 2xl:text-[15px]">
+              <img src="images/Picture5.png" class="w-6 mr-1"> FAQ
+            </a>
+          </li>
+          <li class="flex items-center justify-center ml-5">
+            <a href="" class="flex items-center text-black lg:text-[13px] 2xl:text-[15px]">
+              <img src="images/Picture6.png" class="w-6 mr-1"> CONTACT
+            </a>
+          </li>
+          <li class="flex items-center justify-center ml-5">
+            <a href="" class="flex items-center text-black lg:text-[13px] 2xl:text-[15px]">
+              <img src="images/Picture7.png" id="careers_image" class="mr-1 w-7 h-7"> CAREERS
+            </a>
+          </li>
+          <li class="ml-5">
+            <form id="search_bar" class="flex items-center bg-[#8bca9b] rounded-2xl border-1 w-[220px] h-[30px] ">
+              <img src="images/globe.png" id="search_bar_logo" class="w-5 h-5 ml-1 mr-1">
+              <input type="text" placeholder="Search" id="search_border"
+                class="bg-[#8bca9b] border-none w-[170px] placeholder-black placeholder:font-montserrat placeholder:text-[15px]
+                2xl:text-[15px] lg:placeholder:text-[12px]
+                focus:outline-none text-[15px]">
+            </form>
+          </li>
+        </ul>
+      </nav>
+    </header>
+  
+    <!-- Main -->
+    <main class="flex flex-col w-full 2xl:mt-[90px] xl:mt-[90px]">
+  
+      <!-- Hero -->
+      <section class="flex bg-[url('images/Insight_Business_Building.png')] bg-cover bg-no-repeat bg-center px-[90px] 2xl:pb-[160px] 2xl:pt-[70px]
+      xl:pb-[160px] xl:pt-[30px]
+      lg:pt-[80px] lg:flex-col xl:flex-row
+      lg:pb-[90px]">
+        <!-- Welcome Text -->
+        <div class="flex flex-col items-center justify-center mr-[10px] lg:mr-[0px]">
+          <h1 class="text-[#15633d] 2xl:text-[32px] xl:text-[30px] lg:text-[30px] mt-34 font-bold font-montserrat text-center">Welcome to Insight Business Consultancy Inc.</h1>
+          <p class="text-black 2xl:text-[21.5px] lg:text-[19px] mt-5 text-center">Your One-Stop Partner for Business Growth</p>
+          <p class="text-black 2xl:text-[21.5px] mt-5 text-center font-bold">Ready to take your business to the next level?
+          </p>
+          <p class="text-black 2xl:text-[21.5px] mt-5 text-center"> Let Insight Business Consultancy Inc. handle the paperwork, compliance, and digital support so you can focus on growth.
+
+          </p>
+          <button class="bg-[#99e17a] font-bold rounded-[25px] border-2 border-[#003d20] text-[#003d20] text-[18px] px-10 py-4 mt-10 mb-[200px] shadow-[4px_4px_0px_#004d2c] hover:shadow-[6px_6px_0px_#003a22] cursor-pointer">
+            Book an Appointment
+          </button>
+        </div>
+  
+       <!-- Carousel Container --> 
+        <div class="flex flex-col items-center mt-0 ml-20 font-montserrat sticky 2xl:top-[100px]"> 
+          <!-- Carousel --> 
+           <div class="relative mt-5 w-[500px] h-[600px] flex justify-center items-center overflow-hidden z-10"> 
+            <!-- Left Arrow --> 
+             <button onclick="prevSlide()" class="absolute top-1/2 -translate-y-1/2 left-[100px] bg-black/60 text-white text-2xl p-4 rounded-full z-40"> &#10094;</button> 
+             <!-- Slides --> 
+              <img src="images/carousel-img-1.png" class="carousel-img absolute w-[200px] h-[500px] object-cover border-3 rounded-[20px] border-black transition-all duration-500 ease-in-out"> 
+              <img src="images/carousel-img-2.png" class="carousel-img absolute w-[200px] h-[500px] object-cover border-3 rounded-[20px] border-black transition-all duration-500 ease-in-out"> 
+              <img src="images/carousel-img-1.png" class="carousel-img absolute w-[200px] h-[500px] object-cover border-3 rounded-[20px] border-black transition-all duration-500 ease-in-out"> 
+              <img src="images/carousel-img-2.png" class="carousel-img absolute w-[200px] h-[500px] object-cover border-3 rounded-[20px] border-black transition-all duration-500 ease-in-out"> 
+              <img src="images/carousel-img-1.png" class="carousel-img absolute w-[200px] h-[500px] object-cover border-3 rounded-[20px] border-black transition-all duration-500 ease-in-out"> 
+              <!-- Right Arrow --> 
+               <button onclick="nextSlide()" class="absolute top-1/2 -translate-y-1/2 right-[100px] bg-black/60 text-white text-2xl p-4 rounded-full z-40"> &#10095; </button> </div> 
+               <!-- View More Button --> 
+                <button class="text-2xl font-bold xl:mt-0 2xl:mt-0 bg-[#00b894] text-white px-12 py-4 rounded-[24px] hover:bg-[#019874] transition"> View More </button>
+      </section>
+
+
+      <!-- License & Legal Registrations -->
+      <section class="flex flex-col self-center justify-center pl-20 pr-20 pt-15">
+        <p class="text-2xl text-center">At Insight Business Consultancy Inc., we make business simple. From legal registration and compliance to accounting, payroll, and digital support, we provide comprehensive consultancy services designed for entrepreneurs, SMEs, and corporations. 
+        </p>
+        <p class="pt-5 text-2xl text-center">With our expertise and trusted accreditations, you can focus on growing your business while we take care of the details.
+        </p>
+        <!-- License & Legal Registrations lists -->
+        <ul class="flex flex-col self-center justify-center pt-5 text-center">
+            <li class="text-2xl">✅ Licenses & Legal Registrations
+            </li>
+            <li>SEC Registered Corporation
+            </li>
+            <li>Registered
+            </li>
+            <li>BIR Registered & Accredited
+            </li>
+            <li>LGU Business Permit
+            </li>
+            <li>SSS, PhilHealth, Pag-IBIG Registered Employer
+            </li>
+            <li>CDA Accreditation (if cooperative-related services apply)
+            </li>
+        </ul>
+
+        <ul class="flex flex-col self-center justify-center pt-5 text-center">
+          <li class="text-2xl">✅ Professional Accreditations
+          </li>
+          <li>Board of Accountancy (BOA) Accredited CPAs
+          </li>
+          <li>Board of Accountancy (BOA) Accredited CPAs
+          </li>
+        </ul>
+
+        <ul class="flex flex-col self-center justify-center pt-5 text-center">
+          <li class="text-2xl">✅Software Certifications
+
+          </li>
+          <li>QuickBooks Certified ProAdvisor
+          </li>
+          <li>Xero Certified Advisor
+          </li>
+        </ul>
+
+        <div class="self-center mt-17">
+        <button class=" mb-20 text-[20px] bg-black text-amber-50 rounded-[24px] p-4 font-bold">LEARN MORE</button>
+      </div>
+      </section>
+
+      <!-- Industry We Serve -->
+      <section class="flex flex-col self-center justify-center pt-30 pb-30 p-15 ">
+        <h1 class="font-bold text-[50px] text-center pb-5">INDUSTRIES WE SERVE
+        </h1>
+        <p class="text-[35px] text-center mb-5">Insight Business Consultancy Inc. supports a wide range of businesses.
+        </p>
+
+        <ul class="flex flex-col self-center text-3xl">
+          <li class="mb-5">📌 Startups & Entrepreneurs
+          </li>
+          <li class="mb-5">📌 Small & Medium Enterprises (SMEs)
+          </li>
+          <li class="mb-5">📌 Corporations
+          </li>
+          <li class="mb-5">📌 Professional Firms
+          </li>
+          <li class="mb-5">📌 Non-Profits & Organizations
+          </li>
+        </ul>
+      </section>
+  
+      <!-- News Feed -->
+      <section class="flex lg:flex-col 2xl:lg:flex-row justify-around p-4 pb-20 pt-20 bg-[#ffffff] news_feed">
+        <!-- INQUIRE NOW -->
+        <form class="flex flex-col items-center inquire_now_form">
+          <h1 class="text-[#003a22] font-montserrat font-bold text-4xl mb-5">INQUIRE NOW!</h1>
+          <ul class="flex flex-col items-center justify-center">
+            <ul class="flex">
+              <li class="mb-5 mr-5"><input type="text" placeholder="First Name*" class="p-4 placeholder-[#003a22] border-2 pr-20 font-monsterrat"></li>
+              <li class="mb-5"><input type="text" placeholder="Last Name*" class="p-4 pr-20 placeholder-[#003a22] border-2"></li>
+            </ul>
+            <li class="mb-5"><input type="text" placeholder="Company Name*" class="p-4 pr-92 placeholder-[#003a22] border-2"></li>
+            <li class="mb-5"><input type="text" placeholder="Email Address*" class="p-4 pr-92 placeholder-[#003a22] border-2"></li>
+            <li class="mb-5"><input type="number" placeholder="Phone Number" class="p-4 pr-92 placeholder-[#003a22] border-2"></li>
+            <li class="mb-5">
+              <select id="select_inquiry" class="font-montserrat text-[15px] p-4 pr-109 placeholder-[#003a22] border-2">
+                <option value="">Select Inquiry</option>
+                <option value="general">General Inquiry</option>
+                <option value="support">Support</option>
+                <option value="sales">Sales</option>
+                <option value="feedback">Feedback</option>
+              </select>
+            </li>
+            <li><textarea id="your_inquiry" placeholder="Your Inquiry*" class=" mb-5 font-montserrat text-[15px] p-4 2xl:pr-100 h-[120px] border-2 placeholder-[#003a22]" ></textarea></li>
+          </ul>
+          <button class=" flex flex-row items-center justify-between bg-[#003a22] text-amber-50 rounded-[24px] p-5 cursor-pointer " type="button">Submit Now <img src="images/arrow-button.png" class="w-[10px] h-[13px] ml-2 mt-0.4" alt=""></button>
+        </form>
+  
+        <!-- FACEBOOK -->
+        <div class="flex flex-col self-center justify-center mr-4 lg:mt-10 2xl:mt-0 facebook_page_division font-montserrat">
+          <h1 class="flex justify-center mb-5 text-3xl font-bold text-[#003a22]">FACEBOOK PAGE</h1>
+          <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FLuzonNMofficial%2F&tabs=timeline&width=400&height=650&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
+            class="fb-page w-[400px] h-[650px] rounded-[25px] border-4 border-b-emerald-900 mx-auto" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+        </div>
+      </section>
+
+      <!-- LATEST NEWS AND EVENTS -->
+      <section class="flex flex-col pt-20 pb-20">
+        <h1 class="text-5xl font-bold text-center">LATEST NEWS AND EVENTS</h1>
+        
+        <ul class="flex self-center p-5 2xl:flex-row xl:text-start xl:flex-row lg:flex-col lg:text-center lg:justify-center">
+            <ul>
+              <li class="flex self-center justify-center"><img src="images/tax-dealine.png" alt="" srcset="" class="mb-2 w-180"></li>
+              <li><p class="mb-3 font-semibold text-cyan-600">
+                INSPIRATION
+              </p></li>
+
+              <li><p class="flex flex-col flex-wrap mb-3 font-bold">
+                Warm Breeze and the Scent of Lavender - Why We Love Provence
+              </p></li>
+
+              <li>
+                <p class="flex flex-col flex-wrap mb-3">Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.Except sint cupidit...</p>
+              </li>
+            </ul>
+
+            <ul class="ml-2 mr-2">
+              <li class="flex self-center justify-center"><img src="images/bir does not accredit.png" alt="" srcset="" class="mb-2 w-180 "></li>
+              <li><p class="mb-3 font-semibold text-cyan-600">
+                COMMUNITY STORIES
+              </p></li>
+
+              <li><p class="flex flex-col flex-wrap mb-3 font-bold">
+                The Art of Letting Go - How to Relax on Vacation
+              </p></li>
+
+              <li>
+                <p class="flex flex-col flex-wrap mb-3">Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.Except sint cupidit...</p>
+              </li>
+            </ul>
+
+            <ul>
+              <li class="flex self-center justify-center"><img src="images/girl.png" alt="" srcset="" class="mb-2 w-180"></li>
+              <li><p class="mb-3 font-semibold text-cyan-600">
+                COMMUNITY STORIES
+              </p></li>
+
+              <li><p class="flex flex-col flex-wrap mb-3 font-bold">
+                Things I Wish I Had Known Before I Started Traveling With Kids
+              </p></li>
+
+              <li>
+                <p class="flex flex-col flex-wrap mb-3">Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.Except sint cupidit...</p>
+              </li>
+            </ul>
+        </ul>
+      </section>
+  
+      <!-- Interactive Map -->
+      <section class="flex flex-col items-center justify-center pt-10 interactive_map_section">
+        <h1 class="font-montserrat text-[#003d20] text-[40px] pb-4 font-bold">INTERACTIVE MAPS</h1>
+        <iframe id="interactive_map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3845.158994003028!2d120.58752582125796!3d15.475877692548517!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3396c75141d278f5%3A0xe1e464ba22fb5b00!2sMY%20CREATIVE%20PANDA%20-%20TECHNICAL!5e0!3m2!1sen!2sph!4v1758789787425!5m2!1sen!2sph"
+          class="w-full h-[400px]" style="border:0;" allowfullscreen loading="lazy"></iframe>
+      </section>
+    </main>
+  
+    <!-- Footer -->
+    <footer class="w-full flex justify-evenly bg-[#62924c] p-3">
+      <div class="quick_links_div">
+        <ul class="flex flex-col items-center justify-center quick_links font-montserrat">
+          <li id="quick_links_title" class="text-[20px] font-bold mb-3 text-center">QUICK LINKS</li>
+          <li class="text-[18px] mb-3">About</li>
+          <li class="text-[18px] mb-3">Services</li>
+          <li class="text-[18px] mb-3">FAQs</li>
+          <li class="text-[18px] mb-3">Contact</li>
+          <li class="text-[18px] mb-3">Careers</li>
+          <li class="text-[18px] mb-3">Downloads</li>
+        </ul>
+      </div>
+  
+      <div class="services_div">
+        <ul class="flex flex-col items-center services font-montserrat">
+          <li id="services_title" class="text-[20px] font-bold mb-4">SERVICES</li>
+          <li class="mb-4">Business Registration Services</li>
+          <li class="mb-4">Tax Compliance</li>
+          <li class="mb-4">Bookkeeping & Accounting Services</li>
+          <li class="mb-4">Legal Compliance Services</li>
+          <li class="mb-4">Administration Services</li>
+        </ul>
+      </div>
+  
+      <div class="office-hours_address_div">
+        <ul class="flex flex-col items-center office-hours_address font-montserrat">
+          <li id="office_hours_title" class="text-[20px] font-bold mb-4">OFFICE HOURS</li>
+          <li class="mb-1">Monday-Saturday</li>
+          <li class="mb-1">9:00am-5:00pm</li>
+          <li id="address_title" class="text-[20px] font-bold mt-2 mb-4">ADDRESS</li>
+          <li>8th Floor, Doña Elena Tower 47 P. Sanchez corner 3rd Street </li>
+          <li>Brgy. 605 Zone 060 1008 Sta. Mesa- 0004, City of Manila, </li>
+          <li>First District Philippines</li>
+        </ul>
+      </div>
+  
+      <div class="links-div">
+        <ul class="flex flex-col items-center links font-montserrat">
+          <li><img src="images/Picture1.png" id="business-logo" class="w-[216px] h-[55px] mb-5" alt=""></li>
+          <li><b>-Your One-Stop Partner for Business Growth-</b></li>
+          <li>
+            <ul class="flex mt-3 mb-4 icons">
+              <li class="mr-2"><img src="images/phone.png" class="w-[50px] h-[50px] " alt=""></li>
+              <li class="mr-2"><img src="images/fb.png" class="w-[50px] h-[50px] " alt=""></li>
+              <li class="mr-2"><img src="images/email.png" class="w-[50px] h-[50px]" alt=""></li>
+              <li><img src="images/booknow.png" id="booknow-img" class="w-[130px] h-[50px]" alt=""></li>
+            </ul>
+          </li>
+          <li><img src="images/time.png" id="time-img" class="w-[140px] h-[70px]" alt=""></li>
+        </ul>
+      </div>
+    </footer>
+  
+    <script src="scripts/carousel.js"></script>
+  </body>
+</html>

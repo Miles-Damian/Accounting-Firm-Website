@@ -1,7 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
 
 * {
-    /* border: solid 1px #d6c27d; */
+    border: solid 1px #d6c27d;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -261,6 +271,7 @@
     border-radius: 25%;
     z-index: 4;
   }
+
   .carousel_container .carousel .arrow.left { 
     left: 100px; 
   }
@@ -289,10 +300,69 @@
 
   .news_feed{
     display: flex;
-    background-color: rgb(34, 32, 32);
-    justify-content: flex-end;
+    background-color: rgb(255, 255, 255);
+    justify-content: space-around;
     padding: 20px;
     /* align-items: center; */
+  }
+
+  .inquire_now_form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 40px;
+  }
+
+  .inquire_now_form h1{
+    color: #003a22;
+    font-family: "Montserrat";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .inquire_now_form .form_lists{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .inquire_now_form .form_lists li{
+    list-style: none;
+    margin-bottom: 20px;
+  }
+
+  .inquire_now_form .form_lists li input{ 
+    padding: 16px 245px 16px 16px; /*Top-Right-Bottom-Left*/
+  }
+
+  .inquire_now_form .form_lists .fn_ln{
+    display: flex;
+  }
+
+  .inquire_now_form .form_lists .fn_ln li input{
+    padding: 16px 17px 16px 16px; /*Top-Right-Bottom-Left*/
+  }
+
+  .inquire_now_form .form_lists .fn_ln #first_name_margin{
+    margin-right: 20px;
+  }
+
+  .inquire_now_form .form_lists #select_inquiry{
+    font-family: "Montserrat";
+    font-size: 15px;
+    padding: 16px 278px 16px 16px; /*Top-Right-Bottom-Left*/
+  }
+
+  .inquire_now_form .form_lists #your_inquiry{
+    font-family: "Montserrat";
+    font-size: 15px;
+    padding: 16px 238px 40px 16px; /*Top-Right-Bottom-Left*/
+  }
+
+  .inquire_now_form .form_lists .submit-btn span{
+    font-family: "Montserrat";
+    font-size: 200px;
   }
 
   .news_feed .facebook_page_division{
@@ -303,12 +373,10 @@
     margin-right: 40px;
     align-self: center;
     justify-content: center;
-    padding-top: 20px;
+    /* padding-top: 20px; */
   }
 
   .news_feed .facebook_page_division .fb-page{
-    color: white;
-    font-family: "Montserrat";
     display: flex;
     align-self: center;
     justify-content: center;
@@ -317,23 +385,12 @@
     flex-wrap: wrap;
   }
 
-  .news_feed .facebook_page_division h3{
-    color: white;
+  .news_feed .facebook_page_division h1{
+    color: rgb(0, 0, 0);
     font-family: "Montserrat";
     display: flex;
     align-self: center;
     justify-content: center;
-  }
-
-  .news_feed .facebook_page_division .fb-page{
-    color: white;
-    font-family: "Montserrat";
-    display: flex;
-    align-self: center;
-    justify-content: center;
-    width: 300px;
-    height: 600px;
-    flex-wrap: wrap;
   }
 
   .interactive_map_section{
