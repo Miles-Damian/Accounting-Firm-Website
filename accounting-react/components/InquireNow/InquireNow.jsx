@@ -40,18 +40,22 @@ const InquireNow = () => {
 
         <div className="flex flex-col w-full gap-5">
           {/* First & Last Name */}
-          <div className="flex flex-col gap-5 sm:flex-row">
-            <input
-              type="text"
-              placeholder="First Name*"
-              className="flex-1 p-4 border-2 rounded-lg placeholder-[#003a22] focus:outline-none focus:ring-2 focus:ring-[#003a22] transition-transform duration-200 hover:-translate-y-1 hover:shadow-md"
-            />
-            <input
-              type="text"
-              placeholder="Last Name*"
-              className="flex-1 p-4 border-2 rounded-lg placeholder-[#003a22] focus:outline-none focus:ring-2 focus:ring-[#003a22] transition-transform duration-200 hover:-translate-y-1 hover:shadow-md"
-            />
-          </div>
+<div className="flex flex-col w-full gap-5 sm:flex-row">
+  <input
+    type="text"
+    placeholder="First Name*"
+    className="w-full sm:flex-1 min-w-0 p-4 border-2 border-emerald-900 rounded-lg placeholder-[#003a22] 
+               focus:outline-none focus:ring-2 focus:ring-emerald-700 
+               transition duration-200 hover:-translate-y-1 hover:shadow-md"
+  />
+  <input
+    type="text"
+    placeholder="Last Name*"
+    className="w-full sm:flex-1 min-w-0 p-4 border-2 border-emerald-900 rounded-lg placeholder-[#003a22] 
+               focus:outline-none focus:ring-2 focus:ring-emerald-700 
+               transition duration-200 hover:-translate-y-1 hover:shadow-md"
+  />
+</div>
 
           {/* Other Inputs */}
           <input
@@ -117,7 +121,7 @@ const InquireNow = () => {
           FACEBOOK PAGE
         </h1>
         <iframe
-          src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FLuzonNMofficial%2F&tabs=timeline&width=400&height=650&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
+          src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FLuzonNMofficial%2F&tabs=timeline&width=430&height=650&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
           className="w-full h-[650px] rounded-2xl border-4 border-emerald-900 transition-transform duration-200 hover:-translate-y-1 hover:shadow-lg"
           frameBorder="0"
           allowFullScreen

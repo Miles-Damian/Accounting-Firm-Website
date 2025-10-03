@@ -2,14 +2,14 @@
 import React, { useState, useEffect, useRef } from "react";
 
 const slides = [
-  "/images/random-images/carousel-img-1.png",
-  "/images/random-images/carousel-img-2.png",
-  "/images/random-images/carousel-img-1.png",
-  "/images/random-images/carousel-img-2.png",
-  "/images/random-images/carousel-img-1.png",
-  "/images/random-images/carousel-img-2.png",
-  "/images/random-images/carousel-img-1.png",
-  "/images/random-images/carousel-img-2.png",
+  "/public/images/random-images/mission.jpg",
+  "/public/images/random-images/vision.jpg",
+  "/public/images/random-images/mission.jpg",
+  "/public/images/random-images/vision.jpg",
+  "/public/images/random-images/mission.jpg",
+  "/public/images/random-images/vision.jpg",
+  "/public/images/random-images/mission.jpg",
+  "/public/images/random-images/vision.jpg",
 ];
 
 const HomeHero = () => {
@@ -49,7 +49,7 @@ const HomeHero = () => {
         className="flex flex-col lg:flex-row items-center lg:items-start justify-center 
         bg-[url('/images/bg/building-filter.png')] bg-cover bg-no-repeat bg-center 
         px-6 sm:px-12 lg:px-20 xl:px-[90px] 
-        py-12 lg:py-[90px] xl:py-[120px]"
+        pt-8 sm:pt-10 md:pt-12 lg:pt-[60px] xl:pt-[80px] pb-25"
       >
         {/* LEFT COLUMN */}
         <div
@@ -61,13 +61,13 @@ const HomeHero = () => {
           <h1 className="text-[#004524] text-2xl sm:text-3xl md:text-4xl xl:text-[32px] font-bold font-montserrat leading-snug mt-25">
             Welcome to Insight Business Consultancy Inc.
           </h1>
-          <p className="text-black text-base sm:text-lg md:text-xl mt-4">
+          <p className="mt-4 text-base text-black sm:text-lg md:text-xl">
             Your One-Stop Partner for Business Growth
           </p>
-          <p className="text-black text-base sm:text-lg md:text-xl mt-4 font-bold">
+          <p className="mt-4 text-base font-bold text-black sm:text-lg md:text-xl">
             Ready to take your business to the next level?
           </p>
-          <p className="text-black text-base sm:text-lg md:text-xl mt-4">
+          <p className="mt-4 text-base text-black sm:text-lg md:text-xl">
             Let Insight Business Consultancy Inc. handle the paperwork,
             compliance, and digital support so you can focus on growth.
           </p>
@@ -78,7 +78,7 @@ const HomeHero = () => {
 
         {/* RIGHT COLUMN - CAROUSEL */}
         <div
-          className={`flex flex-col items-center lg:w-1/2 mt-0 lg:mt-0 lg:ml-12 sm:mt-40 transition-all duration-700 delay-300 ${
+          className={`flex flex-col items-center lg:w-1/2 mt-0 lg:mt-0 lg:ml-12 sm:mt-30 transition-all duration-700 delay-300 ${
             isVisible ? "animate-slideUpDelay" : "opacity-0 translate-y-10"
           }`}
         >
@@ -86,12 +86,7 @@ const HomeHero = () => {
             {/* Left Arrow */}
             <button
               onClick={prevSlide}
-              className="absolute top-1/2 -translate-y-1/2 
-              left-0 lg:left-20 
-              bg-black/60 text-white 
-              text-lg sm:text-xl md:text-2xl 
-              p-2 sm:p-3 md:p-4 
-              rounded-full z-30"
+              className="absolute left-0 z-30 p-2 text-lg text-white -translate-y-1/2 rounded-full top-1/2 lg:left-20 bg-black/60 sm:text-xl md:text-2xl sm:p-3 md:p-4"
             >
               &#10094;
             </button>
@@ -128,12 +123,7 @@ const HomeHero = () => {
             {/* Right Arrow */}
             <button
               onClick={nextSlide}
-              className="absolute top-1/2 -translate-y-1/2 
-              right-0 lg:right-20 
-              bg-black/60 text-white 
-              text-lg sm:text-xl md:text-2xl 
-              p-2 sm:p-3 md:p-4 
-              rounded-full z-30"
+              className="absolute right-0 z-30 p-2 text-lg text-white -translate-y-1/2 rounded-full top-1/2 lg:right-20 bg-black/60 sm:text-xl md:text-2xl sm:p-3 md:p-4"
             >
               &#10095;
             </button>
