@@ -1,25 +1,24 @@
 // src/components/Industries/Industries.jsx
 import React, { useEffect, useRef, useState } from "react";
 
-// Simple icon
-const IndustryIcon = ({ className }) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    fill="currentColor"
-    viewBox="0 0 20 20"
-    className={`h-6 w-6 text-green-600 flex-shrink-0 ${className}`}
-  >
-    <path d="M6 2a1 1 0 00-1 1v2H3a1 1 0 000 2h2v6H3a1 1 0 000 2h2v2a1 1 0 001 1h8a1 1 0 001-1v-2h2a1 1 0 000-2h-2V7h2a1 1 0 000-2h-2V3a1 1 0 00-1-1H6zM7 5V4h6v1H7zm0 10v-1h6v1H7zm0-3V9h6v3H7z" />
-  </svg>
-);
+const industryIcons = {
+  "Startups & Entrepreneurs": "fa-solid fa-rocket",
+  "Small & Medium Enterprises (SMEs)": "fa-solid fa-store",
+  "Corporations": "fa-solid fa-building",
+  "Professional Firms": "fa-solid fa-scale-balanced",
+  "Non-Profits & Organizations": "fa-solid fa-hand-holding-heart",
+};
 
-const industries = [
-  "Startups & Entrepreneurs",
-  "Small & Medium Enterprises (SMEs)",
-  "Corporations",
-  "Professional Firms",
-  "Non-Profits & Organizations",
-];
+// Distinct animations
+const industryAnimations = {
+  "Startups & Entrepreneurs": "group-hover:-translate-y-2", // rocket lifts up
+  "Small & Medium Enterprises (SMEs)": "group-hover:scale-110", // pulse
+  "Corporations": "group-hover:rotate-3", // slight shake
+  "Professional Firms": "group-hover:-rotate-6", // tilt
+  "Non-Profits & Organizations": "group-hover:scale-125", // heartbeat
+};
+
+const industries = Object.keys(industryIcons);
 
 const Industries = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -44,9 +43,9 @@ const Industries = () => {
   return (
     <section
       ref={sectionRef}
-      className="bg-white dark:bg-gray-900 py-16 font-display overflow-hidden"
+      className="py-16 overflow-hidden bg-white dark:bg-gray-900 font-display"
     >
-      <div className="container mx-auto px-6 lg:px-8 text-center">
+      <div className="container px-6 mx-auto text-center lg:px-8">
         {/* Heading */}
         <div
           className={`transition-all duration-700 ${
@@ -58,30 +57,29 @@ const Industries = () => {
           <h2 className="text-3xl font-bold text-gray-900 dark:text-white sm:text-4xl">
             Industries We Serve
           </h2>
-          <p className="mt-4 max-w-2xl mx-auto text-lg text-gray-600 dark:text-gray-400">
+          <p className="max-w-2xl mx-auto mt-4 text-lg text-gray-600 dark:text-gray-400">
             Insight Business Consultancy Inc. supports a wide range of businesses.
           </p>
         </div>
 
         {/* Industries List */}
-        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto text-left">
+        <div className="grid max-w-3xl grid-cols-1 gap-6 mx-auto mt-12 text-left sm:grid-cols-2">
           {industries.map((industry, index) => {
-            // Alternate animation direction
-            const direction =
-              index % 2 === 0 ? "-translate-x-10" : "translate-x-10";
+            const direction = index % 2 === 0 ? "-translate-x-10" : "translate-x-10";
 
             return (
               <div
                 key={industry}
-                className={`flex items-center space-x-3 p-4 rounded-lg bg-gray-50 dark:bg-gray-800 shadow-sm hover:shadow-md transition-all duration-700 ${
-                  isVisible
-                    ? "opacity-100 translate-x-0"
-                    : `opacity-0 ${direction}`
-                }`}
-                style={{ transitionDelay: `${index * 200}ms` }} // stagger effect
+                className={`group flex items-center space-x-3 p-4 rounded-lg bg-gray-50 dark:bg-gray-800 shadow-sm 
+                transition-all duration-700 
+                ${isVisible ? "opacity-100 translate-x-0" : `opacity-0 ${direction}`}
+                hover:-translate-y-2 hover:shadow-lg`}
+                style={{ transitionDelay: `${index * 200}ms` }}
               >
-                <IndustryIcon />
-                <span className="text-lg font-medium text-gray-800 dark:text-gray-200">
+                <i
+                  className={`${industryIcons[industry]} text-green-600 text-xl transition-transform duration-300 ${industryAnimations[industry]}`}
+                ></i>
+                <span className="text-lg font-medium text-gray-800 transition-colors duration-300 dark:text-gray-200 group-hover:text-green-700">
                   {industry}
                 </span>
               </div>

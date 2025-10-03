@@ -23,7 +23,7 @@ const InquireNow = () => {
   return (
     <section
       ref={sectionRef}
-      className="flex flex-col 2xl:flex-row justify-between gap-12 px-6 lg:px-12 xl:px-20 py-16 bg-white overflow-hidden"
+      className="flex flex-col justify-between gap-12 px-6 py-16 overflow-hidden bg-white 2xl:flex-row lg:px-12 xl:px-20"
     >
       {/* INQUIRE NOW FORM */}
       <form
@@ -38,18 +38,18 @@ const InquireNow = () => {
           INQUIRE NOW!
         </h1>
 
-        <div className="flex flex-col gap-5 w-full">
+        <div className="flex flex-col w-full gap-5">
           {/* First & Last Name */}
-          <div className="flex flex-col sm:flex-row gap-5">
+          <div className="flex flex-col gap-5 sm:flex-row">
             <input
               type="text"
               placeholder="First Name*"
-              className="flex-1 p-4 border-2 rounded-lg placeholder-[#003a22] focus:outline-none focus:ring-2 focus:ring-[#003a22]"
+              className="flex-1 p-4 border-2 rounded-lg placeholder-[#003a22] focus:outline-none focus:ring-2 focus:ring-[#003a22] transition-transform duration-200 hover:-translate-y-1 hover:shadow-md"
             />
             <input
               type="text"
               placeholder="Last Name*"
-              className="flex-1 p-4 border-2 rounded-lg placeholder-[#003a22] focus:outline-none focus:ring-2 focus:ring-[#003a22]"
+              className="flex-1 p-4 border-2 rounded-lg placeholder-[#003a22] focus:outline-none focus:ring-2 focus:ring-[#003a22] transition-transform duration-200 hover:-translate-y-1 hover:shadow-md"
             />
           </div>
 
@@ -57,23 +57,23 @@ const InquireNow = () => {
           <input
             type="text"
             placeholder="Company Name*"
-            className="w-full p-4 border-2 rounded-lg placeholder-[#003a22] focus:outline-none focus:ring-2 focus:ring-[#003a22]"
+            className="w-full p-4 border-2 rounded-lg placeholder-[#003a22] focus:outline-none focus:ring-2 focus:ring-[#003a22] transition-transform duration-200 hover:-translate-y-1 hover:shadow-md"
           />
           <input
             type="email"
             placeholder="Email Address*"
-            className="w-full p-4 border-2 rounded-lg placeholder-[#003a22] focus:outline-none focus:ring-2 focus:ring-[#003a22]"
+            className="w-full p-4 border-2 rounded-lg placeholder-[#003a22] focus:outline-none focus:ring-2 focus:ring-[#003a22] transition-transform duration-200 hover:-translate-y-1 hover:shadow-md"
           />
           <input
             type="tel"
             placeholder="Phone Number"
-            className="w-full p-4 border-2 rounded-lg placeholder-[#003a22] focus:outline-none focus:ring-2 focus:ring-[#003a22]"
+            className="w-full p-4 border-2 rounded-lg placeholder-[#003a22] focus:outline-none focus:ring-2 focus:ring-[#003a22] transition-transform duration-200 hover:-translate-y-1 hover:shadow-md"
           />
 
           {/* Select */}
           <select
             id="select_inquiry"
-            className="w-full p-4 border-2 rounded-lg font-montserrat text-base placeholder-[#003a22] focus:outline-none focus:ring-2 focus:ring-[#003a22]"
+            className="w-full p-4 border-2 rounded-lg font-montserrat text-base placeholder-[#003a22] focus:outline-none focus:ring-2 focus:ring-[#003a22] transition-transform duration-200 hover:-translate-y-1 hover:shadow-md"
           >
             <option value="">Select Inquiry</option>
             <option value="general">General Inquiry</option>
@@ -86,14 +86,14 @@ const InquireNow = () => {
           <textarea
             id="your_inquiry"
             placeholder="Your Inquiry*"
-            className="w-full p-4 h-[120px] border-2 rounded-lg font-montserrat text-base placeholder-[#003a22] focus:outline-none focus:ring-2 focus:ring-[#003a22]"
+            className="w-full p-4 h-[120px] border-2 rounded-lg font-montserrat text-base placeholder-[#003a22] focus:outline-none focus:ring-2 focus:ring-[#003a22] transition-transform duration-200 hover:-translate-y-1 hover:shadow-md"
           ></textarea>
         </div>
 
         {/* Submit Button */}
         <button
           type="button"
-          className="flex items-center justify-center mt-6 bg-[#003a22] text-white rounded-full px-6 py-3 font-semibold shadow-lg hover:bg-[#025232] transition"
+          className="flex items-center justify-center mt-6 bg-[#003a22] text-white rounded-full px-6 py-3 font-semibold shadow-lg transition-all duration-200 hover:bg-[#025232] hover:scale-105"
         >
           Submit Now
           <img
@@ -118,7 +118,7 @@ const InquireNow = () => {
         </h1>
         <iframe
           src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FLuzonNMofficial%2F&tabs=timeline&width=400&height=650&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
-          className="w-full h-[650px] rounded-2xl border-4 border-emerald-900"
+          className="w-full h-[650px] rounded-2xl border-4 border-emerald-900 transition-transform duration-200 hover:-translate-y-1 hover:shadow-lg"
           frameBorder="0"
           allowFullScreen
           allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"

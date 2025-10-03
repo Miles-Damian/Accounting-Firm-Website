@@ -7,16 +7,26 @@ const NewsCard = ({ img, alt, category, title, desc, delay, isVisible }) => (
     ${isVisible ? "opacity-100 rotate-0 translate-y-0" : "opacity-0 rotate-6 translate-y-10"}`}
     style={{ transitionDelay: `${delay}ms` }}
   >
-    <img
-      src={img}
-      alt={alt}
-      className="mb-4 w-full max-h-80 object-contain rounded-xl bg-white shadow-md"
-    />
-    <p className="mb-2 font-semibold text-cyan-600 text-sm md:text-base">
-      {category}
-    </p>
-    <h3 className="mb-2 font-bold text-lg md:text-xl">{title}</h3>
-    <p className="text-gray-700 text-sm md:text-base">{desc}</p>
+    <div
+      className="overflow-hidden transition-all duration-300 bg-white shadow-md rounded-xl hover:shadow-2xl hover:-translate-y-1"
+    >
+      <img
+        src={img}
+        alt={alt}
+        className="object-contain w-full mb-4 transition-transform duration-300 transform bg-white max-h-80 rounded-t-xl hover:scale-105"
+      />
+      <div className="px-4 pb-4">
+        <p className="mb-2 text-sm font-semibold text-cyan-600 md:text-base">
+          {category}
+        </p>
+        <h3
+          className="mb-2 text-lg font-bold transition-colors duration-300 md:text-xl hover:text-green-700"
+        >
+          {title}
+        </h3>
+        <p className="text-sm text-gray-700 md:text-base">{desc}</p>
+      </div>
+    </div>
   </div>
 );
 
@@ -41,7 +51,7 @@ const LatestNews = () => {
   return (
     <section
       ref={sectionRef}
-      className="py-16 bg-gray-50 overflow-hidden"
+      className="py-16 overflow-hidden bg-gray-50"
     >
       <h1
         className={`text-3xl md:text-5xl font-bold text-center mb-12 transition-all duration-700 ${
@@ -51,7 +61,7 @@ const LatestNews = () => {
         LATEST NEWS AND EVENTS
       </h1>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-7xl mx-auto px-6">
+      <div className="grid grid-cols-1 gap-10 px-6 mx-auto md:grid-cols-2 lg:grid-cols-3 max-w-7xl">
         <NewsCard
           img="/images/random-images/tax-dealine.png"
           alt="Tax Deadline"
