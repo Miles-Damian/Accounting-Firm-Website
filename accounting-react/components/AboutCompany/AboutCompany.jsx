@@ -36,10 +36,13 @@ const AboutCompany = () => {
           INSIGHT BUSINESS CONSULTANCY INC.
         </h1>
         <p className="text-base leading-relaxed text-gray-600 md:text-lg">
-        a newly established firm committed to providing professional, end-to-end business solutions for entrepreneurs, startups, and growing companies in the Philippines.
-We are a team of passionate accounting, finance, legal, and compliance experts dedicated to helping businesses start strong, operate legally, and scale successfully.
-Whether you're launching your first venture or managing an expanding enterprise, INSIGHT is your trusted partner every step of the way.
-
+          a newly established firm committed to providing professional, end-to-end
+          business solutions for entrepreneurs, startups, and growing companies in
+          the Philippines. We are a team of passionate accounting, finance, legal,
+          and compliance experts dedicated to helping businesses start strong,
+          operate legally, and scale successfully. Whether you're launching your
+          first venture or managing an expanding enterprise, INSIGHT is your
+          trusted partner every step of the way.
         </p>
       </div>
 
@@ -51,16 +54,20 @@ Whether you're launching your first venture or managing an expanding enterprise,
       >
         {/* Outer Green Border */}
         <div
-          className="relative w-[460px] h-[560px] md:w-[560px] md:h-[660px] flex items-center justify-center"
+          className="relative flex items-center justify-center 
+                     w-[260px] h-[300px] 
+                     sm:w-[320px] sm:h-[360px] 
+                     md:w-[500px] md:h-[580px]
+                     lg:w-[620px] lg:h-[720px]"
           style={{
             clipPath:
               "polygon(25% 6.7%, 75% 6.7%, 100% 50%, 75% 93.3%, 25% 93.3%, 0% 50%)",
-            backgroundColor: "#059669", // green border
+            backgroundColor: "#059669",
           }}
         >
           {/* Inner White Border */}
           <div
-            className="w-[440px] h-[540px] md:w-[540px] md:h-[640px] flex items-center justify-center"
+            className="w-[94%] h-[94%] flex items-center justify-center"
             style={{
               clipPath:
                 "polygon(25% 6.7%, 75% 6.7%, 100% 50%, 75% 93.3%, 25% 93.3%, 0% 50%)",
@@ -69,7 +76,7 @@ Whether you're launching your first venture or managing an expanding enterprise,
           >
             {/* Image */}
             <div
-              className="w-[420px] h-[520px] md:w-[520px] md:h-[620px] bg-cover bg-center shadow-xl transition-transform duration-500 hover:scale-105"
+              className="w-[90%] h-[90%] bg-cover bg-center shadow-xl transition-transform duration-500 hover:scale-105 hover:-translate-y-2"
               style={{
                 backgroundImage: "url('/images/bg/building.jpg')",
                 clipPath:

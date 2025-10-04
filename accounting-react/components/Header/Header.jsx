@@ -1,14 +1,28 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 
 const Header = () => {
   const [isSidebarToggled, setIsSidebarToggled] = useState(false);
-  const [isServicesToggled, setIsServicesToggled] = useState(false);
+  const [isDesktopServicesOpen, setIsDesktopServicesOpen] = useState(false);
+  const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
 
-  const toggleSidebar = () => setIsSidebarToggled(!isSidebarToggled);
-  const toggleServices = () => setIsServicesToggled(!isServicesToggled);
+  const toggleSidebar = () => setIsSidebarToggled((v) => !v);
+  const toggleDesktopServices = () =>
+    setIsDesktopServicesOpen((v) => !v);
+  const toggleMobileServices = () =>
+    setIsMobileServicesOpen((v) => !v);
   const handleSearch = (e) => setSearchQuery(e.target.value);
+
+  // Lock page scroll when mobile menu is open
+  useEffect(() => {
+    if (isSidebarToggled) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => (document.body.style.overflow = "");
+  }, [isSidebarToggled]);
 
   return (
     <header className="sticky top-0 z-50 w-full bg-gradient-to-b from-green-100 to-green-200 font-montserrat">
@@ -25,11 +39,12 @@ const Header = () => {
           onClick={toggleSidebar}
           className="relative z-50 flex lg:hidden"
           id="header-menu-btn"
+          aria-label="Toggle menu"
         >
           {isSidebarToggled ? (
-            <i className="fa-solid fa-xmark fa-2x"></i> // X icon when open
+            <i className="fa-solid fa-xmark fa-2x"></i>
           ) : (
-            <i className="fa-solid fa-bars fa-2x"></i> // Bars when closed
+            <i className="fa-solid fa-bars fa-2x"></i>
           )}
         </button>
 
@@ -80,7 +95,7 @@ const Header = () => {
             </a>
           </motion.li>
 
-          {/* Services */}
+          {/* Services (desktop) */}
           <motion.li className="relative cursor-pointer group" whileHover="hover">
             <div className="flex items-center">
               <motion.i
@@ -90,7 +105,7 @@ const Header = () => {
               />
               <button
                 id="services-dropdown-btn"
-                onClick={toggleServices}
+                onClick={toggleDesktopServices}
                 className="ml-2 text-base relative inline-block transition-colors duration-300 hover:text-green-800
                            after:absolute after:left-0 after:-bottom-[3px] after:h-[2px] after:w-full after:bg-green-700
                            after:origin-left after:scale-x-0 after:transition-transform after:duration-300
@@ -100,16 +115,16 @@ const Header = () => {
               </button>
               <motion.i
                 className="ml-1 fa-solid fa-angle-down fa-s"
-                animate={{ rotate: isServicesToggled ? 180 : 0 }}
+                animate={{ rotate: isDesktopServicesOpen ? 180 : 0 }}
                 transition={{ duration: 0.2 }}
               />
             </div>
 
             <AnimatePresence>
-              {isServicesToggled && (
+              {isDesktopServicesOpen && (
                 <motion.ul
                   id="services-dropdown-actions"
-                  className="absolute flex flex-col items-center gap-3 p-3 -translate-x-1/2 bg-white shadow rounded-xl center left-1/2 top-full"
+                  className="absolute flex flex-col items-center gap-3 p-3 -translate-x-1/2 bg-white shadow left-1/2 top-full rounded-xl"
                   initial={{ opacity: 0, y: -10, scale: 0.95 }}
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   exit={{ opacity: 0, y: -10, scale: 0.95 }}
@@ -221,52 +236,110 @@ const Header = () => {
           </li>
         </ul>
 
-        {/* ✅ Mobile Sidebar (fixed overlay) */}
+        {/* Mobile Sidebar (includes Services) */}
         <AnimatePresence>
           {isSidebarToggled && (
-            <motion.ul
-              id="mobile-nav-actions-container"
-              className="fixed top-0 right-0 z-40 flex flex-col w-full h-screen gap-6 p-6 bg-white lg:hidden"
-              initial={{ opacity: 0, x: "100%" }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: "100%" }}
-              transition={{ duration: 0.3, ease: "easeInOut" }}
+            <motion.div
+              className="fixed inset-0 z-40 lg:hidden"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
             >
-              {["HOME", "ABOUT US", "FAQ", "CONTACT", "CAREERS"].map((label, i) => (
-                <motion.li
-                  key={label}
-                  whileHover={{ x: 5 }}
-                  transition={{ duration: 0.2, ease: "easeOut" }}
-                  className="flex items-center gap-2"
-                >
-                  <i
-                    className={`fa-solid ${["fa-house", "fa-people-group", "fa-circle-question", "fa-phone", "fa-briefcase"][i]} text-2xl`}
-                  />
-                  <a
-                    href="#"
-                    className="text-3xl transition-colors duration-300 hover:text-green-800"
-                  >
-                    {label}
-                  </a>
-                </motion.li>
-              ))}
+              {/* Backdrop to close */}
+              <div
+                className="absolute inset-0 bg-black/30"
+                onClick={() => setIsSidebarToggled(false)}
+              />
+              {/* Drawer */}
+              <motion.ul
+                id="mobile-nav-actions-container"
+                className="absolute right-0 top-0 h-full w-full max-w-[420px] bg-white p-6 flex flex-col gap-6 overflow-y-auto"
+                initial={{ x: "100%" }}
+                animate={{ x: 0 }}
+                exit={{ x: "100%" }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
+              >
+                {[
+                  { label: "HOME", icon: "fa-house" },
+                  { label: "ABOUT US", icon: "fa-people-group" },
+                  { label: "SERVICES", icon: "fa-universal-access" },
+                  { label: "FAQ", icon: "fa-circle-question" },
+                  { label: "CONTACT", icon: "fa-phone" },
+                  { label: "CAREERS", icon: "fa-briefcase" },
+                ].map(({ label, icon }) => (
+                  <li key={label} className="flex flex-col gap-2">
+                    <div className="flex items-center gap-3">
+                      <i className={`fa-solid ${icon} text-2xl`} />
+                      {label === "SERVICES" ? (
+                        <button
+                          onClick={toggleMobileServices}
+                          className="flex items-center gap-2 text-3xl transition-colors duration-300 hover:text-green-800"
+                        >
+                          {label}
+                          <i
+                            className={`fa-solid fa-angle-down text-xl transition-transform ${
+                              isMobileServicesOpen ? "rotate-180" : ""
+                            }`}
+                          />
+                        </button>
+                      ) : (
+                        <a
+                          href="#"
+                          className="text-3xl transition-colors duration-300 hover:text-green-800"
+                          onClick={() => setIsSidebarToggled(false)}
+                        >
+                          {label}
+                        </a>
+                      )}
+                    </div>
 
-              {/* ✅ Mobile Search */}
-              <li>
-                <form action="" className="relative">
-                  <button type="submit" className="absolute -translate-y-1/2 left-3 top-1/2">
-                    <i className="text-2xl fa-solid fa-magnifying-glass"></i>
-                  </button>
-                  <input
-                    value={searchQuery}
-                    onChange={handleSearch}
-                    type="text"
-                    className="w-full py-2 pl-12 pr-5 text-2xl border border-black rounded-full focus:outline-none focus:ring-2 focus:ring-green-700"
-                    placeholder="SEARCH"
-                  />
-                </form>
-              </li>
-            </motion.ul>
+                    {/* Mobile Services submenu */}
+                    {label === "SERVICES" && isMobileServicesOpen && (
+                      <ul className="flex flex-col gap-3 mt-1 ml-9">
+                        {[
+                          "Business Registration Services",
+                          "Accounting & Bookkeeping Services",
+                          "Tax & Regulatory Compliance",
+                          "Payroll Outsourced Services",
+                          "BIR One-Time Transactions",
+                          "Specialized Registrations & Compliance",
+                          "Business Support Services",
+                        ].map((service) => (
+                          <li key={service}>
+                            <a
+                              href="#"
+                              className="text-xl transition hover:text-green-800"
+                              onClick={() => setIsSidebarToggled(false)}
+                            >
+                              {service}
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </li>
+                ))}
+
+                {/* Mobile Search */}
+                <li className="mt-2">
+                  <form action="" className="relative">
+                    <button
+                      type="submit"
+                      className="absolute -translate-y-1/2 left-3 top-1/2"
+                    >
+                      <i className="text-2xl fa-solid fa-magnifying-glass"></i>
+                    </button>
+                    <input
+                      value={searchQuery}
+                      onChange={handleSearch}
+                      type="text"
+                      className="w-full py-2 pl-12 pr-5 text-2xl border border-black rounded-full focus:outline-none focus:ring-2 focus:ring-green-700"
+                      placeholder="SEARCH"
+                    />
+                  </form>
+                </li>
+              </motion.ul>
+            </motion.div>
           )}
         </AnimatePresence>
       </nav>

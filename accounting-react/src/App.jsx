@@ -7,9 +7,9 @@ import AboutUsPage from "../pages/AboutUsPage/AboutUsPage";
 function App() {
     return (
         <>
-           <HomePage/>
+           {/* <HomePage/> */}
            {/* <ServicesPage/> */}
-           {/* <AboutUsPage/> */}
+           <AboutUsPage/>
            {/* <ContactPage/> */}
            {/* <FAQPage/> */}
         </>

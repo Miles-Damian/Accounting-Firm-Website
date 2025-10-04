@@ -35,7 +35,7 @@ const MissionVision = () => {
       <div
         ref={missionRef}
         data-section="mission"
-        className="grid items-center grid-cols-1 gap-12 lg:grid-cols-2"
+        className="grid items-center grid-cols-1 gap-12 lg:grid-cols-2 2xl:mt-20"
       >
         {/* Text Left */}
         <div
@@ -52,10 +52,8 @@ const MissionVision = () => {
             Empowering Businesses to Grow with Confidence
           </h1>
           <p className="text-base leading-relaxed text-gray-600 md:text-lg">
-            Our mission is to simplify business processes and empower entrepreneurs,
-            SMEs, and corporations with expert legal, financial, and compliance support.
-            We strive to help our clients operate with confidence, efficiency, and
-            long-term sustainability.
+          To empower entrepreneurs and businesses by delivering reliable, transparent, and value-driven accounting and business consultancy services.
+
           </p>
         </div>
 
@@ -82,7 +80,7 @@ const MissionVision = () => {
       <div
         ref={visionRef}
         data-section="vision"
-        className="grid items-center grid-cols-1 gap-12 lg:grid-cols-2"
+        className="grid items-center grid-cols-1 gap-12 lg:grid-cols-2 2xl:mt-50"
       >
         {/* Image Left */}
         <div
@@ -117,10 +115,8 @@ const MissionVision = () => {
             A Future Where Businesses Thrive Without Limits
           </h1>
           <p className="text-base leading-relaxed text-gray-600 md:text-lg">
-            Our vision is to be the most trusted consultancy in the Philippines,
-            known for innovation, reliability, and excellence. We aim to help
-            businesses of all sizes achieve growth and stability, setting the
-            standard for professional consultancy services nationwide.
+          To become a leading business consultancy firm recognized for excellence, integrity, and innovation in supporting enterprise growth across the Philippines.
+
           </p>
         </div>
       </div>
