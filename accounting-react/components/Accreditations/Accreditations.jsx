@@ -1,5 +1,4 @@
-// src/components/Accreditations/Accreditations.jsx
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from  "react";
 
 const Card = ({ title, items, isVisible, delay }) => (
   <div

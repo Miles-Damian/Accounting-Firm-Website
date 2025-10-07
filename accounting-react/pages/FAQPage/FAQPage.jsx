@@ -1,4 +1,3 @@
-// src/pages/FAQPage/FAQPage.jsx
 import React from "react";
 import { motion } from "motion/react";
 import Header from "../../components/Header/Header";
@@ -44,9 +43,8 @@ const FAQPage = () => {
         <motion.h2
           className="mb-10 text-center text-3xl font-extrabold text-gray-900"
           initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
         >
           Frequently Asked Questions
         </motion.h2>
@@ -57,9 +55,8 @@ const FAQPage = () => {
               key={index}
               className="group rounded-lg border border-gray-200 bg-gray-50 shadow-sm"
               initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: true }}
             >
               <summary className="flex cursor-pointer list-none items-center justify-between p-4 hover:bg-gray-100">
                 <h3 className="font-semibold text-gray-900">{faq.q}</h3>
@@ -78,9 +75,9 @@ const FAQPage = () => {
           ))}
         </div>
       </main>
-      <Footer/>
+
+      <Footer />
     </div>
-    
   );
 };
 

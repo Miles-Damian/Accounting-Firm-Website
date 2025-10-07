@@ -1,17 +1,29 @@
-import ServicesPage from "../pages/ServicesPage/ServicesPage";
-import FAQPage from "../pages/FAQPage/FAQPage";
-import HomePage from "../pages/HomePage/HomePage";
-import ContactPage from "../pages/ContactPage/ContactPage";
-import AboutUsPage from "../pages/AboutUsPage/AboutUsPage";
+import BusinessRegistrationPage from "../pages/BusinessRegistrationPage/BusinessRegistrationPage";
+import Header from "../components/Header/Header";
+import Footer from "../components/Footer/Footer";
+import BookKeepingAndAccountingServices from "../pages/BookKeepingAndAccountingServices/BookKeepingAndAccountingServices";
+import TaxAndRegulationServicesPage from "../pages/TaxAndRegulatoryServicesPage/TaxAndRegulatoryServicesPage";
+import PayrollOutsourcedServicesPage from "../pages/PayrollOutsourcedServicesPage/PayrollOutsourcedServicesPage";
+import BirOneTImeTransactionServicesPage from "../pages/BirOneTimeTransactionServicesPage/BirOneTimeTransactionServicesPage";
+import SpecializedRegistrationServicesPage from "../pages/SpecializedRegistrationServicesPage/SpecializedRegistrationServicesPage";
+import BusinessSupportServicesPage from "../pages/BusinessSupportServicesPage/BusinessSupportServicesPage";
+import CareersPage from "../pages/CareersPage/CareersPage";
+import CareerApplyPage from "../pages/CareerApplyPage/CareerApplyPage";
 
 function App() {
     return (
         <>
-           {/* <HomePage/> */}
-           {/* <ServicesPage/> */}
-           <AboutUsPage/>
-           {/* <ContactPage/> */}
-           {/* <FAQPage/> */}
+            {/* <Header /> */}
+            {/* <BusinessRegistrationPage /> */}
+            {/* <BookKeepingAndAccountingServices /> */}
+            {/* <TaxAndRegulationServicesPage /> */}
+            {/* <PayrollOutsourcedServicesPage /> */}
+            {/* <BirOneTImeTransactionServicesPage /> */}
+            {/* <SpecializedRegistrationServicesPage /> */}
+            {/* <BusinessSupportServicesPage /> */}
+            {/* <CareersPage /> */}
+            {/* <CareerApplyPage /> */}
+            {/* <Footer /> */}
         </>
     );
 }

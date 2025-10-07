@@ -1,345 +1,419 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
+import { NavLink, useLocation } from "react-router-dom";
 
 const Header = () => {
   const [isSidebarToggled, setIsSidebarToggled] = useState(false);
-  const [isDesktopServicesOpen, setIsDesktopServicesOpen] = useState(false);
+  const [isServicesToggled, setIsServicesToggled] = useState(false);
   const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
-  const [searchQuery, setSearchQuery] = useState("");
+  const location = useLocation();
 
-  const toggleSidebar = () => setIsSidebarToggled((v) => !v);
-  const toggleDesktopServices = () =>
-    setIsDesktopServicesOpen((v) => !v);
-  const toggleMobileServices = () =>
-    setIsMobileServicesOpen((v) => !v);
-  const handleSearch = (e) => setSearchQuery(e.target.value);
+  const toggleSidebar = () => setIsSidebarToggled(!isSidebarToggled);
+  const toggleServices = () => setIsServicesToggled(!isServicesToggled);
 
-  // Lock page scroll when mobile menu is open
-  useEffect(() => {
-    if (isSidebarToggled) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
-    return () => (document.body.style.overflow = "");
-  }, [isSidebarToggled]);
+  const UnderlinedText = ({ isActive, children }) => (
+    <span
+      className={`relative after:absolute after:left-0 after:-bottom-[3px] after:h-[2px] after:bg-[#004524] after:rounded-full after:w-full after:origin-left after:scale-x-0 after:opacity-0 after:transition-all after:duration-300 group-hover:after:scale-x-100 group-hover:after:opacity-100 ${
+        isActive ? "after:scale-x-100 after:opacity-100" : ""
+      }`}
+    >
+      <b>{children}</b>
+    </span>
+  );
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-gradient-to-b from-green-100 to-green-200 font-montserrat">
-      <nav className="relative flex items-center justify-between h-16 px-4 sm:px-6 lg:px-10 max-w-[1600px] mx-auto">
-        {/* Logo */}
+    <header className="sticky top-0 z-50 w-full pt-1.5 pb-1.5 bg-gradient-to-b from-green-100 to-green-200">
+      <nav className="flex justify-between items-center relative w-full p-2 h-16 max-w-[1400px] mx-auto">
         <img
-          className="w-40 md:w-44 lg:w-48 h-auto animate-jump animate-duration-[400ms]"
-          src="/public/images/logo/logo.png"
+          className="w-40 h-auto animate-jump animate-duration-[400ms]"
+          src="/images/logo/logo.png"
           alt="Insight Accounting Firm"
         />
 
-        {/* Mobile menu button (Hamburger / X) */}
-        <button
-          onClick={toggleSidebar}
-          className="relative z-50 flex lg:hidden"
-          id="header-menu-btn"
-          aria-label="Toggle menu"
-        >
-          {isSidebarToggled ? (
-            <i className="fa-solid fa-xmark fa-2x"></i>
-          ) : (
-            <i className="fa-solid fa-bars fa-2x"></i>
-          )}
+        {/* Mobile menu toggle */}
+        <button onClick={toggleSidebar} className="flex lg:hidden">
+          <i className="fa-solid fa-bars fa-2x"></i>
         </button>
 
-        {/* Desktop navigation */}
-        <ul
-          id="nav-actions-container"
-          className="flex-row items-center hidden gap-6 ml-16 lg:flex"
-        >
-          {/* Home */}
-          <motion.li
-            className="relative flex items-center gap-2 cursor-pointer group"
-            whileHover="hover"
-          >
-            <motion.i
-              className="text-xs fa-solid fa-house"
-              variants={{ hover: { scale: 1.3, rotate: -10 } }}
-              transition={{ type: "spring", stiffness: 300 }}
-            />
-            <a
-              href="#"
-              className="text-base relative inline-block transition-colors duration-300 hover:text-green-800
-                         after:absolute after:left-0 after:-bottom-[3px] after:h-[2px] after:w-full after:bg-green-700
-                         after:origin-left after:scale-x-0 after:transition-transform after:duration-300
-                         group-hover:after:scale-x-100"
+        {/* ---------- DESKTOP NAVIGATION ---------- */}
+        <ul className="hidden lg:flex lg:flex-row lg:items-center lg:gap-4">
+          {/* HOME */}
+          <li>
+            <NavLink
+              to="/"
+              className={({ isActive }) =>
+                `group flex items-center gap-2 text-base font-medium font-inter transition-all duration-300 ${
+                  isActive ? "text-green-800 font-semibold" : ""
+                }`
+              }
             >
-              <b>HOME</b>
-            </a>
-          </motion.li>
-
-          {/* About Us */}
-          <motion.li
-            className="relative flex items-center gap-2 cursor-pointer group"
-            whileHover="hover"
-          >
-            <motion.i
-              className="text-xs fa-solid fa-people-group"
-              variants={{ hover: { scale: 1.3, rotate: 10 } }}
-              transition={{ type: "spring", stiffness: 300 }}
-            />
-            <a
-              href="#"
-              className="text-base relative inline-block transition-colors duration-300 hover:text-green-800
-                         after:absolute after:left-0 after:-bottom-[3px] after:h-[2px] after:w-full after:bg-green-700
-                         after:origin-left after:scale-x-0 after:transition-transform after:duration-300
-                         group-hover:after:scale-x-100"
-            >
-              <b>ABOUT US</b>
-            </a>
-          </motion.li>
-
-          {/* Services (desktop) */}
-          <motion.li className="relative cursor-pointer group" whileHover="hover">
-            <div className="flex items-center">
               <motion.i
-                className="text-xs fa-solid fa-universal-access"
-                variants={{ hover: { scale: 1.3, rotate: -8 } }}
-                transition={{ type: "spring", stiffness: 300 }}
+                className="fa-solid fa-house text-md transition-transform duration-300 group-hover:scale-125 group-hover:text-[#004524]"
+                whileHover={{ rotate: -15, scale: 1.3, color: "#004524" }}
+                whileTap={{ scale: 0.9 }}
+              />
+              <UnderlinedText isActive={location.pathname === "/"}>
+                HOME
+              </UnderlinedText>
+            </NavLink>
+          </li>
+
+          {/* ABOUT */}
+          <li>
+            <NavLink
+              to="/about"
+              className={({ isActive }) =>
+                `group flex items-center gap-2 text-base font-medium font-inter transition-all duration-300 ${
+                  isActive ? "text-green-800 font-semibold" : ""
+                }`
+              }
+            >
+              <motion.i
+                className="fa-solid fa-people-group text-md transition-transform duration-300 group-hover:rotate-6 group-hover:scale-125 group-hover:text-[#00b894]"
+                whileHover={{ rotate: 10, scale: 1.3, color: "#00b894" }}
+                whileTap={{ scale: 0.9 }}
+              />
+              <UnderlinedText isActive={location.pathname === "/about"}>
+                ABOUT&nbsp;US
+              </UnderlinedText>
+            </NavLink>
+          </li>
+
+          {/* SERVICES (Dropdown - desktop) */}
+          <li className="relative">
+            <div
+              className={`group flex items-center gap-[4px] text-base font-medium font-inter transition-all duration-300 ${
+                location.pathname.startsWith("/services")
+                  ? "text-green-800 font-semibold"
+                  : ""
+              }`}
+            >
+              <motion.i
+                className="fa-solid fa-universal-access text-md transition-transform duration-300 group-hover:rotate-12 group-hover:scale-125 group-hover:text-[#004524]"
+                whileHover={{ rotate: 15, scale: 1.2, color: "#004524" }}
+                whileTap={{ scale: 0.95 }}
               />
               <button
                 id="services-dropdown-btn"
-                onClick={toggleDesktopServices}
-                className="ml-2 text-base relative inline-block transition-colors duration-300 hover:text-green-800
-                           after:absolute after:left-0 after:-bottom-[3px] after:h-[2px] after:w-full after:bg-green-700
-                           after:origin-left after:scale-x-0 after:transition-transform after:duration-300
-                           group-hover:after:scale-x-100"
+                onClick={toggleServices}
+                onMouseEnter={() => setIsServicesToggled(true)}
+                onMouseLeave={() => setIsServicesToggled(false)}
+                className={`flex items-center gap-[3px] text-base font-inter transition-all duration-200 ${
+                  location.pathname.startsWith("/services")
+                    ? "font-semibold text-green-800"
+                    : ""
+                }`}
               >
-                <b>SERVICES</b>
+                <UnderlinedText
+                  isActive={location.pathname.startsWith("/services")}
+                >
+                  SERVICES
+                </UnderlinedText>
+                <motion.i
+                  className="fa-solid fa-angle-down text-[13px]"
+                  animate={{
+                    rotate: isServicesToggled ? 180 : 0,
+                    color:
+                      isServicesToggled ||
+                      location.pathname.startsWith("/services")
+                        ? "#004524"
+                        : "#000000",
+                  }}
+                  transition={{ duration: 0.2 }}
+                />
               </button>
-              <motion.i
-                className="ml-1 fa-solid fa-angle-down fa-s"
-                animate={{ rotate: isDesktopServicesOpen ? 180 : 0 }}
-                transition={{ duration: 0.2 }}
-              />
             </div>
 
             <AnimatePresence>
-              {isDesktopServicesOpen && (
+              {isServicesToggled && (
                 <motion.ul
-                  id="services-dropdown-actions"
-                  className="absolute flex flex-col items-center gap-3 p-3 -translate-x-1/2 bg-white shadow left-1/2 top-full rounded-xl"
-                  initial={{ opacity: 0, y: -10, scale: 0.95 }}
-                  animate={{ opacity: 1, y: 0, scale: 1 }}
-                  exit={{ opacity: 0, y: -10, scale: 0.95 }}
+                  className="bg-white rounded-xl absolute left-1/2 -translate-x-1/2 top-full flex flex-col overflow-hidden shadow-[0_2px_6px_rgba(0,0,0,0.1)]"
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
                   transition={{ duration: 0.2, ease: "easeOut" }}
+                  onMouseEnter={() => setIsServicesToggled(true)}
+                  onMouseLeave={() => setIsServicesToggled(false)}
                 >
                   {[
-                    "Business Registration Services",
-                    "Accounting & Bookkeeping Services",
-                    "Tax & Regulatory Compliance",
-                    "Payroll Outsourced Services",
-                    "BIR One-Time Transactions",
-                    "Specialized Registrations & Compliance",
-                    "Business Support Services",
-                  ].map((service) => (
-                    <li key={service} className="relative">
-                      <a
-                        href="#"
-                        className="text-base whitespace-nowrap relative inline-block transition-colors duration-300 hover:text-green-800
-                                   after:absolute after:left-0 after:-bottom-[3px] after:h-[2px] after:w-full after:bg-green-700
-                                   after:origin-left after:scale-x-0 after:transition-transform after:duration-300
-                                   hover:after:scale-x-100"
+                    ["/services/business-registration", "Business Registration Services"],
+                    ["/services/bookkeeping-and-accounting", "Accounting & Bookkeeping Services"],
+                    ["/services/tax-and-regulatory-compliance", "Tax & Regulatory Compliance"],
+                    ["/services/payroll-outsourced", "Payroll Outsourced Services"],
+                    ["/services/bir-transactions", "BIR One-Time Transactions"],
+                    ["/services/specialized-registration", "Specialized Registrations & Compliance"],
+                    ["/services/business-support", "Business Support Services"],
+                  ].map(([to, label]) => (
+                    <li key={to} className="w-full text-center hover:bg-gray-200">
+                      <NavLink
+                        to={to}
+                        className={({ isActive }) =>
+                          `flex items-center justify-center h-10 px-4 text-base whitespace-nowrap transition-colors ${
+                            isActive ? "text-green-700 font-semibold" : ""
+                          }`
+                        }
                       >
-                        {service}
-                      </a>
+                        {label}
+                      </NavLink>
                     </li>
                   ))}
                 </motion.ul>
               )}
             </AnimatePresence>
-          </motion.li>
+          </li>
 
           {/* FAQ */}
-          <motion.li
-            className="relative flex items-center gap-2 cursor-pointer group"
-            whileHover="hover"
-          >
-            <motion.i
-              className="text-xs fa-solid fa-circle-question"
-              variants={{ hover: { scale: 1.3, rotate: 8 } }}
-              transition={{ type: "spring", stiffness: 300 }}
-            />
-            <a
-              href="#"
-              className="text-base relative inline-block transition-colors duration-300 hover:text-green-800
-                         after:absolute after:left-0 after:-bottom-[3px] after:h-[2px] after:w-full after:bg-green-700
-                         after:origin-left after:scale-x-0 after:transition-transform after:duration-300
-                         group-hover:after:scale-x-100"
-            >
-              <b>FAQ</b>
-            </a>
-          </motion.li>
-
-          {/* Contact */}
-          <motion.li
-            className="relative flex items-center gap-2 cursor-pointer group"
-            whileHover="hover"
-          >
-            <motion.i
-              className="text-xs fa-solid fa-phone"
-              variants={{ hover: { scale: 1.3, rotate: -12 } }}
-              transition={{ type: "spring", stiffness: 300 }}
-            />
-            <a
-              href="#"
-              className="text-base relative inline-block transition-colors duration-300 hover:text-green-800
-                         after:absolute after:left-0 after:-bottom-[3px] after:h-[2px] after:w-full after:bg-green-700
-                         after:origin-left after:scale-x-0 after:transition-transform after:duration-300
-                         group-hover:after:scale-x-100"
-            >
-              <b>CONTACT</b>
-            </a>
-          </motion.li>
-
-          {/* Careers */}
-          <motion.li
-            className="relative flex items-center gap-2 cursor-pointer group"
-            whileHover="hover"
-          >
-            <motion.i
-              className="text-xs fa-solid fa-briefcase"
-              variants={{ hover: { scale: 1.3, rotate: 12 } }}
-              transition={{ type: "spring", stiffness: 300 }}
-            />
-            <a
-              href="#"
-              className="text-base relative inline-block transition-colors duration-300 hover:text-green-800
-                         after:absolute after:left-0 after:-bottom-[3px] after:h-[2px] after:w-full after:bg-green-700
-                         after:origin-left after:scale-x-0 after:transition-transform after:duration-300
-                         group-hover:after:scale-x-100"
-            >
-              <b>CAREERS</b>
-            </a>
-          </motion.li>
-
-          {/* Desktop Search */}
           <li>
-            <form action="" className="relative">
-              <button type="submit" className="absolute -translate-y-1/2 left-3 top-1/2">
-                <i className="text-xs fa-solid fa-magnifying-glass"></i>
-              </button>
-              <input
-                value={searchQuery}
-                onChange={handleSearch}
-                type="text"
-                className="w-full py-1 pl-8 pr-5 text-base bg-white border border-black rounded-full focus:outline-none focus:ring-2 focus:ring-green-700"
-                placeholder="SEARCH"
+            <NavLink
+              to="/faq"
+              className={({ isActive }) =>
+                `group flex items-center gap-2 text-base font-medium font-inter transition-all duration-300 ${
+                  isActive ? "text-green-800 font-semibold" : ""
+                }`
+              }
+            >
+              <motion.i
+                className="fa-solid fa-circle-question text-md transition-transform duration-300 group-hover:-rotate-12 group-hover:scale-125 group-hover:text-[#00b894]"
+                whileHover={{ rotate: -12, scale: 1.2, color: "#00b894" }}
+                whileTap={{ scale: 0.9 }}
               />
-            </form>
+              <UnderlinedText isActive={location.pathname === "/faq"}>
+                FAQ
+              </UnderlinedText>
+            </NavLink>
+          </li>
+
+          {/* CONTACT */}
+          <li>
+            <NavLink
+              to="/contact"
+              className={({ isActive }) =>
+                `group flex items-center gap-2 text-base font-medium font-inter transition-all duration-300 ${
+                  isActive ? "text-green-800 font-semibold" : ""
+                }`
+              }
+            >
+              <motion.i
+                className="fa-solid fa-phone text-md transition-transform duration-300 group-hover:rotate-12 group-hover:scale-125 group-hover:text-[#004524]"
+                whileHover={{ rotate: 12, scale: 1.2, color: "#004524" }}
+                whileTap={{ scale: 0.9 }}
+              />
+              <UnderlinedText isActive={location.pathname === "/contact"}>
+                CONTACT
+              </UnderlinedText>
+            </NavLink>
+          </li>
+
+          {/* CAREERS */}
+          <li>
+            <NavLink
+              to="/careers"
+              className={({ isActive }) =>
+                `group flex items-center gap-2 text-base font-medium font-inter transition-all duration-300 ${
+                  isActive ? "text-green-800 font-semibold" : ""
+                }`
+              }
+            >
+              <motion.i
+                className="fa-solid fa-briefcase text-md transition-transform duration-300 group-hover:-rotate-12 group-hover:scale-125 group-hover:text-[#00b894]"
+                whileHover={{ rotate: -12, scale: 1.2, color: "#00b894" }}
+                whileTap={{ scale: 0.9 }}
+              />
+              <UnderlinedText isActive={location.pathname === "/careers"}>
+                CAREERS
+              </UnderlinedText>
+            </NavLink>
           </li>
         </ul>
 
-        {/* Mobile Sidebar (includes Services) */}
+        {/* ---------- MOBILE NAV ---------- */}
         <AnimatePresence>
           {isSidebarToggled && (
-            <motion.div
-              className="fixed inset-0 z-40 lg:hidden"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
+            <motion.ul
+              className="absolute right-0 flex flex-col w-full h-screen gap-4 p-2 bg-white rounded-b-lg top-full lg:hidden"
+              initial={{ opacity: 0, x: "100%" }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: "100%" }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
             >
-              {/* Backdrop to close */}
-              <div
-                className="absolute inset-0 bg-black/30"
-                onClick={() => setIsSidebarToggled(false)}
-              />
-              {/* Drawer */}
-              <motion.ul
-                id="mobile-nav-actions-container"
-                className="absolute right-0 top-0 h-full w-full max-w-[420px] bg-white p-6 flex flex-col gap-6 overflow-y-auto"
-                initial={{ x: "100%" }}
-                animate={{ x: 0 }}
-                exit={{ x: "100%" }}
-                transition={{ duration: 0.3, ease: "easeInOut" }}
-              >
-                {[
-                  { label: "HOME", icon: "fa-house" },
-                  { label: "ABOUT US", icon: "fa-people-group" },
-                  { label: "SERVICES", icon: "fa-universal-access" },
-                  { label: "FAQ", icon: "fa-circle-question" },
-                  { label: "CONTACT", icon: "fa-phone" },
-                  { label: "CAREERS", icon: "fa-briefcase" },
-                ].map(({ label, icon }) => (
-                  <li key={label} className="flex flex-col gap-2">
-                    <div className="flex items-center gap-3">
-                      <i className={`fa-solid ${icon} text-2xl`} />
-                      {label === "SERVICES" ? (
-                        <button
-                          onClick={toggleMobileServices}
-                          className="flex items-center gap-2 text-3xl transition-colors duration-300 hover:text-green-800"
-                        >
-                          {label}
-                          <i
-                            className={`fa-solid fa-angle-down text-xl transition-transform ${
-                              isMobileServicesOpen ? "rotate-180" : ""
-                            }`}
-                          />
-                        </button>
-                      ) : (
-                        <a
-                          href="#"
-                          className="text-3xl transition-colors duration-300 hover:text-green-800"
-                          onClick={() => setIsSidebarToggled(false)}
-                        >
-                          {label}
-                        </a>
-                      )}
-                    </div>
+              {/* HOME */}
+              <li>
+                <NavLink
+                  to="/"
+                  onClick={() => setIsSidebarToggled(false)}
+                  className={({ isActive }) =>
+                    `group flex items-center gap-2 text-3xl transition-all duration-300 ${
+                      isActive ? "text-green-800 font-semibold" : ""
+                    }`
+                  }
+                >
+                  <motion.i
+                    className="text-2xl fa-solid fa-house transition-transform duration-300 group-hover:scale-125 group-hover:text-[#004524]"
+                    whileHover={{ scale: 1.2, color: "#004524" }}
+                  />
+                  <UnderlinedText isActive={location.pathname === "/"}>
+                    HOME
+                  </UnderlinedText>
+                </NavLink>
+              </li>
 
-                    {/* Mobile Services submenu */}
-                    {label === "SERVICES" && isMobileServicesOpen && (
-                      <ul className="flex flex-col gap-3 mt-1 ml-9">
-                        {[
-                          "Business Registration Services",
-                          "Accounting & Bookkeeping Services",
-                          "Tax & Regulatory Compliance",
-                          "Payroll Outsourced Services",
-                          "BIR One-Time Transactions",
-                          "Specialized Registrations & Compliance",
-                          "Business Support Services",
-                        ].map((service) => (
-                          <li key={service}>
-                            <a
-                              href="#"
-                              className="text-xl transition hover:text-green-800"
-                              onClick={() => setIsSidebarToggled(false)}
-                            >
-                              {service}
-                            </a>
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                  </li>
-                ))}
+              {/* ABOUT */}
+              <li>
+                <NavLink
+                  to="/about"
+                  onClick={() => setIsSidebarToggled(false)}
+                  className={({ isActive }) =>
+                    `group flex items-center gap-2 text-3xl transition-all duration-300 ${
+                      isActive ? "text-green-800 font-semibold" : ""
+                    }`
+                  }
+                >
+                  <motion.i
+                    className="text-2xl fa-solid fa-people-group transition-transform duration-300 group-hover:scale-125 group-hover:text-[#00b894]"
+                    whileHover={{ scale: 1.2, color: "#00b894" }}
+                  />
+                  <UnderlinedText isActive={location.pathname === "/about"}>
+                    ABOUT&nbsp;US
+                  </UnderlinedText>
+                </NavLink>
+              </li>
 
-                {/* Mobile Search */}
-                <li className="mt-2">
-                  <form action="" className="relative">
-                    <button
-                      type="submit"
-                      className="absolute -translate-y-1/2 left-3 top-1/2"
+              {/* ✅ SERVICES (Between ABOUT US and FAQ) */}
+              <li className="relative">
+                <div
+                  className={`group flex items-center gap-[4px] text-3xl transition-all duration-300 ${
+                    location.pathname.startsWith("/services")
+                      ? "text-green-800 font-semibold"
+                      : ""
+                  }`}
+                >
+                  <motion.i
+                    className="text-2xl fa-solid fa-universal-access transition-transform duration-300 group-hover:scale-125 group-hover:text-[#004524]"
+                    whileHover={{ scale: 1.2, color: "#004524" }}
+                  />
+                  <button
+                    onClick={() => setIsMobileServicesOpen((v) => !v)}
+                    className={`flex items-center gap-[4px] ml-[2px] transition-all duration-200 ${
+                      location.pathname.startsWith("/services")
+                        ? "font-semibold text-green-800"
+                        : "font-normal text-black"
+                    }`}
+                  >
+                    <UnderlinedText
+                      isActive={location.pathname.startsWith("/services")}
                     >
-                      <i className="text-2xl fa-solid fa-magnifying-glass"></i>
-                    </button>
-                    <input
-                      value={searchQuery}
-                      onChange={handleSearch}
-                      type="text"
-                      className="w-full py-2 pl-12 pr-5 text-2xl border border-black rounded-full focus:outline-none focus:ring-2 focus:ring-green-700"
-                      placeholder="SEARCH"
+                      SERVICES
+                    </UnderlinedText>
+                    <motion.i
+                      className="fa-solid fa-angle-down text-[18px]"
+                      animate={{
+                        rotate: isMobileServicesOpen ? 180 : 0,
+                        color: isMobileServicesOpen ? "#004524" : "#000000",
+                      }}
+                      transition={{ duration: 0.2 }}
                     />
-                  </form>
-                </li>
-              </motion.ul>
-            </motion.div>
+                  </button>
+                </div>
+
+                <AnimatePresence>
+                  {isMobileServicesOpen && (
+                    <motion.ul
+                      className="flex flex-col gap-1 pl-9"
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: "auto" }}
+                      exit={{ opacity: 0, height: 0 }}
+                      transition={{ duration: 0.2, ease: "easeOut" }}
+                    >
+                      {[
+                        ["/services/business-registration", "Business Registration Services"],
+                        ["/services/bookkeeping-and-accounting", "Bookkeeping & Accounting Services"],
+                        ["/services/tax-and-regulatory-compliance", "Tax & Regulatory Compliance"],
+                        ["/services/payroll-outsourced", "Payroll Outsourced Services"],
+                        ["/services/bir-transactions", "BIR One-Time Transactions"],
+                        ["/services/specialized-registration", "Specialized Registrations & Compliance"],
+                        ["/services/business-support", "Business Support Services"],
+                      ].map(([to, label]) => (
+                        <li key={to}>
+                          <NavLink
+                            to={to}
+                            className="text-xl whitespace-nowrap"
+                            onClick={() => {
+                              setIsSidebarToggled(false);
+                              setIsMobileServicesOpen(false);
+                            }}
+                          >
+                            {label}
+                          </NavLink>
+                        </li>
+                      ))}
+                    </motion.ul>
+                  )}
+                </AnimatePresence>
+              </li>
+
+              {/* FAQ */}
+              <li>
+                <NavLink
+                  to="/faq"
+                  onClick={() => setIsSidebarToggled(false)}
+                  className={({ isActive }) =>
+                    `group flex items-center gap-2 text-3xl transition-all duration-300 ${
+                      isActive ? "text-green-800 font-semibold" : ""
+                    }`
+                  }
+                >
+                  <motion.i
+                    className="text-2xl fa-solid fa-circle-question transition-transform duration-300 group-hover:scale-125 group-hover:text-[#00b894]"
+                    whileHover={{ scale: 1.2, color: "#00b894" }}
+                  />
+                  <UnderlinedText isActive={location.pathname === "/faq"}>
+                    FAQ
+                  </UnderlinedText>
+                </NavLink>
+              </li>
+
+              {/* CONTACT */}
+              <li>
+                <NavLink
+                  to="/contact"
+                  onClick={() => setIsSidebarToggled(false)}
+                  className={({ isActive }) =>
+                    `group flex items-center gap-2 text-3xl transition-all duration-300 ${
+                      isActive ? "text-green-800 font-semibold" : ""
+                    }`
+                  }
+                >
+                  <motion.i
+                    className="text-2xl fa-solid fa-phone transition-transform duration-300 group-hover:scale-125 group-hover:text-[#004524]"
+                    whileHover={{ scale: 1.2, color: "#004524" }}
+                  />
+                  <UnderlinedText isActive={location.pathname === "/contact"}>
+                    CONTACT
+                  </UnderlinedText>
+                </NavLink>
+              </li>
+
+              {/* CAREERS */}
+              <li>
+                <NavLink
+                  to="/careers"
+                  onClick={() => setIsSidebarToggled(false)}
+                  className={({ isActive }) =>
+                    `group flex items-center gap-2 text-3xl transition-all duration-300 ${
+                      isActive ? "text-green-800 font-semibold" : ""
+                    }`
+                  }
+                >
+                  <motion.i
+                    className="text-2xl fa-solid fa-briefcase transition-transform duration-300 group-hover:scale-125 group-hover:text-[#00b894]"
+                    whileHover={{ scale: 1.2, color: "#00b894" }}
+                  />
+                  <UnderlinedText isActive={location.pathname === "/careers"}>
+                    CAREERS
+                  </UnderlinedText>
+                </NavLink>
+              </li>
+            </motion.ul>
           )}
         </AnimatePresence>
       </nav>

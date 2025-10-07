@@ -1,0 +1,52 @@
+import ServicesHero from "../../components/ServicesHero/ServicesHero";
+import AboutService from "../../components/AboutService/AboutService";
+import OurServices from "../../components/OurServices/OurServices";
+import Header from "../../components/Header/Header";
+import Footer from "../../components/Footer/Footer";
+
+const BirOneTImeTransactionServicesPage = () => {
+	const businessServicesData = {
+		heroImage: '/images/bg/bir-ai.png',
+		heroHeading: 'BIR ONE TIME TRANSACTIONS',
+		subSectionHeading1: 'Some tax transactions happen only once but require careful documentation and filing.',
+		subSectionSubHeading1: 'We help individuals and businesses process these special cases smoothly.',
+		subSectionSubHeading2: 'Proper handling avoids delays, penalties, and legal issues in high-value or sensitive transactions.',
+		cardData: [
+			{
+				src: '/images/stock/sales.jpg',
+				title: 'Sales',
+				caption: 'Tax clearance, document preparation, and filing for asset or property sale.'
+			},
+			{
+				src: '/images/stock/assistance.jpg',
+				title: 'Donation',
+				caption: 'Assistance with donor’s tax, deed of donation, and compliance requirements.'
+			},
+			{
+				src: '/images/stock/estate.jpg',
+				title: 'Estate',
+				caption: 'Estate tax settlement, filing, and documentation for heirs and executors.'
+			},
+		]
+	};
+
+	return (
+		<>
+			<Header />
+			<ServicesHero
+				heroImage={businessServicesData.heroImage} heroHeading={businessServicesData.heroHeading}
+			/>
+			<AboutService
+				subSectionHeading1={businessServicesData.subSectionHeading1}
+				subSectionSubHeading1={businessServicesData.subSectionSubHeading1}
+				subSectionSubHeading2={businessServicesData.subSectionSubHeading2}
+			/>
+			<OurServices
+				cardData={businessServicesData.cardData}
+			/>
+			<Footer />
+		</>
+	);
+};
+
+export default BirOneTImeTransactionServicesPage;

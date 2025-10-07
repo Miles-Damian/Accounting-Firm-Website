@@ -49,7 +49,7 @@ const HomeHero = () => {
         className="flex flex-col lg:flex-row items-center lg:items-start justify-center 
         bg-[url('/images/bg/building-filter.png')] bg-cover bg-no-repeat bg-center 
         px-6 sm:px-12 lg:px-20 xl:px-[90px] 
-        pt-8 sm:pt-10 md:pt-12 lg:pt-[60px] xl:pt-[80px] pb-25"
+        pt-8 sm:pt-10 md:pt-12 lg:pt-[60px] xl:pt-[130px] pb-25"
       >
         {/* LEFT COLUMN */}
         <div

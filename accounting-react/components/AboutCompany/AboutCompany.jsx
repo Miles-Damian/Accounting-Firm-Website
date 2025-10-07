@@ -36,13 +36,7 @@ const AboutCompany = () => {
           INSIGHT BUSINESS CONSULTANCY INC.
         </h1>
         <p className="text-base leading-relaxed text-gray-600 md:text-lg">
-          a newly established firm committed to providing professional, end-to-end
-          business solutions for entrepreneurs, startups, and growing companies in
-          the Philippines. We are a team of passionate accounting, finance, legal,
-          and compliance experts dedicated to helping businesses start strong,
-          operate legally, and scale successfully. Whether you're launching your
-          first venture or managing an expanding enterprise, INSIGHT is your
-          trusted partner every step of the way.
+        a trusted network of seasoned professionals composed of accountants, lawyers, and IT specialists dedicated to delivering comprehensive business solutions for entrepreneurs and growing companies in the Philippines. With years of combined expertise, our team ensures that every client receives reliable guidance—from business registration and compliance to strategic growth and digital transformation. Whether you’re starting a new venture or expanding your operations, INSIGHT is your dependable partner in building a sustainable and future-ready business.
         </p>
       </div>
 

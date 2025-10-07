@@ -1,4 +1,4 @@
-// src/components/Footer/Footer.jsx
+import { Link } from "react-router-dom";
 import React, { useState, useEffect, useRef } from "react";
 
 const Footer = () => {
@@ -37,29 +37,32 @@ const Footer = () => {
       className="w-full px-6 py-12 overflow-hidden text-black bg-gradient-to-b from-green-100 to-green-200"
     >
       <div className="grid grid-cols-1 gap-12 mx-auto text-center max-w-7xl sm:grid-cols-2 lg:grid-cols-4 font-montserrat lg:text-left">
-        
+
         {/* QUICK LINKS */}
         <div
           className={`flex flex-col items-center lg:items-start border-b border-black/30 lg:border-b-0 lg:border-r lg:pr-6 transform transition-all duration-700 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+            isVisible
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 translate-y-10"
           }`}
           style={{ transitionDelay: "100ms" }}
         >
           <h3 className="mb-4 text-xl font-bold">QUICK LINKS</h3>
           <ul className="space-y-2 text-base">
-            <li className="cursor-pointer hover:underline">About</li>
-            <li className="cursor-pointer hover:underline">Services</li>
-            <li className="cursor-pointer hover:underline">FAQs</li>
-            <li className="cursor-pointer hover:underline">Contact</li>
-            <li className="cursor-pointer hover:underline">Careers</li>
-            <li className="cursor-pointer hover:underline">Downloads</li>
+            <li className="cursor-pointer hover:underline"><Link to="/">HOME</Link></li>
+            <li className="cursor-pointer hover:underline"><Link to="/about">ABOUT</Link></li>
+            <li className="cursor-pointer hover:underline"><Link to="/faq">FAQs</Link></li>
+            <li className="cursor-pointer hover:underline"><Link to="/contact">CONTACT</Link></li>
+            <li className="cursor-pointer hover:underline"><Link to="/careers">CAREERS</Link></li>
           </ul>
         </div>
 
         {/* SERVICES */}
         <div
           className={`flex flex-col items-center lg:items-start border-b border-black/30 lg:border-b-0 lg:border-r lg:pr-6 transform transition-all duration-700 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+            isVisible
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 translate-y-10"
           }`}
           style={{ transitionDelay: "200ms" }}
         >
@@ -76,7 +79,9 @@ const Footer = () => {
         {/* OFFICE HOURS & ADDRESS */}
         <div
           className={`flex flex-col items-center lg:items-start border-b border-black/30 lg:border-b-0 lg:border-r lg:pr-6 transform transition-all duration-700 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+            isVisible
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 translate-y-10"
           }`}
           style={{ transitionDelay: "300ms" }}
         >
@@ -93,7 +98,9 @@ const Footer = () => {
         {/* LOGO & CONTACT */}
         <div
           className={`flex flex-col items-center lg:items-start transform transition-all duration-700 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+            isVisible
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 translate-y-10"
           }`}
           style={{ transitionDelay: "400ms" }}
         >
@@ -101,18 +108,73 @@ const Footer = () => {
           <img
             src="/images/random-images/Picture1.png"
             alt="Business Logo"
-            className="w-[209px] h-[40px] mb-4"
+            className="h-auto mb-4 w-50"
           />
-          <p className="mb-4 font-semibold">
+          <p className="mb-4 font-semibold text-center lg:text-left">
             - Your One-Stop Partner for Business Growth -
           </p>
-          
-          {/* Icons */}
-          <div className="flex mb-4 space-x-3">
-            <img src="/images/random-images/phone.png" alt="Phone" className="w-[40px] h-[40px]" />
-            <img src="/images/random-images/fb.png" alt="Facebook" className="w-[40px] h-[40px]" />
-            <img src="/images/random-images/email.png" alt="Email" className="w-[40px] h-[40px]" />
-            <img src="/images/random-images/booknow.png" alt="Book Now" className="w-[120px] h-[40px]" />
+
+          {/* CONTACT ICONS WITH TOOLTIPS */}
+          <div className="flex items-center justify-center mb-4 space-x-5 lg:justify-start">
+            {/* PHONE */}
+            <div className="relative group">
+              <a href="tel:+639123456789">
+                <img
+                  src="/images/random-images/phone.png"
+                  alt="Phone"
+                  className="w-[40px] h-auto cursor-pointer transition-transform duration-300 group-hover:scale-110"
+                />
+              </a>
+              <span className="absolute left-1/2 -translate-x-1/2 mt-2 w-max px-3 py-1 text-sm rounded-lg bg-[#004524] text-white opacity-0 group-hover:opacity-100 translate-y-1 group-hover:translate-y-0 transition-all duration-300">
+                +63 912 345 6789
+              </span>
+            </div>
+
+            {/* FACEBOOK */}
+            <div className="relative group">
+              <a
+                href="https://facebook.com/insightconsultancy"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="/images/random-images/fb.png"
+                  alt="Facebook"
+                  className="w-[40px] h-auto cursor-pointer transition-transform duration-300 group-hover:scale-110"
+                />
+              </a>
+              <span className="absolute left-1/2 -translate-x-1/2 mt-2 w-max px-3 py-1 text-sm rounded-lg bg-[#004524] text-white opacity-0 group-hover:opacity-100 translate-y-1 group-hover:translate-y-0 transition-all duration-300">
+                facebook.com/insightconsultancy
+              </span>
+            </div>
+
+            {/* EMAIL */}
+            <div className="relative group">
+              <a href="mailto:info@insightconsultancy.ph">
+                <img
+                  src="/images/random-images/email.png"
+                  alt="Email"
+                  className="w-[40px] h-auto cursor-pointer transition-transform duration-300 group-hover:scale-110"
+                />
+              </a>
+              <span className="absolute left-1/2 -translate-x-1/2 mt-2 w-max px-3 py-1 text-sm rounded-lg bg-[#004524] text-white opacity-0 group-hover:opacity-100 translate-y-1 group-hover:translate-y-0 transition-all duration-300">
+                info@insightconsultancy.ph
+              </span>
+            </div>
+
+            {/* BOOK NOW */}
+            <div className="relative group">
+              <a href="#">
+                <img
+                  src="/images/random-images/booknow.png"
+                  alt="Book Now"
+                  className="w-[120px] h-auto cursor-pointer transition-transform duration-300 group-hover:scale-105"
+                />
+              </a>
+              <span className="absolute left-1/2 -translate-x-1/2 mt-2 w-max px-3 py-1 text-sm rounded-lg bg-[#004524] text-white opacity-0 group-hover:opacity-100 translate-y-1 group-hover:translate-y-0 transition-all duration-300">
+                Book an Appointment
+              </span>
+            </div>
           </div>
 
           {/* Dynamic Time */}

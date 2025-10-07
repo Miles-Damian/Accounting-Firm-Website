@@ -1,5 +1,7 @@
 import Header from "../../components/Header/Header";
 import Accreditations from "../../components/Accreditations/Accreditations";
+import OurExpertiseSection from "../../components/OurExpertiseSection/OurExpertiseSection";
+import WhyWorkWithUs from "../../components/WhyWorkWithUs/WhyWorkWithUs";
 import Industries from "../../components/Industries/Industries";
 import HomeHero from "../../components/HomeHero/HomeHero";
 import NewsFeed from "../../components/NewsFeed/NewsFeed";
@@ -11,13 +13,15 @@ const HomePage = () => {
 	return (
 		<>
 			<Header />
-			<HomeHero/>
-			<Accreditations/>
-			<Industries/>
-			<InquireNow/>
-			<NewsFeed/>
-			<GoogleMap/>
-			<Footer/>
+			<HomeHero />
+			<Accreditations />
+			<OurExpertiseSection />
+			<WhyWorkWithUs />
+			<Industries />
+			<InquireNow />
+			<NewsFeed />
+			<GoogleMap />
+			<Footer />
 		</>
 	);
 };

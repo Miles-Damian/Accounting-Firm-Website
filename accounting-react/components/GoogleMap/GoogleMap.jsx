@@ -25,7 +25,7 @@ const GoogleMap = () => {
   return (
     <section
       ref={sectionRef}
-      className="flex flex-col items-center justify-center py-12 bg-white interactive_map_section overflow-hidden"
+      className="flex flex-col items-center justify-center py-12 overflow-hidden bg-white interactive_map_section"
     >
       <h1
         className={`font-montserrat text-[#003d20] text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-center transition-all duration-700 ${
@@ -44,7 +44,7 @@ const GoogleMap = () => {
       >
         <iframe
           id="interactive_map"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3845.158994003028!2d120.58752582125796!3d15.475877692548517!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3396c75141d278f5%3A0xe1e464ba22fb5b00!2sMY%20CREATIVE%20PANDA%20-%20TECHNICAL!5e0!3m2!1sen!2sph!4v1758789787425!5m2!1sen!2sph"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1810.9725281764943!2d120.59420453420651!3d15.536005336815975!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3396c9439709824d%3A0xc0863cdbb03190dd!2sJPG%20Accounting!5e0!3m2!1sen!2sph!4v1759827183224!5m2!1sen!2sph"
           className="w-full h-[300px] sm:h-[400px] md:h-[500px] rounded-xl shadow-md"
           style={{ border: 0 }}
           allowFullScreen

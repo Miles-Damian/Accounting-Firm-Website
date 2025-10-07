@@ -94,7 +94,7 @@ const ContactUs = () => {
           }`}
         >
           {[
-  { icon: "fa-solid fa-phone", text: "0961-694-637$" },
+  { icon: "fa-solid fa-phone", text: "0961-694-637" },
   {
     icon: "fa-solid fa-envelope",
     text: (
