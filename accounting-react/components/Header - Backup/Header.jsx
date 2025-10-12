@@ -36,7 +36,7 @@ const Header = () => {
         </button>
 
         {/* ---------- DESKTOP NAVIGATION ---------- */}
-        <ul className="hidden mr-10 lg:flex lg:flex-row lg:items-center lg:gap-11">
+        <ul className="hidden lg:flex lg:flex-row lg:items-center lg:gap-4">
           {/* HOME */}
           <li>
             <NavLink
@@ -143,7 +143,6 @@ const Header = () => {
                     ["/services/bir-transactions", "BIR One-Time Transactions"],
                     ["/services/specialized-registration", "Specialized Registrations & Compliance"],
                     ["/services/business-support", "Business Support Services"],
-                    ["/services/business-support", "All-in-One Business Services"]
                   ].map(([to, label]) => (
                     <li key={to} className="w-full text-center hover:bg-gray-200">
                       <NavLink

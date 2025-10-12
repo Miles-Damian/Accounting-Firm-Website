@@ -1,10 +1,46 @@
-// src/components/InquireNow/InquireNow.jsx
 import React, { useEffect, useRef, useState } from "react";
 
 const InquireNow = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [selectedService, setSelectedService] = useState("");
   const sectionRef = useRef(null);
 
+  // Sub-services
+  const subServices = {
+    "Business Registration Services": [
+      "DTI Registration",
+      "SEC Registration",
+      "Barangay Clearance",
+      "Business Permit",
+    ],
+    "Accounting & Bookkeeping Services": [
+      "Monthly Bookkeeping",
+      "Financial Statement Preparation",
+      "Bank Reconciliation",
+    ],
+    "Tax & Regulatory Compliance": [
+      "BIR Registration",
+      "Monthly/Quarterly Tax Filing",
+      "Annual Tax Return",
+    ],
+    "BIR One-Time Transactions": [
+      "Estate Tax",
+      "Capital Gains Tax",
+      "Donor’s Tax",
+    ],
+    "Specialized Registrations & Compliance": [
+      "PEZA Registration",
+      "AMLC Registration",
+      "BSP/DOLE/IPO Registration",
+    ],
+    "Business Support Services": [
+      "Website Development",
+      "Social Media Marketing",
+      "Payroll System Setup",
+    ],
+  };
+
+  // Fade-in animation
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -14,7 +50,6 @@ const InquireNow = () => {
     );
 
     if (sectionRef.current) observer.observe(sectionRef.current);
-
     return () => {
       if (sectionRef.current) observer.unobserve(sectionRef.current);
     };
@@ -23,99 +58,111 @@ const InquireNow = () => {
   return (
     <section
       ref={sectionRef}
-      className="flex flex-col justify-between gap-12 px-6 py-16 overflow-hidden bg-white 2xl:flex-row lg:px-12 xl:px-20"
+      className="flex flex-col items-center justify-center gap-16 px-6 py-16 bg-white lg:flex-row lg:items-start lg:justify-center lg:px-20"
     >
-      {/* INQUIRE NOW FORM */}
-      <form
-        className={`flex flex-col w-full max-w-lg mx-auto items-center bg-white shadow-md p-8 rounded-2xl transition-all duration-700 ${
-          isVisible
-            ? "opacity-100 translate-x-0 scale-100"
-            : "opacity-0 -translate-x-10 scale-95"
-        }`}
-        style={{ transitionDelay: "100ms" }}
-      >
-        <h1 className="text-[#003a22] font-montserrat font-bold text-3xl md:text-4xl mb-6 text-center">
-          INQUIRE NOW!
-        </h1>
+      {/* ✅ INQUIRE FORM */}
+      <div className="flex justify-center w-full lg:w-1/2">
+        <form
+          className={`w-full max-w-md bg-[#f9fafb] border border-gray-100 p-10 rounded-2xl shadow-md flex flex-col gap-6 transition-all duration-1000 ease-in-out ${
+            isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-12"
+          }`}
+        >
+          <h1 className="text-[#003a22] font-montserrat font-bold text-3xl mb-4 text-center">
+            INQUIRE NOW!
+          </h1>
 
-        <div className="flex flex-col w-full gap-5">
-          {/* First & Last Name */}
-<div className="flex flex-col w-full gap-5 sm:flex-row">
-  <input
-    type="text"
-    placeholder="First Name*"
-    className="w-full sm:flex-1 min-w-0 p-4 border-2 border-emerald-900 rounded-lg placeholder-[#003a22] 
-               focus:outline-none focus:ring-2 focus:ring-emerald-700 
-               transition duration-200 hover:-translate-y-1 hover:shadow-md"
-  />
-  <input
-    type="text"
-    placeholder="Last Name*"
-    className="w-full sm:flex-1 min-w-0 p-4 border-2 border-emerald-900 rounded-lg placeholder-[#003a22] 
-               focus:outline-none focus:ring-2 focus:ring-emerald-700 
-               transition duration-200 hover:-translate-y-1 hover:shadow-md"
-  />
-</div>
+          {/* Inputs */}
+          {["Full Name*", "Email Address*", "Mobile Number*"].map(
+            (placeholder, i) => (
+              <input
+                key={i}
+                type={
+                  placeholder.includes("Email")
+                    ? "email"
+                    : placeholder.includes("Mobile")
+                    ? "tel"
+                    : "text"
+                }
+                placeholder={placeholder}
+                required
+                className="w-full p-4 border border-[#003a22] rounded-md placeholder-[#003a22] focus:outline-none focus:ring-2 focus:ring-[#003a22] transition-all duration-300"
+              />
+            )
+          )}
 
-          {/* Other Inputs */}
-          <input
-            type="text"
-            placeholder="Company Name*"
-            className="w-full p-4 border-2 rounded-lg placeholder-[#003a22] focus:outline-none focus:ring-2 focus:ring-[#003a22] transition-transform duration-200 hover:-translate-y-1 hover:shadow-md"
-          />
-          <input
-            type="email"
-            placeholder="Email Address*"
-            className="w-full p-4 border-2 rounded-lg placeholder-[#003a22] focus:outline-none focus:ring-2 focus:ring-[#003a22] transition-transform duration-200 hover:-translate-y-1 hover:shadow-md"
-          />
-          <input
-            type="tel"
-            placeholder="Phone Number"
-            className="w-full p-4 border-2 rounded-lg placeholder-[#003a22] focus:outline-none focus:ring-2 focus:ring-[#003a22] transition-transform duration-200 hover:-translate-y-1 hover:shadow-md"
-          />
-
-          {/* Select */}
+          {/* Dropdown */}
           <select
-            id="select_inquiry"
-            className="w-full p-4 border-2 rounded-lg font-montserrat text-base placeholder-[#003a22] focus:outline-none focus:ring-2 focus:ring-[#003a22] transition-transform duration-200 hover:-translate-y-1 hover:shadow-md"
+            value={selectedService}
+            onChange={(e) => setSelectedService(e.target.value)}
+            required
+            className="w-full p-4 border border-[#003a22] rounded-md text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#003a22] transition-all duration-300"
           >
-            <option value="">Select Inquiry</option>
-            <option value="general">General Inquiry</option>
-            <option value="support">Support</option>
-            <option value="sales">Sales</option>
-            <option value="feedback">Feedback</option>
+            <option value="">Select Service</option>
+            {Object.keys(subServices).map((service) => (
+              <option key={service}>{service}</option>
+            ))}
           </select>
 
-          {/* Textarea */}
+          {/* Sub-services */}
+          {selectedService && (
+            <div
+              className={`p-4 border border-gray-200 rounded-xl bg-white shadow-sm transition-all duration-500 ease-in-out ${
+                isVisible
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-3"
+              }`}
+            >
+              <h3 className="text-md font-semibold mb-3 text-[#003a22]">
+                Choose Sub-Services for {selectedService}:
+              </h3>
+              <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
+                {subServices[selectedService].map((item, i) => (
+                  <label
+                    key={i}
+                    className="flex items-center gap-2 text-sm text-gray-700"
+                  >
+                    <input
+                      type="checkbox"
+                      name="subservices[]"
+                      value={item}
+                      className="accent-[#003a22]"
+                    />
+                    {item}
+                  </label>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Inquiry */}
           <textarea
-            id="your_inquiry"
-            placeholder="Your Inquiry*"
-            className="w-full p-4 h-[120px] border-2 rounded-lg font-montserrat text-base placeholder-[#003a22] focus:outline-none focus:ring-2 focus:ring-[#003a22] transition-transform duration-200 hover:-translate-y-1 hover:shadow-md"
+            placeholder="Inquiry / Message*"
+            rows="4"
+            required
+            className="w-full p-4 border border-[#003a22] rounded-md placeholder-[#003a22] focus:outline-none focus:ring-2 focus:ring-[#003a22] transition-all duration-300"
           ></textarea>
-        </div>
 
-        {/* Submit Button */}
-        <button
-          type="button"
-          className="flex items-center justify-center mt-6 bg-[#003a22] text-white rounded-full px-6 py-3 font-semibold shadow-lg transition-all duration-200 hover:bg-[#025232] hover:scale-105"
-        >
-          Submit Now
-          <img
-            src="/public/images/random-images/arrow-button.png"
-            className="w-[9px] h-[10px] ml-2 mt-1"
-            alt="Arrow"
+          {/* Date */}
+          <input
+            type="datetime-local"
+            className="w-full p-4 border border-[#003a22] rounded-md text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#003a22] transition-all duration-300"
           />
-        </button>
-      </form>
 
-      {/* FACEBOOK PAGE */}
+          {/* Submit Button */}
+          <button
+            type="submit"
+            className="mt-4 bg-[#003a22] text-white font-semibold rounded-full px-6 py-3 shadow-md hover:bg-[#025232] hover:shadow-xl transition-all duration-300"
+          >
+            Submit Inquiry
+          </button>
+        </form>
+      </div>
+
+      {/* ✅ FACEBOOK PAGE */}
       <div
-        className={`flex flex-col items-center w-full max-w-md mx-auto transition-all duration-700 ${
-          isVisible
-            ? "opacity-100 translate-x-0 scale-100"
-            : "opacity-0 translate-x-10 scale-95"
+        className={`flex flex-col items-center justify-center w-full lg:w-1/2 max-w-md transition-all duration-1000 ease-in-out ${
+          isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-12"
         }`}
-        style={{ transitionDelay: "300ms" }}
       >
         <h1 className="text-2xl md:text-3xl font-bold text-[#003a22] mb-6 text-center">
           FACEBOOK PAGE

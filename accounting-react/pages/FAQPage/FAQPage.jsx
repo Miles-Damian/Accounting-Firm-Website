@@ -36,12 +36,12 @@ const faqs = [
 
 const FAQPage = () => {
   return (
-    <div className="bg-gray-100 font-display min-h-screen">
+    <div className="min-h-screen bg-gray-100 font-display">
       <Header />
 
-      <main className="container mx-auto px-4 py-12 pb-100">
+      <main className="container px-6 py-20 mx-auto">
         <motion.h2
-          className="mb-10 text-center text-3xl font-extrabold text-gray-900"
+          className="mb-16 text-5xl font-extrabold text-center text-black"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -49,19 +49,22 @@ const FAQPage = () => {
           Frequently Asked Questions
         </motion.h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {/* SINGLE COLUMN */}
+        <div className="flex flex-col max-w-4xl gap-6 mx-auto">
           {faqs.map((faq, index) => (
             <motion.details
               key={index}
-              className="group rounded-lg border border-gray-200 bg-gray-50 shadow-sm"
+              className="overflow-hidden bg-white border border-green-200 shadow-lg group rounded-2xl"
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
             >
-              <summary className="flex cursor-pointer list-none items-center justify-between p-4 hover:bg-gray-100">
-                <h3 className="font-semibold text-gray-900">{faq.q}</h3>
+              <summary className="flex items-center justify-between px-8 py-6 list-none transition-all duration-300 cursor-pointer hover:bg-green-50">
+                <h3 className="text-2xl font-semibold text-[#004524]">
+                  {faq.q}
+                </h3>
                 <svg
-                  className="h-5 w-5 text-green-700 transition-transform duration-300 group-open:rotate-180"
+                  className="text-green-700 transition-transform duration-300 h-7 w-7 group-open:rotate-180"
                   fill="none"
                   stroke="currentColor"
                   strokeWidth="2"
@@ -70,7 +73,9 @@ const FAQPage = () => {
                   <polyline points="6 9 12 15 18 9" />
                 </svg>
               </summary>
-              <p className="p-4 pt-0 text-gray-700">{faq.a}</p>
+              <p className="px-8 pb-6 text-lg leading-relaxed text-gray-700">
+                {faq.a}
+              </p>
             </motion.details>
           ))}
         </div>

@@ -1,0 +1,40 @@
+Business Registration:
+-Sec Registration
+-DTI Registration
+-BIR Registration
+-Business Permit (LGU)
+-SSS/PhilHealth/Pag-IBIG Registration
+-Other Government Registrations
+
+Accounting:
+-Financial Statement Preparation
+-Computerized Accounting
+-Financial Budget Forecasting
+-Loose Leaf Books of Account
+
+Tax Compliance:
+-BIR Filings & Reports
+-SEC Filing (GIS & AFS)
+-SSS/PhilHealth/Pag-IBIG Compliance
+
+Payroll:
+-Payroll Processing
+-Automated Attendance Tracking
+-Compensation Tax Filing
+
+BIR One-Time Transactions:
+-Sales
+-Donation
+-Estate
+
+Specialized Registration:
+-SEC Amendments
+-AMLC Registration
+-DOLE Registration
+-IPO Registration
+-PEZA Registration
+-BSP Registration
+
+Business Support:
+-Website Development
+-Social Media Marketing

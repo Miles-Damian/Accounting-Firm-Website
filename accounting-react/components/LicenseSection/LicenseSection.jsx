@@ -67,7 +67,7 @@ const LicenseSection = () => {
       {/* CTA Button */}
       <div className={`mt-16 transition-all duration-700 delay-300 ${fadeUp}`}>
         <button className="bg-[#004524] hover:bg-[#006d3b] text-white text-lg font-semibold px-8 py-3 rounded-full shadow-md transition-transform hover:scale-105">
-          Book an Appointment
+          INQUIRE NOW
         </button>
       </div>
     </section>

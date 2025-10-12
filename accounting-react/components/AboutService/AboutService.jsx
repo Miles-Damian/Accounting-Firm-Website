@@ -39,11 +39,11 @@ const AboutService = (props) => {
 						: 'opacity-0 translate-y-8'
 					}`}
 			>
-				<h2 className="font-inter font-extrabold text-3xl text-gray-800 text-center mb-2">
+				<h2 className="mb-2 text-3xl font-extrabold text-center text-gray-800 font-inter">
 					{props.subSectionHeading1}
 				</h2>
 
-				<p className="font-inter font-light text-gray-800 text-center lg:text-xl">
+				<p className="font-light text-center text-gray-800 font-inter lg:text-xl">
 					{props.subSectionSubHeading1}
 				</p>
 			</div>
@@ -54,17 +54,17 @@ const AboutService = (props) => {
 						: 'opacity-0 translate-y-8'
 					}`}
 			>
-				<div className="flex items-center justify-center fa-xl gap-2 mb-2">
+				<div className="flex items-center justify-center gap-2 mb-2 fa-xl">
 					<i
 						className="fa-solid fa-circle-check animate-jump-in animate-infinite animate-duration-1000"
 						style={{ color: '#7cb490' }}
 					></i>
-					<h2 className="font-inter font-extrabold text-3xl text-gray-800 text-center">
+					<h2 className="text-3xl font-extrabold text-center text-gray-800 font-inter">
 						Why it Matters?
 					</h2>
 				</div>
 
-				<p className="font-inter font-light text-gray-800 text-center lg:text-xl">
+				<p className="font-light text-center text-gray-800 font-inter lg:text-xl">
 					{props.subSectionSubHeading2}
 				</p>
 			</div>

@@ -69,10 +69,12 @@ const Footer = () => {
           <h3 className="mb-4 text-xl font-bold">SERVICES</h3>
           <ul className="space-y-2 text-base">
             <li>Business Registration Services</li>
-            <li>Tax Compliance</li>
-            <li>Bookkeeping & Accounting Services</li>
-            <li>Legal Compliance Services</li>
-            <li>Administration Services</li>
+            <li>Accounting & Bookkeeping Services</li>
+            <li>Tax & Regulatory Compliance</li>
+            <li>BIR One-Time Transactions</li>
+            <li>Specialized Registrations & Compliance</li>
+            <li>Business Support Services</li>
+            <li>All-in-One Business Services</li>
           </ul>
         </div>
 

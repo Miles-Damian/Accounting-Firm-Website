@@ -68,7 +68,7 @@ const Accreditations = () => {
               : "opacity-0 -translate-y-10"
           }`}
         >
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+          <h2 className="text-3xl font-bold leading-snug tracking-tight text-gray-900 sm:text-4xl">
             At Insight Business Consultancy Inc., we make business simple. From
             legal registration and compliance to accounting, payroll, and
             digital support, we provide comprehensive consultancy services

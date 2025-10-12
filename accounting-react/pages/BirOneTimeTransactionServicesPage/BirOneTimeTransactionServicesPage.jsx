@@ -40,6 +40,7 @@ const BirOneTImeTransactionServicesPage = () => {
 				subSectionHeading1={businessServicesData.subSectionHeading1}
 				subSectionSubHeading1={businessServicesData.subSectionSubHeading1}
 				subSectionSubHeading2={businessServicesData.subSectionSubHeading2}
+				serviceName="BIR One-Time Transactions" // ✅ This is what gets passed
 			/>
 			<OurServices
 				cardData={businessServicesData.cardData}

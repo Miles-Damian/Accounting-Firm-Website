@@ -1,5 +1,5 @@
-// src/components/HomeHero/HomeHero.jsx
 import React, { useState, useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom"; // ✅ Import navigate hook
 
 const slides = [
   "/public/images/random-images/mission.jpg",
@@ -16,6 +16,7 @@ const HomeHero = () => {
   const [current, setCurrent] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
   const heroRef = useRef(null);
+  const navigate = useNavigate(); // ✅ Initialize navigate
 
   const prevSlide = () => {
     setCurrent((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
@@ -25,7 +26,7 @@ const HomeHero = () => {
     setCurrent((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
   };
 
-  // Intersection Observer
+  // ✅ Intersection Observer
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -42,6 +43,11 @@ const HomeHero = () => {
       if (heroRef.current) observer.unobserve(heroRef.current);
     };
   }, []);
+
+  // ✅ Navigate function for "INQUIRE NOW"
+  const handleInquireNow = () => {
+    navigate("/contact");
+  };
 
   return (
     <main className="flex flex-col w-full" ref={heroRef}>
@@ -71,8 +77,13 @@ const HomeHero = () => {
             Let Insight Business Consultancy Inc. handle the paperwork,
             compliance, and digital support so you can focus on growth.
           </p>
-          <button className="bg-[#99e17a] font-bold rounded-[25px] border-2 border-[#003d20] text-[#003d20] text-base md:text-lg px-8 py-3 mt-8 shadow-[4px_4px_0px_#004d2c] hover:shadow-[6px_6px_0px_#003a22] transition self-center lg:self-start">
-            Book an Appointment
+
+          {/* ✅ Redirects to Contact Page */}
+          <button
+            onClick={handleInquireNow}
+            className="bg-[#99e17a] font-bold rounded-[25px] border-2 border-[#003d20] text-[#003d20] text-base md:text-lg px-8 py-3 mt-8 shadow-[4px_4px_0px_#004d2c] hover:shadow-[6px_6px_0px_#003a22] transition self-center lg:self-start"
+          >
+            INQUIRE NOW
           </button>
         </div>
 

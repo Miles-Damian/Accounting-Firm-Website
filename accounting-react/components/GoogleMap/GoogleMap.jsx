@@ -44,7 +44,7 @@ const GoogleMap = () => {
       >
         <iframe
           id="interactive_map"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1810.9725281764943!2d120.59420453420651!3d15.536005336815975!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3396c9439709824d%3A0xc0863cdbb03190dd!2sJPG%20Accounting!5e0!3m2!1sen!2sph!4v1759827183224!5m2!1sen!2sph"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3861.0609255235436!2d121.0189103754602!3d14.59560417719823!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c98b32a236ad%3A0xd4665c07311baf5b!2sDo%C3%B1a%20Elena%20Tower!5e0!3m2!1sen!2sph!4v1759955835811!5m2!1sen!2sph"
           className="w-full h-[300px] sm:h-[400px] md:h-[500px] rounded-xl shadow-md"
           style={{ border: 0 }}
           allowFullScreen
