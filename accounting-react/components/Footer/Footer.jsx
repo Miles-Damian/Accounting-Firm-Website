@@ -74,7 +74,7 @@ const Footer = () => {
             <li>BIR One-Time Transactions</li>
             <li>Specialized Registrations & Compliance</li>
             <li>Business Support Services</li>
-            <li>All-in-One Business Services</li>
+            {/* <li>All-in-One Business Services</li> */}
           </ul>
         </div>
 
@@ -108,7 +108,7 @@ const Footer = () => {
         >
           {/* Business Logo */}
           <img
-            src="/images/random-images/Picture1.png"
+            src="https://ibcph.com/accounting-react/images/random-images/Picture1.png"
             alt="Business Logo"
             className="h-auto mb-4 w-50"
           />
@@ -122,13 +122,13 @@ const Footer = () => {
             <div className="relative group">
               <a href="tel:+639123456789">
                 <img
-                  src="/images/random-images/phone.png"
+                  src="https://ibcph.com/accounting-react/images/random-images/phone.png"
                   alt="Phone"
                   className="w-[40px] h-auto cursor-pointer transition-transform duration-300 group-hover:scale-110"
                 />
               </a>
               <span className="absolute left-1/2 -translate-x-1/2 mt-2 w-max px-3 py-1 text-sm rounded-lg bg-[#004524] text-white opacity-0 group-hover:opacity-100 translate-y-1 group-hover:translate-y-0 transition-all duration-300">
-                +63 912 345 6789
+               +63 939 927 0318
               </span>
             </div>
 
@@ -140,7 +140,7 @@ const Footer = () => {
                 rel="noopener noreferrer"
               >
                 <img
-                  src="/images/random-images/fb.png"
+                  src="https://ibcph.com/accounting-react/images/random-images/fb.png"
                   alt="Facebook"
                   className="w-[40px] h-auto cursor-pointer transition-transform duration-300 group-hover:scale-110"
                 />
@@ -152,31 +152,32 @@ const Footer = () => {
 
             {/* EMAIL */}
             <div className="relative group">
-              <a href="mailto:info@insightconsultancy.ph">
+              <a href="mailto:inquiry@ibcph.com">
                 <img
-                  src="/images/random-images/email.png"
+                  src="https://ibcph.com/accounting-react/images/random-images/email.png"
                   alt="Email"
                   className="w-[40px] h-auto cursor-pointer transition-transform duration-300 group-hover:scale-110"
                 />
               </a>
               <span className="absolute left-1/2 -translate-x-1/2 mt-2 w-max px-3 py-1 text-sm rounded-lg bg-[#004524] text-white opacity-0 group-hover:opacity-100 translate-y-1 group-hover:translate-y-0 transition-all duration-300">
-                info@insightconsultancy.ph
+                inquiry@ibcph.com
               </span>
             </div>
 
             {/* BOOK NOW */}
-            <div className="relative group">
-              <a href="#">
-                <img
-                  src="/images/random-images/booknow.png"
-                  alt="Book Now"
-                  className="w-[120px] h-auto cursor-pointer transition-transform duration-300 group-hover:scale-105"
-                />
-              </a>
-              <span className="absolute left-1/2 -translate-x-1/2 mt-2 w-max px-3 py-1 text-sm rounded-lg bg-[#004524] text-white opacity-0 group-hover:opacity-100 translate-y-1 group-hover:translate-y-0 transition-all duration-300">
-                Book an Appointment
-              </span>
-            </div>
+<div className="relative group">
+  <Link to="/contact">
+    <img
+      src="https://ibcph.com/accounting-react/images/random-images/booknow.png"
+      alt="Book Now"
+      className="w-[120px] h-auto cursor-pointer transition-transform duration-300 group-hover:scale-105"
+    />
+  </Link>
+  <span className="absolute left-1/2 -translate-x-1/2 mt-2 w-max px-3 py-1 text-sm rounded-lg bg-[#004524] text-white opacity-0 group-hover:opacity-100 translate-y-1 group-hover:translate-y-0 transition-all duration-300">
+    Book an Appointment
+  </span>
+</div>
+
           </div>
 
           {/* Dynamic Time */}

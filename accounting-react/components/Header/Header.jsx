@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { NavLink, useLocation } from "react-router-dom";
 
@@ -6,10 +6,37 @@ const Header = () => {
   const [isSidebarToggled, setIsSidebarToggled] = useState(false);
   const [isServicesToggled, setIsServicesToggled] = useState(false);
   const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
+  const [showContactInfo, setShowContactInfo] = useState(true);
   const location = useLocation();
 
   const toggleSidebar = () => setIsSidebarToggled(!isSidebarToggled);
   const toggleServices = () => setIsServicesToggled(!isServicesToggled);
+
+  useEffect(() => {
+    let lastScrollY = window.scrollY;
+    let ticking = false;
+  
+    const updateVisibility = () => {
+      if (lastScrollY > 120) {
+        setShowContactInfo(false);
+      } else {
+        setShowContactInfo(true);
+      }
+      ticking = false;
+    };
+  
+    const handleScroll = () => {
+      lastScrollY = window.scrollY;
+      if (!ticking) {
+        window.requestAnimationFrame(updateVisibility);
+        ticking = true;
+      }
+    };
+  
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+  
 
   const UnderlinedText = ({ isActive, children }) => (
     <span
@@ -22,13 +49,63 @@ const Header = () => {
   );
 
   return (
-    <header className="sticky top-0 z-50 w-full pt-1.5 pb-1.5 bg-gradient-to-b from-green-100 to-green-200">
-      <nav className="flex justify-between items-center relative w-full p-2 h-16 max-w-[1400px] mx-auto">
-        <img
-          className="w-40 h-auto animate-jump animate-duration-[400ms]"
-          src="/images/logo/logo.png"
-          alt="Insight Accounting Firm"
-        />
+    <header className="fixed top-0 left-0 w-full z-[999] transform-none bg-gradient-to-b from-green-100 to-green-200 shadow-sm">
+  <motion.div
+  initial={{
+    height: window.innerWidth < 1024
+      ? showContactInfo
+        ? "85px"
+        : "70px"
+      : showContactInfo
+      ? "115px"
+      : "85px",
+  }}
+  animate={{
+    height: window.innerWidth < 1024
+      ? showContactInfo
+        ? "85px"
+        : "70px"
+      : showContactInfo
+      ? "115px"
+      : "85px",
+    transition: { duration: 0.5, ease: [0.25, 0.1, 0.25, 1] },
+  }}
+  className="pt-1.5 pb-1.5 w-full"
+>
+
+
+
+
+      <nav className="flex justify-between items-center relative w-full p-2 h-auto max-w-[1400px] mx-auto">
+        <div className="flex flex-col items-center">
+          <img
+            className="w-40 h-auto animate-jump animate-duration-[400ms] ml-1.5 mr-4.5"
+            src="https://ibcph.com/accounting-react/images/logo/logo.png"
+            alt="Insight Accounting Firm"
+          />
+
+          {/* Contact info (fades out on scroll) */}
+          <AnimatePresence>
+  {showContactInfo && (
+    <motion.div
+      className="hidden mt-1 leading-tight text-left xl:block"
+      initial={{ opacity: 0, y: -10 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -10 }}
+      transition={{ duration: 0.3, ease: "easeInOut" }}
+    >
+      <p className="text-[14px] font-medium text-black text-center">
+        <span className="font-semibold">inquiry@ibcph.com | careers@ibcph.com</span> | +63&nbsp;939&nbsp;927&nbsp;0318
+      </p>
+      <p className="text-[14px] text-black text-center">
+        8th Floor, Doña Elena Tower 47&nbsp;P, Manila City
+      </p>
+    </motion.div>
+  )}
+</AnimatePresence>
+
+
+        </div>
 
         {/* Mobile menu toggle */}
         <button onClick={toggleSidebar} className="flex lg:hidden">
@@ -53,7 +130,7 @@ const Header = () => {
                 whileTap={{ scale: 0.9 }}
               />
               <UnderlinedText isActive={location.pathname === "/"}>
-                HOME
+                <p className="lg:text-[18px]">HOME</p>
               </UnderlinedText>
             </NavLink>
           </li>
@@ -74,7 +151,7 @@ const Header = () => {
                 whileTap={{ scale: 0.9 }}
               />
               <UnderlinedText isActive={location.pathname === "/about"}>
-                ABOUT&nbsp;US
+                <p className="lg:text-[18px]">ABOUT&nbsp;US</p>
               </UnderlinedText>
             </NavLink>
           </li>
@@ -107,7 +184,7 @@ const Header = () => {
                 <UnderlinedText
                   isActive={location.pathname.startsWith("/services")}
                 >
-                  SERVICES
+                  <p className="lg:text-[18px]">SERVICES </p>
                 </UnderlinedText>
                 <motion.i
                   className="fa-solid fa-angle-down text-[13px]"
@@ -143,7 +220,6 @@ const Header = () => {
                     ["/services/bir-transactions", "BIR One-Time Transactions"],
                     ["/services/specialized-registration", "Specialized Registrations & Compliance"],
                     ["/services/business-support", "Business Support Services"],
-                    ["/services/business-support", "All-in-One Business Services"]
                   ].map(([to, label]) => (
                     <li key={to} className="w-full text-center hover:bg-gray-200">
                       <NavLink
@@ -179,7 +255,7 @@ const Header = () => {
                 whileTap={{ scale: 0.9 }}
               />
               <UnderlinedText isActive={location.pathname === "/faq"}>
-                FAQ
+                <p className="lg:text-[18px]">FAQ </p>
               </UnderlinedText>
             </NavLink>
           </li>
@@ -200,7 +276,7 @@ const Header = () => {
                 whileTap={{ scale: 0.9 }}
               />
               <UnderlinedText isActive={location.pathname === "/contact"}>
-                CONTACT
+                <p className="lg:text-[18px]">CONTACT</p>
               </UnderlinedText>
             </NavLink>
           </li>
@@ -221,7 +297,7 @@ const Header = () => {
                 whileTap={{ scale: 0.9 }}
               />
               <UnderlinedText isActive={location.pathname === "/careers"}>
-                CAREERS
+                <p className="lg:text-[18px]">CAREERS</p>
               </UnderlinedText>
             </NavLink>
           </li>
@@ -418,7 +494,9 @@ const Header = () => {
           )}
         </AnimatePresence>
       </nav>
-    </header>
+      </motion.div>
+</header>
+
   );
 };
 

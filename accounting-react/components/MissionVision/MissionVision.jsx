@@ -68,7 +68,7 @@ const MissionVision = () => {
           <div
             className="relative w-80 h-80 md:w-96 md:h-96 bg-cover bg-center shadow-2xl border-8 border-white rounded-[2rem] hover:scale-105 hover:shadow-xl transition-transform duration-500"
             style={{
-              backgroundImage: "url('../public/images/random-images/mission.jpg')",
+              backgroundImage: "url('https://ibcph.com/accounting-react/images/random-images/mission.jpg')",
             }}
           >
             <div className="absolute inset-0 rounded-[2rem] border-4 border-green-600 opacity-90"></div>
@@ -93,7 +93,7 @@ const MissionVision = () => {
           <div
             className="relative transition-transform duration-500 bg-center bg-cover border-8 border-white rounded-full shadow-2xl w-80 h-80 md:w-96 md:h-96 hover:scale-105 hover:shadow-xl"
             style={{
-              backgroundImage: "url('../public/images/random-images/vision.jpg')",
+              backgroundImage: "url('https://ibcph.com/accounting-react/images/random-images/vision.jpg')",
             }}
           >
             <div className="absolute inset-0 border-4 border-green-600 rounded-full opacity-90"></div>

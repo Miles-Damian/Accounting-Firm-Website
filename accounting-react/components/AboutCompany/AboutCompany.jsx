@@ -20,9 +20,10 @@ const AboutCompany = () => {
 
   return (
     <section
-      ref={sectionRef}
-      className="container grid items-center grid-cols-1 gap-12 px-4 py-16 mx-auto lg:grid-cols-2"
-    >
+  ref={sectionRef}
+  className="container grid items-center grid-cols-1 gap-12 px-4 py-16 mx-auto lg:grid-cols-2 pt-[115px] lg:pt-[120px]"
+>
+
       {/* Text Section */}
       <div
         className={`flex flex-col gap-6 text-center lg:text-left transition-all duration-700 ${
@@ -72,7 +73,7 @@ const AboutCompany = () => {
             <div
               className="w-[90%] h-[90%] bg-cover bg-center shadow-xl transition-transform duration-500 hover:scale-105 hover:-translate-y-2"
               style={{
-                backgroundImage: "url('/images/bg/building.jpg')",
+                backgroundImage: "url('https://ibcph.com/accounting-react/images/bg/building.jpg')",
                 clipPath:
                   "polygon(25% 6.7%, 75% 6.7%, 100% 50%, 75% 93.3%, 25% 93.3%, 0% 50%)",
               }}

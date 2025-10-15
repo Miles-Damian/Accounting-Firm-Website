@@ -56,7 +56,7 @@ const LicenseSection = () => {
             className="flex items-center justify-center transition-transform duration-300 hover:scale-110 hover:shadow-lg rounded-xl"
           >
             <img
-              src={`/images/logo/${name}.png`}
+              src={`https://ibcph.com/accounting-react/images/logo/${name}.png`}
               alt={name}
               className="object-contain w-24 h-24 md:w-28 md:h-28"
             />

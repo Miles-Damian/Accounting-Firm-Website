@@ -7,7 +7,6 @@ import WhoWeServe from "../../components/WhoWeServe/WhoWeServe";
 import LicenseSection from "../../components/LicenseSection/LicenseSection";
 import TeamSection from "../../components/TeamSection/TeamSection";
 import Footer from "../../components/Footer/Footer";
-import InquireNow from "../../components/InquireNow/InquireNow";
 
 function AboutUsPage() {
     return (
@@ -19,7 +18,6 @@ function AboutUsPage() {
             <WhoWeServe />
             <LicenseSection />
             <TeamSection />
-            <InquireNow />
             <Footer />
         </>
     );

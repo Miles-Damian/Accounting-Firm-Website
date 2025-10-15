@@ -63,7 +63,7 @@ const LatestNews = () => {
 
       <div className="grid grid-cols-1 gap-10 px-6 mx-auto md:grid-cols-2 lg:grid-cols-3 max-w-7xl">
         <NewsCard
-          img="/images/random-images/tax-dealine.png"
+          img="https://ibcph.com/accounting-react/images/random-images/tax-dealine.png"
           alt="Tax Deadline"
           category="INSPIRATION"
           title="Warm Breeze and the Scent of Lavender - Why We Love Provence"
@@ -73,7 +73,7 @@ const LatestNews = () => {
         />
 
         <NewsCard
-          img="/images/random-images/bir does not accredit.png"
+          img="https://ibcph.com/accounting-react/images/random-images/bir does not accredit.png"
           alt="BIR News"
           category="COMMUNITY STORIES"
           title="The Art of Letting Go - How to Relax on Vacation"
@@ -83,7 +83,7 @@ const LatestNews = () => {
         />
 
         <NewsCard
-          img="/images/random-images/girl.png"
+          img="https://ibcph.com/accounting-react/images/random-images/girl.png"
           alt="Travel With Kids"
           category="COMMUNITY STORIES"
           title="Things I Wish I Had Known Before I Started Traveling With Kids"

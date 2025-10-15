@@ -3,27 +3,35 @@ import AboutService from "../../components/AboutService/AboutService";
 import OurServices from "../../components/OurServices/OurServices";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
+import { useEffect } from "react";
 
 const BusinessSupportServicesPage = () => {
 	const businessServicesData = {
-		heroImage: '/images/bg/support.jpg',
+		heroImage: 'https://ibcph.com/accounting-react/images/bg/support.jpg',
 		heroHeading: 'BUSINESS SUPPORT SERVICES',
 		subSectionHeading1: 'Beyond compliance, we also help businesses strengthen their presence and reach more customers.',
 		subSectionSubHeading1: 'With our digital solutions, we provide the tools to help you compete in today’s online-driven market.',
 		subSectionSubHeading2: 'Builds visibility, credibility, and competitive advantage in your industry.',
 		cardData: [
 			{
-				src: '/images/stock/web-dev.jpg',
+				src: 'https://ibcph.com/accounting-react/images/stock/web-dev.jpg',
 				title: 'Website Development',
 				caption: 'Professional websites with responsive design, SEO optimization, and CMS integration.'
 			},
 			{
-				src: '/images/stock/socmed-marketing.webp',
+				src: 'https://ibcph.com/accounting-react/images/stock/socmed-marketing.webp',
 				title: 'Social Media Marketing',
 				caption: 'Content planning, advertising campaigns, and social media management.'
 			},
-		]
+	]
 	};
+
+	useEffect(() => {
+		window.scrollTo({
+			top: 0,
+			behavior: 'smooth',
+		});
+	}, []);
 
 	return (
 		<>	
@@ -38,6 +46,7 @@ const BusinessSupportServicesPage = () => {
 			/>
 			<OurServices
 				cardData={businessServicesData.cardData}
+				shortcutService={'Business Support Services'}
 			/>
 			<Footer />
 		</>

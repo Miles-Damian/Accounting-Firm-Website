@@ -6,6 +6,6 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineConfig({
   plugins: [
     react(),
-    tailwindcss()
-  ],
+    tailwindcss()],
+    base: '/accounting-react/', // 👈 match your folder name exactly
 })

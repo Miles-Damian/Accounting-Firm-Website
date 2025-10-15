@@ -39,11 +39,11 @@ const AboutService = (props) => {
 						: 'opacity-0 translate-y-8'
 					}`}
 			>
-				<h2 className="mb-2 text-3xl font-extrabold text-center text-gray-800 font-inter">
+				<h2 className="font-inter font-extrabold text-3xl text-gray-800 text-center mb-2">
 					{props.subSectionHeading1}
 				</h2>
 
-				<p className="font-light text-center text-gray-800 font-inter lg:text-xl">
+				<p className="font-inter font-light text-gray-800 text-center lg:text-xl">
 					{props.subSectionSubHeading1}
 				</p>
 			</div>
@@ -54,22 +54,22 @@ const AboutService = (props) => {
 						: 'opacity-0 translate-y-8'
 					}`}
 			>
-				<div className="flex items-center justify-center gap-2 mb-2 fa-xl">
+				<div className="flex items-center justify-center fa-xl gap-2 mb-2">
 					<i
 						className="fa-solid fa-circle-check animate-jump-in animate-infinite animate-duration-1000"
 						style={{ color: '#7cb490' }}
 					></i>
-					<h2 className="text-3xl font-extrabold text-center text-gray-800 font-inter">
+					<h2 className="font-inter font-extrabold text-3xl text-gray-800 text-center">
 						Why it Matters?
 					</h2>
 				</div>
 
-				<p className="font-light text-center text-gray-800 font-inter lg:text-xl">
+				<p className="font-inter font-light text-gray-800 text-center lg:text-xl">
 					{props.subSectionSubHeading2}
 				</p>
 			</div>
 
-			<button
+			{/* <button
 				className={`font-inter font-semibold border-2 border-[#7cb490] bg-transparent px-8 py-4 text-[#7cb490] rounded-md cursor-pointer border-b-6 border-[#4f735b] text-lg hover:border-[#4f735b] hover:scale-105 ${isVisible
 						? 'opacity-100 translate-y-0'
 						: 'opacity-0 translate-y-8'
@@ -80,7 +80,7 @@ const AboutService = (props) => {
 				}}
 			>
 				Learn More
-			</button>
+			</button> */}
 		</section>
 	);
 };

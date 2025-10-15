@@ -85,12 +85,12 @@ const Accreditations = () => {
           <Card
             title="Licenses & Legal Registrations"
             items={[
-              { text: "SEC Registered Corporation", logo: "/images/logo/SEC.png" },
-              { text: "DTI Registered", logo: "/images/logo/DTI.png" },
-              { text: "BIR Registered & Accredited", logo: "/images/logo/BIR.png" },
-              { text: "LGU Business Permit", logo: "/images/logo/LGU.png" },
-              { text: "SSS, PhilHealth, Pag-IBIG Registered Employer", logo: "/images/logo/SSS.png" },
-              { text: "CDA Accreditation (if cooperative-related services apply)", logo: "/images/logo/CDA.png" },
+              { text: "SEC Registered Corporation", logo: "https://ibcph.com/accounting-react/images/logo/SEC.png" },
+              { text: "DTI Registered", logo: "https://ibcph.com/accounting-react/images/logo/DTI.png" },
+              { text: "BIR Registered & Accredited", logo: "https://ibcph.com/accounting-react/images/logo/BIR.png" },
+              { text: "LGU Business Permit", logo: "https://ibcph.com/accounting-react/images/logo/LGU.png" },
+              { text: "SSS, PhilHealth, Pag-IBIG Registered Employer", logo: "https://ibcph.com/accounting-react/images/logo/SSS.png" },
+              { text: "CDA Accreditation (if cooperative-related services apply)", logo: "https://ibcph.com/accounting-react/images/logo/CDA.png" },
             ]}
             isVisible={isVisible}
             delay={200}
@@ -99,8 +99,8 @@ const Accreditations = () => {
           <Card
             title="Professional Accreditations"
             items={[
-              { text: "Board of Accountancy (BOA) Accredited CPAs", logo: "/images/logo/PRC.png" },
-              { text: "PRC Licensed CPAs", logo: "/images/logo/PRC.png" },
+              { text: "Board of Accountancy (BOA) Accredited CPAs", logo: "https://ibcph.com/accounting-react/images/logo/PRC.png" },
+              { text: "PRC Licensed CPAs", logo: "https://ibcph.com/accounting-react/images/logo/PRC.png" },
             ]}
             isVisible={isVisible}
             delay={400}
@@ -109,8 +109,8 @@ const Accreditations = () => {
           <Card
             title="Software Certifications"
             items={[
-              { text: "QuickBooks Certified ProAdvisor", logo: "/images/logo/quickbooks.png" },
-              { text: "Xero Certified Advisor", logo: "/images/logo/xero.png" },
+              { text: "QuickBooks Certified ProAdvisor", logo: "https://ibcph.com/accounting-react/images/logo/quickbooks.png" },
+              { text: "Xero Certified Advisor", logo: "https://ibcph.com/accounting-react/images/logo/xero.png" },
             ]}
             isVisible={isVisible}
             delay={600}

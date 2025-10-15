@@ -36,7 +36,7 @@ const faqs = [
 
 const FAQPage = () => {
   return (
-    <div className="min-h-screen bg-gray-100 font-display">
+    <div className="min-h-screen bg-gray-100 pt-30 font-display">
       <Header />
 
       <main className="container px-6 py-20 mx-auto">
