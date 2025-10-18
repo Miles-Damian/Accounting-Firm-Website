@@ -48,7 +48,7 @@ const CertificationPage = () => {
 				src: 'https://ibcph.com/images/stock/non-registration.jpg',
 				title: 'Certificate of Non-Registration / Registration',
 				caption: 'We process certifications confirming whether an individual is registered or unregistered with the Bureau of Immigration, ensuring accurate record validation.'
-			  }
+			  },
 			  
 		]
 	};

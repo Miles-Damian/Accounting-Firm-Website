@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "motion/react";
 import { useNavigate } from "react-router-dom";
 
 export default function HomeHero({
-  bgSrc = "https://ibcph.com/images/bg/building-filter.png",
+  bgSrc = "/images/bg/building-filter.png",
   cards,
 }) {
   const defaultCards = useMemo(
