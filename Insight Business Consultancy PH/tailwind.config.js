@@ -8,7 +8,7 @@ export default {
     extend: {
 
       screens: {
-        'min-1415': '1415px', // show only from 1415px and up
+        'min-1415': '1102px', // show only from 1415px and up
       },
 
       colors: {

@@ -495,18 +495,20 @@ useEffect(() => {
       </nav>
       </motion.div>
 
-            {/* 🔹 Below Contact Bar */}
-            <AnimatePresence>
+{/* 🔹 Below Contact Bar */}
+<AnimatePresence>
   {showTopBar && (
     <motion.div
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
       transition={{ duration: 0.3 }}
-      className="flex max-[1414px]:hidden justify-between items-center py-1.5 px-10 bg-[#004817] text-white text-sm"
+      className="flex justify-between items-center py-1.5 px-10 bg-[#004817] text-white text-sm 
+                 max-[1425px]:text-xs max-[1425px]:px-6 max-[1425px]:gap-3 
+                 max-[1102px]:hidden"
     >
       {/* 🔹 Left: Address (clickable) */}
-      <div className="flex items-center gap-5">
+      <div className="flex items-center gap-5 max-[1425px]:gap-3">
         <a
           href="https://www.google.com/maps?q=Doña+Elena+Tower,+P.+Sanchez+corner+3rd+Street,+Sta.+Mesa,+Manila"
           target="_blank"
@@ -520,7 +522,7 @@ useEffect(() => {
       </div>
 
       {/* 🔹 Right: Contact info (clickable) */}
-      <div className="flex items-center gap-5">
+      <div className="flex items-center gap-5 max-[1425px]:gap-3">
         <a
           href="tel:+639399270318"
           className="flex items-center hover:text-[#aee1c3] transition-colors duration-200"
@@ -545,6 +547,7 @@ useEffect(() => {
     </motion.div>
   )}
 </AnimatePresence>
+
 
 
 </header>
