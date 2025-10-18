@@ -41,14 +41,14 @@ const DropdownCheckbox = ({
       <div className="w-full p-4 mt-2 overflow-y-auto bg-white border-2 border-gray-200 rounded-lg shadow-inner max-h-64 sm:max-h-72">
         {selectedServices.map((service, i) => (
           <div key={i} className="mb-4">
-            <p className="font-semibold text-[#003a22] text-sm mb-2">
+            <p className="font-semibold text-[#003a22] text-[13px] mb-2">
               {service.type}
             </p>
-            <div className="grid grid-cols-1 gap-y-2 sm:grid-cols-2">
+            <div className="grid grid-cols-1 gap-y-1.5 sm:grid-cols-2">
               {serviceCheckboxMap[service.type]?.map((item) => (
                 <label
                   key={item}
-                  className="flex items-center gap-2 text-[14.5px] text-gray-700 hover:text-[#004524] transition-colors"
+                  className="flex items-center gap-2 text-[13px] text-gray-700 hover:text-[#004524] transition-colors"
                 >
                   <input
                     type="checkbox"
@@ -129,7 +129,44 @@ const InquireNow = () => {
       "PEZA Registration",
       "BSP Registration",
     ],
-    "Business Support Services": ["Website Development", "Social Media Marketing"],
+    "Business Support Services": [
+      "Website Development",
+      "Social Media Marketing",
+    ],
+
+    // ✅ Newly added categories
+    "Alien Registration": [
+      "Annual Report (A.R)",
+      "ACR I-CARD Issuance",
+      "Voluntary Application for ACR I-CARD",
+      "Renewal ACR I-CARD",
+      "Re-Issuance of ACR I-CARD",
+      "ACR I-CARD Waiver",
+      "Cancellation of ACR I-CARD",
+      "Philippine-Born Registration",
+    ],
+    "Certification": [
+      "Certification for Not the Same Person",
+      "ACR I-CARD Certification",
+      "BI Clearance Certification",
+      "Pending Visa Application Certification",
+      "Certified True Copy Certification",
+      "Travel Records Certification",
+      "Certificate of Non-Registration / Registration",
+    ],
+    "Citizenship": [
+      "Application for Retention / Re-acquisition of Phil. Citizenship",
+      "Inclusion of Dependents under R.A. 9225",
+      "Recognition as Filipino Citizen",
+      "Affirmation of Recognition as Filipino Citizen",
+      "Cancellation of Alien Certificate of Registry (ACR)",
+    ],
+    "Special Permits": [
+      "Special Study Permit",
+      "Provisional Work Permit",
+      "Special Work Permit – Commercial",
+      "Special Work Permit – Artists & Athletes",
+    ],
   };
 
   const formRef = useRef();

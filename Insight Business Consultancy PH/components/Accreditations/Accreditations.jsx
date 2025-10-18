@@ -91,6 +91,7 @@ const Accreditations = () => {
               { text: "LGU Business Permit", logo: "https://ibcph.com/images/logo/LGU.png" },
               { text: "SSS, PhilHealth, Pag-IBIG Registered Employer", logo: "https://ibcph.com/images/logo/SSS.png" },
               { text: "CDA Accreditation (if cooperative-related services apply)", logo: "https://ibcph.com/images/logo/CDA.png" },
+              { text: "Bureau of Immigration", logo: "https://ibcph.com/images/logo/BOI.png" },
             ]}
             isVisible={isVisible}
             delay={200}
@@ -111,6 +112,7 @@ const Accreditations = () => {
             items={[
               { text: "QuickBooks Certified ProAdvisor", logo: "https://ibcph.com/images/logo/quickbooks.png" },
               { text: "Xero Certified Advisor", logo: "https://ibcph.com/images/logo/xero.png" },
+              { text: "JuanTax", logo: "https://ibcph.com/images/logo/JuanTax.png" },
             ]}
             isVisible={isVisible}
             delay={600}

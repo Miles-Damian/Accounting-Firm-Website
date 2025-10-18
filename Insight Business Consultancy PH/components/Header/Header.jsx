@@ -166,6 +166,10 @@ useEffect(() => {
                     ["/services/bir-transactions", "BIR One-Time Transactions"],
                     ["/services/specialized-registration", "Specialized Registrations & Compliance"],
                     ["/services/business-support", "Business Support Services"],
+                    ["/services/alien-registration", "Alien Registration Services"],
+                    ["/services/certification", "Certification Services"],
+                    ["/services/citizenship", "Citizenship Services"],
+                    ["/services/special-permits", "Special Permits Services"],
                   ].map(([to, label]) => (
                     <li key={to} className="w-full text-center hover:bg-gray-200">
                       <NavLink
@@ -266,13 +270,13 @@ useEffect(() => {
           to="/"
           onClick={() => setIsSidebarToggled(false)}
           className={({ isActive }) =>
-            `group flex items-center gap-2 text-2xl sm:text-3xl leading-tight transition-all duration-300 ${
+            `group flex items-center gap-2 text-xl sm:text-2xl leading-tight transition-all duration-300 ${
               isActive ? "text-green-800 font-semibold" : ""
             }`
           }
         >
           <motion.i
-            className="text-xl sm:text-2xl fa-solid fa-house transition-transform duration-300 group-hover:scale-125 group-hover:text-[#004524]"
+            className="text-lg sm:text-xl fa-solid fa-house transition-transform duration-300 group-hover:scale-125 group-hover:text-[#004524]"
             whileHover={{ scale: 1.2, color: "#004524" }}
           />
           <UnderlinedText isActive={location.pathname === "/"}>
@@ -287,13 +291,13 @@ useEffect(() => {
           to="/about"
           onClick={() => setIsSidebarToggled(false)}
           className={({ isActive }) =>
-            `group flex items-center gap-2 text-2xl sm:text-3xl leading-tight transition-all duration-300 ${
+            `group flex items-center gap-2 text-xl sm:text-2xl leading-tight transition-all duration-300 ${
               isActive ? "text-green-800 font-semibold" : ""
             }`
           }
         >
           <motion.i
-            className="text-xl sm:text-2xl fa-solid fa-people-group transition-transform duration-300 group-hover:scale-125 group-hover:text-[#00b894]"
+            className="text-lg sm:text-xl fa-solid fa-people-group transition-transform duration-300 group-hover:scale-125 group-hover:text-[#00b894]"
             whileHover={{ scale: 1.2, color: "#00b894" }}
           />
           <UnderlinedText isActive={location.pathname === "/about"}>
@@ -305,14 +309,14 @@ useEffect(() => {
       {/* ✅ SERVICES */}
       <li className="relative">
         <div
-          className={`group flex items-center gap-[4px] text-2xl sm:text-3xl leading-tight transition-all duration-300 ${
+          className={`group flex items-center gap-[4px] text-xl sm:text-2xl leading-tight transition-all duration-300 ${
             location.pathname.startsWith("/services")
               ? "text-green-800 font-semibold"
               : ""
           }`}
         >
           <motion.i
-            className="text-xl sm:text-2xl fa-solid fa-universal-access transition-transform duration-300 group-hover:scale-125 group-hover:text-[#004524]"
+            className="text-lg sm:text-xl fa-solid fa-universal-access transition-transform duration-300 group-hover:scale-125 group-hover:text-[#004524]"
             whileHover={{ scale: 1.2, color: "#004524" }}
           />
           <button
@@ -323,13 +327,9 @@ useEffect(() => {
                 : "font-semibold text-black"
             }`}
           >
-            {/* <UnderlinedText
-              isActive={location.pathname.startsWith("/services")}
-            > */}
-              SERVICES
-            {/* </UnderlinedText> */}
+            SERVICES
             <motion.i
-              className="fa-solid fa-angle-down text-[16px]"
+              className="fa-solid fa-angle-down text-[14px]"
               animate={{
                 rotate: isMobileServicesOpen ? 180 : 0,
                 color: isMobileServicesOpen ? "#004524" : "#000000",
@@ -356,26 +356,29 @@ useEffect(() => {
                 ["/services/bir-transactions", "BIR One-Time Transactions"],
                 ["/services/specialized-registration", "Specialized Registrations & Compliance"],
                 ["/services/business-support", "Business Support Services"],
+                ["/services/alien-registration", "Alien Registration Services"],
+                ["/services/certification", "Certification Services"],
+                ["/services/citizenship", "Citizenship Services"],
+                ["/services/special-permits", "Special Permits Services"],
               ].map(([to, label]) => (
                 <li key={to}>
                   <NavLink
-  to={to}
-  className={({ isActive }) =>
-    `text-sm leading-snug break-words whitespace-normal sm:text-base transition-all duration-200
-     ${
-       isActive
-         ? "text-[#004524] font-semibold border-b-2 border-[#004524]"
-         : "text-black hover:text-[#004524]"
-     }`
-  }
-  onClick={() => {
-    setIsSidebarToggled(false);
-    setIsMobileServicesOpen(false);
-  }}
->
-  {label}
-</NavLink>
-
+                    to={to}
+                    className={({ isActive }) =>
+                      `text-xs leading-snug break-words whitespace-normal sm:text-sm transition-all duration-200
+                       ${
+                         isActive
+                           ? "text-[#004524] font-semibold border-b-2 border-[#004524]"
+                           : "text-black hover:text-[#004524]"
+                       }`
+                    }
+                    onClick={() => {
+                      setIsSidebarToggled(false);
+                      setIsMobileServicesOpen(false);
+                    }}
+                  >
+                    {label}
+                  </NavLink>
                 </li>
               ))}
             </motion.ul>
@@ -389,13 +392,13 @@ useEffect(() => {
           to="/faq"
           onClick={() => setIsSidebarToggled(false)}
           className={({ isActive }) =>
-            `group flex items-center gap-2 text-2xl sm:text-3xl leading-tight transition-all duration-300 ${
+            `group flex items-center gap-2 text-xl sm:text-2xl leading-tight transition-all duration-300 ${
               isActive ? "text-green-800 font-semibold" : ""
             }`
           }
         >
           <motion.i
-            className="text-xl sm:text-2xl fa-solid fa-circle-question transition-transform duration-300 group-hover:scale-125 group-hover:text-[#00b894]"
+            className="text-lg sm:text-xl fa-solid fa-circle-question transition-transform duration-300 group-hover:scale-125 group-hover:text-[#00b894]"
             whileHover={{ scale: 1.2, color: "#00b894" }}
           />
           <UnderlinedText isActive={location.pathname === "/faq"}>
@@ -410,13 +413,13 @@ useEffect(() => {
           to="/contact"
           onClick={() => setIsSidebarToggled(false)}
           className={({ isActive }) =>
-            `group flex items-center gap-2 text-2xl sm:text-3xl leading-tight transition-all duration-300 ${
+            `group flex items-center gap-2 text-xl sm:text-2xl leading-tight transition-all duration-300 ${
               isActive ? "text-green-800 font-semibold" : ""
             }`
           }
         >
           <motion.i
-            className="text-xl sm:text-2xl fa-solid fa-phone transition-transform duration-300 group-hover:scale-125 group-hover:text-[#004524]"
+            className="text-lg sm:text-xl fa-solid fa-phone transition-transform duration-300 group-hover:scale-125 group-hover:text-[#004524]"
             whileHover={{ scale: 1.2, color: "#004524" }}
           />
           <UnderlinedText isActive={location.pathname === "/contact"}>
@@ -431,13 +434,13 @@ useEffect(() => {
           to="/careers"
           onClick={() => setIsSidebarToggled(false)}
           className={({ isActive }) =>
-            `group flex items-center gap-2 text-2xl sm:text-3xl leading-tight transition-all duration-300 ${
+            `group flex items-center gap-2 text-xl sm:text-2xl leading-tight transition-all duration-300 ${
               isActive ? "text-green-800 font-semibold" : ""
             }`
           }
         >
           <motion.i
-            className="text-xl sm:text-2xl fa-solid fa-briefcase transition-transform duration-300 group-hover:scale-125 group-hover:text-[#00b894]"
+            className="text-lg sm:text-xl fa-solid fa-briefcase transition-transform duration-300 group-hover:scale-125 group-hover:text-[#00b894]"
             whileHover={{ scale: 1.2, color: "#00b894" }}
           />
           <UnderlinedText isActive={location.pathname === "/careers"}>

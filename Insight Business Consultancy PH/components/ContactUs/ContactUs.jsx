@@ -2,85 +2,81 @@ import React, { useEffect, useRef, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 
 /* ============================================================
-   INLINE DROPDOWN COMPONENT (styled to match old hover effects)
+   INLINE DROPDOWN COMPONENT (compact & scrollable)
    ============================================================ */
-/* ============================================================
-   SIMPLE INLINE SCROLLABLE DROPDOWN (non-modal, compact)
-   ============================================================ */
-   const DropdownCheckbox = ({
-    handleSelectedServices,
-    showServiceTypes,
-    setShowServiceTypes,
-    resetSelection,
-    selectedServices,
-    serviceCheckboxMap,
-  }) => (
-    <div className="w-full">
-      <label className="font-montserrat text-sm md:text-base mb-1 block text-[#003a22] font-semibold">
-        Select Services
-      </label>
-  
-      {/* Toggle button */}
-      <button
-        type="button"
-        onClick={() => setShowServiceTypes(!showServiceTypes)}
-        className="w-full p-4 border-2 rounded-lg bg-white placeholder-[#003a22] text-left focus:outline-none focus:ring-2 focus:ring-[#003a22] transition-transform duration-300 hover:scale-105 hover:shadow-lg flex justify-between items-center"
-      >
-        <span>
-          {selectedServices.some((s) => s.items.length > 0)
-            ? "Selected Services"
-            : "Choose Services"}
-        </span>
-        <i
-          className={`fa-solid fa-chevron-${
-            showServiceTypes ? "up" : "down"
-          } text-gray-500`}
-        ></i>
-      </button>
-  
-      {/* Scrollable container */}
-      {showServiceTypes && (
-        <div className="w-full p-4 mt-3 overflow-y-auto transition-all duration-300 bg-white border-2 border-gray-200 rounded-lg shadow-inner max-h-60">
-          {selectedServices.map((service, i) => (
-            <div key={i} className="mb-3">
-              <p className="font-semibold text-[#003a22] text-sm mb-1">
-                {service.type}
-              </p>
-              <div className="grid grid-cols-1 gap-1 pl-2 sm:grid-cols-2">
-                {serviceCheckboxMap[service.type]?.map((item) => (
-                  <label
-                    key={item}
-                    className="flex items-center gap-2 text-sm text-gray-700 hover:text-[#004524] transition-colors"
-                  >
-                    <input
-                      type="checkbox"
-                      name={item}
-                      checked={service.items.includes(item)}
-                      onChange={handleSelectedServices}
-                      className="accent-[#003a22]"
-                    />
-                    {item
-                      .replace(/-/g, " ")
-                      .replace(/\b\w/g, (l) => l.toUpperCase())}
-                  </label>
-                ))}
-              </div>
+const DropdownCheckbox = ({
+  handleSelectedServices,
+  showServiceTypes,
+  setShowServiceTypes,
+  resetSelection,
+  selectedServices,
+  serviceCheckboxMap,
+}) => (
+  <div className="w-full">
+    <label className="font-montserrat text-sm md:text-base mb-1 block text-[#003a22] font-semibold">
+      Select Services
+    </label>
+
+    {/* Toggle button */}
+    <button
+      type="button"
+      onClick={() => setShowServiceTypes(!showServiceTypes)}
+      className="w-full p-4 border-2 rounded-lg bg-white placeholder-[#003a22] text-left focus:outline-none focus:ring-2 focus:ring-[#003a22] transition-transform duration-300 hover:scale-105 hover:shadow-lg flex justify-between items-center"
+    >
+      <span>
+        {selectedServices.some((s) => s.items.length > 0)
+          ? "Selected Services"
+          : "Choose Services"}
+      </span>
+      <i
+        className={`fa-solid fa-chevron-${
+          showServiceTypes ? "up" : "down"
+        } text-gray-500`}
+      ></i>
+    </button>
+
+    {/* Scrollable container */}
+    {showServiceTypes && (
+      <div className="w-full p-4 mt-3 overflow-y-auto transition-all duration-300 bg-white border-2 border-gray-200 rounded-lg shadow-inner max-h-60">
+        {selectedServices.map((service, i) => (
+          <div key={i} className="mb-3">
+            <p className="font-semibold text-[#003a22] text-xs mb-1">
+              {service.type}
+            </p>
+            <div className="grid grid-cols-1 gap-1 pl-2 sm:grid-cols-2">
+              {serviceCheckboxMap[service.type]?.map((item) => (
+                <label
+                  key={item}
+                  className="flex items-center gap-2 text-xs text-gray-700 hover:text-[#004524] transition-colors"
+                >
+                  <input
+                    type="checkbox"
+                    name={item}
+                    checked={service.items.includes(item)}
+                    onChange={handleSelectedServices}
+                    className="accent-[#003a22]"
+                  />
+                  {item
+                    .replace(/-/g, " ")
+                    .replace(/\b\w/g, (l) => l.toUpperCase())}
+                </label>
+              ))}
             </div>
-          ))}
-          <div className="flex justify-end mt-3">
-            <button
-              type="button"
-              onClick={resetSelection}
-              className="text-sm text-red-600 hover:underline"
-            >
-              Clear All
-            </button>
           </div>
+        ))}
+        <div className="flex justify-end mt-3">
+          <button
+            type="button"
+            onClick={resetSelection}
+            className="text-sm text-red-600 hover:underline"
+          >
+            Clear All
+          </button>
         </div>
-      )}
-    </div>
-  );
-  
+      </div>
+    )}
+  </div>
+);
 
 /* ============================================================
    MAIN CONTACT US COMPONENT
@@ -111,6 +107,9 @@ const ContactUs = () => {
     return () => currentRef && observer.unobserve(currentRef);
   }, []);
 
+  /* ============================================================
+     SERVICES AND SUBSERVICES
+     ============================================================ */
   const serviceCheckboxMap = {
     "Business Registration Services": [
       "SEC Registration",
@@ -145,7 +144,44 @@ const ContactUs = () => {
       "PEZA Registration",
       "BSP Registration",
     ],
-    "Business Support Services": ["Website Development", "Social Media Marketing"],
+    "Business Support Services": [
+      "Website Development",
+      "Social Media Marketing",
+    ],
+
+    // ✅ Newly added categories
+    "Alien Registration": [
+      "Annual Report (A.R)",
+      "ACR I-CARD Issuance",
+      "Voluntary Application for ACR I-CARD",
+      "Renewal ACR I-CARD",
+      "Re-Issuance of ACR I-CARD",
+      "ACR I-CARD Waiver",
+      "Cancellation of ACR I-CARD",
+      "Philippine-Born Registration",
+    ],
+    "Certification": [
+      "Certification for Not the Same Person",
+      "ACR I-CARD Certification",
+      "BI Clearance Certification",
+      "Pending Visa Application Certification",
+      "Certified True Copy Certification",
+      "Travel Records Certification",
+      "Certificate of Non-Registration / Registration",
+    ],
+    "Citizenship": [
+      "Application for Retention / Re-acquisition of Phil. Citizenship",
+      "Inclusion of Dependents under R.A. 9225",
+      "Recognition as Filipino Citizen",
+      "Affirmation of Recognition as Filipino Citizen",
+      "Cancellation of Alien Certificate of Registry (ACR)",
+    ],
+    "Special Permits": [
+      "Special Study Permit",
+      "Provisional Work Permit",
+      "Special Work Permit – Commercial",
+      "Special Work Permit – Artists & Athletes",
+    ],
   };
 
   const formRef = useRef();
@@ -280,7 +316,7 @@ const ContactUs = () => {
         </p>
       </div>
 
-      {/* 2 Columns */}
+      {/* Two Columns */}
       <div className="grid max-w-6xl grid-cols-1 gap-16 mx-auto lg:grid-cols-2">
         {/* LEFT FORM */}
         <form
@@ -290,7 +326,6 @@ const ContactUs = () => {
             isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-12"
           }`}
         >
-          {/* Inputs */}
           <input
             name="full_name"
             value={formData.full_name}
@@ -326,7 +361,6 @@ const ContactUs = () => {
             className="w-full p-4 border-2 rounded-lg placeholder-[#003a22] focus:outline-none focus:ring-2 focus:ring-[#003a22] transition-transform duration-300 hover:scale-105 hover:shadow-lg"
           />
 
-          {/* Dropdown */}
           <DropdownCheckbox
             handleSelectedServices={handleSelectedServices}
             showServiceTypes={showServiceTypes}
@@ -346,7 +380,6 @@ const ContactUs = () => {
             className="w-full p-4 border-2 rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#003a22] transition-transform duration-300 hover:scale-105 hover:shadow-lg"
           ></textarea>
 
-          {/* Submit button */}
           <button
             type="submit"
             disabled={isLoading}

@@ -17,6 +17,10 @@ import PayrollOutsourcedServicesPage from '../pages/PayrollOutsourcedServicesPag
 import BirOneTImeTransactionServicesPage from '../pages/BirOneTimeTransactionServicesPage/BirOneTimeTransactionServicesPage.jsx'
 import SpecializedRegistrationServicesPage from '../pages/SpecializedRegistrationServicesPage/SpecializedRegistrationServicesPage.jsx'
 import BusinessSupportServicesPage from '../pages/BusinessSupportServicesPage/BusinessSupportServicesPage.jsx'
+import AlienRegistrationPage from '../pages/AlienRegistrationPage/AlienRegistrationPage.jsx'
+import CertificationPage from '../pages/CertificationPage/CertificationPage.jsx'
+import CitizenshipPage from '../pages/CitizenshipPage/CitizenshipPage.jsx'
+import SpecialPermitsPage from '../pages/SpecialPermitsPage/SpecialPermitsPage.jsx'
 
 const router = createBrowserRouter([
   {
@@ -36,6 +40,10 @@ const router = createBrowserRouter([
       { path: '/services/bir-transactions', element: <BirOneTImeTransactionServicesPage /> },
       { path: '/services/specialized-registration', element: <SpecializedRegistrationServicesPage /> },
       { path: '/services/business-support', element: <BusinessSupportServicesPage /> },
+      { path: '/services/alien-registration', element: <AlienRegistrationPage /> },
+      { path: '/services/certification', element: <CertificationPage /> },
+      { path: '/services/citizenship', element: <CitizenshipPage /> },
+      { path: '/services/special-permits', element: < SpecialPermitsPage/> },
     ]
   }
 ], {
