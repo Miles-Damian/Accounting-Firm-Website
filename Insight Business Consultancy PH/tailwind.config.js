@@ -7,10 +7,6 @@ export default {
 	theme: {
 		extend: {
 
-			screens: {
-				'min-1415': '1102px', // show only from 1415px and up
-			},
-
 			colors: {
 				primary: "#004524",
 				secondary: "#003d20",

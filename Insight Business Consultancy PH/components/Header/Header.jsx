@@ -508,7 +508,8 @@ const Header = () => {
 						exit={{opacity: 0, y: -20}}
 						transition={{duration: 0.3}}
 						className="flex justify-between items-center py-1.5 px-10 bg-[#004817] text-white text-sm
-                 max-[1425px]:text-xs max-[1425px]:px-6 max-[1425px]:gap-3 
+                 max-[1425px]:text-xs max-[1425px]:px-8 max-[1425px]:gap-4
+                 max-[1173px]:text-[11px] max-[1193px]:px-5 max-[1193px]:gap-3
                  max-[1102px]:hidden"
 					>
 						{/* 🔹 Left: Address (clickable) */}
