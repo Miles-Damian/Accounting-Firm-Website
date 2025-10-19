@@ -12,16 +12,16 @@ import Footer from "../../components/Footer/Footer";
 const HomePage = () => {
 	return (
 		<>
-			<Header />
-			<HomeHero />
-			<Accreditations />
-			<OurExpertiseSection />
-			<WhyWorkWithUs />
-			<Industries />
-			<InquireNow />
-			<NewsFeed />
-			<GoogleMap />
-			<Footer />
+			<Header/>
+			<HomeHero/>
+			<Accreditations/>
+			<OurExpertiseSection/>
+			<WhyWorkWithUs/>
+			<Industries/>
+			<InquireNow/>
+			<NewsFeed/>
+			<GoogleMap/>
+			<Footer/>
 		</>
 	);
 };

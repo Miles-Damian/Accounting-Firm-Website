@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import {useEffect, useRef, useState} from 'react';
 
 const AboutService = (props) => {
 	const [isVisible, setIsVisible] = useState(false);
@@ -13,7 +13,7 @@ const AboutService = (props) => {
 					}
 				});
 			},
-			{ threshold: 0.1 }
+			{threshold: 0.1}
 		);
 
 		if (sectionRef.current) {
@@ -35,9 +35,9 @@ const AboutService = (props) => {
 		>
 			<div
 				className={`transition-all duration-700 ease-out ${isVisible
-						? 'opacity-100 translate-y-0'
-						: 'opacity-0 translate-y-8'
-					}`}
+					? 'opacity-100 translate-y-0'
+					: 'opacity-0 translate-y-8'
+				}`}
 			>
 				<h2 className="font-inter font-extrabold text-3xl text-gray-800 text-center mb-2">
 					{props.subSectionHeading1}
@@ -50,14 +50,14 @@ const AboutService = (props) => {
 
 			<div
 				className={`transition-all duration-700 ease-out delay-200 ${isVisible
-						? 'opacity-100 translate-y-0'
-						: 'opacity-0 translate-y-8'
-					}`}
+					? 'opacity-100 translate-y-0'
+					: 'opacity-0 translate-y-8'
+				}`}
 			>
 				<div className="flex items-center justify-center fa-xl gap-2 mb-2">
 					<i
 						className="fa-solid fa-circle-check animate-jump-in animate-infinite animate-duration-1000"
-						style={{ color: '#7cb490' }}
+						style={{color: '#7cb490'}}
 					></i>
 					<h2 className="font-inter font-extrabold text-3xl text-gray-800 text-center">
 						Why it Matters?

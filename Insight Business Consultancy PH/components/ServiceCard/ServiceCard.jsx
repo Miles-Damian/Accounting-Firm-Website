@@ -1,6 +1,7 @@
-const ServiceCard = ({ data }) => {
+const ServiceCard = ({data}) => {
 	return (
-		<div className="bg-[#f6f7f8] p-6 rounded-xl transition-all duration-300 ease-in-out transform hover:-translate-y-2 hover:shadow-lg cursor-pointer flex flex-col">
+		<div
+			className="bg-[#f6f7f8] p-6 rounded-xl transition-all duration-300 ease-in-out transform hover:-translate-y-2 hover:shadow-lg cursor-pointer flex flex-col">
 			<img
 				src={data.src}
 				alt={data.title}

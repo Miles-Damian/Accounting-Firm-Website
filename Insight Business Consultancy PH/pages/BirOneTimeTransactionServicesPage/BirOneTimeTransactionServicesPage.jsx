@@ -3,7 +3,7 @@ import AboutService from "../../components/AboutService/AboutService";
 import OurServices from "../../components/OurServices/OurServices";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
-import { useEffect } from "react";
+import {useEffect} from "react";
 
 const BirOneTImeTransactionServicesPage = () => {
 	const businessServicesData = {
@@ -40,7 +40,7 @@ const BirOneTImeTransactionServicesPage = () => {
 
 	return (
 		<>
-			<Header />
+			<Header/>
 			<ServicesHero
 				heroImage={businessServicesData.heroImage} heroHeading={businessServicesData.heroHeading}
 			/>
@@ -53,7 +53,7 @@ const BirOneTImeTransactionServicesPage = () => {
 				cardData={businessServicesData.cardData}
 				shortcutService={'BIR One Time Transactions'}
 			/>
-			<Footer />
+			<Footer/>
 		</>
 	);
 };

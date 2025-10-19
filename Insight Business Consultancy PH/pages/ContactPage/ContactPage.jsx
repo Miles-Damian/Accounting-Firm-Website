@@ -6,15 +6,15 @@ import ContactUs from "../../components/ContactUs/ContactUs";
 import GoogleMap from "../../components/GoogleMap/GoogleMap";
 
 const ContactPage = () => {
-    return(
-        <>
-        <Header/>
-        {/* <HomeHero/> */}
-        <ContactUs/>
-        <GoogleMap/>
-        <Footer/>
-        </>
-    );
+	return (
+		<>
+			<Header/>
+			{/* <HomeHero/> */}
+			<ContactUs/>
+			<GoogleMap/>
+			<Footer/>
+		</>
+	);
 };
 
 export default ContactPage;
