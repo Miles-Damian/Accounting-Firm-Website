@@ -1,7 +1,7 @@
 import ServicesHero from "../../components/ServicesHero/ServicesHero";
 import AboutService from "../../components/AboutService/AboutService";
 import OurServices from "../../components/OurServices/OurServices";
-import { useState } from "react";
+import {useState} from "react";
 
 const ServicesPage = () => {
 	const selectedService = useState(businessServicesData);
@@ -24,9 +24,9 @@ const ServicesPage = () => {
 
 	return (
 		<>
-			<ServicesHero heroImage={selectedService.heroImage}  mainHeading={selectedService.mainHeading} />
-			<AboutService />
-			<OurServices />
+			<ServicesHero heroImage={selectedService.heroImage} mainHeading={selectedService.mainHeading}/>
+			<AboutService/>
+			<OurServices/>
 		</>
 	);
 };

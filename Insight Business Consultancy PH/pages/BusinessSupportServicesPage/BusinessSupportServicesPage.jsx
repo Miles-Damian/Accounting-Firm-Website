@@ -3,7 +3,7 @@ import AboutService from "../../components/AboutService/AboutService";
 import OurServices from "../../components/OurServices/OurServices";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
-import { useEffect } from "react";
+import {useEffect} from "react";
 
 const BusinessSupportServicesPage = () => {
 	const businessServicesData = {
@@ -23,7 +23,7 @@ const BusinessSupportServicesPage = () => {
 				title: 'Social Media Marketing',
 				caption: 'Content planning, advertising campaigns, and social media management.'
 			},
-	]
+		]
 	};
 
 	useEffect(() => {
@@ -34,8 +34,8 @@ const BusinessSupportServicesPage = () => {
 	}, []);
 
 	return (
-		<>	
-			<Header />
+		<>
+			<Header/>
 			<ServicesHero
 				heroImage={businessServicesData.heroImage} heroHeading={businessServicesData.heroHeading}
 			/>
@@ -48,7 +48,7 @@ const BusinessSupportServicesPage = () => {
 				cardData={businessServicesData.cardData}
 				shortcutService={'Business Support Services'}
 			/>
-			<Footer />
+			<Footer/>
 		</>
 	);
 };

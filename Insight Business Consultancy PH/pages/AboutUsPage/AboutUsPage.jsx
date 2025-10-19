@@ -9,17 +9,18 @@ import TeamSection from "../../components/TeamSection/TeamSection";
 import Footer from "../../components/Footer/Footer";
 
 function AboutUsPage() {
-    return (
-        <>
-            <Header />
-            <AboutCompany />
-            <MissionVision />
-            <CoreValues />
-            <WhoWeServe />
-            <LicenseSection />
-            <TeamSection />
-            <Footer />
-        </>
-    );
+	return (
+		<>
+			<Header/>
+			<AboutCompany/>
+			<MissionVision/>
+			<CoreValues/>
+			<WhoWeServe/>
+			<LicenseSection/>
+			<TeamSection/>
+			<Footer/>
+		</>
+	);
 }
+
 export default AboutUsPage;

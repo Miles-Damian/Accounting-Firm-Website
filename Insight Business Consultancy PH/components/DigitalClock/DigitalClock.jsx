@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import {useState, useEffect} from 'react';
 
 export default function DigitalClock() {
 	const [time, setTime] = useState(new Date());
@@ -34,7 +34,8 @@ export default function DigitalClock() {
 			<div className="relative bg-slate-900/90 backdrop-blur-xl p-2 shadow-2xl border-2 border-slate-700/50">
 				{/* Time display */}
 				<div className="text-center mb">
-					<div className="text-2xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-slate-300 via-slate-100 to-slate-300 tracking-wider tabular-nums">
+					<div
+						className="text-2xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-slate-300 via-slate-100 to-slate-300 tracking-wider tabular-nums">
 						{formatTime(time)}
 					</div>
 				</div>

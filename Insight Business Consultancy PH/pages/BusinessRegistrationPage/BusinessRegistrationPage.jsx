@@ -3,7 +3,7 @@ import AboutService from "../../components/AboutService/AboutService";
 import OurServices from "../../components/OurServices/OurServices";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
-import { useEffect } from "react";
+import {useEffect} from "react";
 
 const BusinessRegistrationPage = () => {
 	const businessServicesData = {
@@ -55,7 +55,7 @@ const BusinessRegistrationPage = () => {
 
 	return (
 		<>
-			<Header />
+			<Header/>
 			<ServicesHero
 				heroImage={businessServicesData.heroImage} heroHeading={businessServicesData.heroHeading}
 			/>
@@ -68,7 +68,7 @@ const BusinessRegistrationPage = () => {
 				cardData={businessServicesData.cardData}
 				shortcutService={'Accounting & Bookkeeping Services'}
 			/>
-			<Footer />
+			<Footer/>
 		</>
 	);
 };

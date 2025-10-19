@@ -3,7 +3,7 @@ import AboutService from "../../components/AboutService/AboutService";
 import OurServices from "../../components/OurServices/OurServices";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
-import { useEffect } from "react";
+import {useEffect} from "react";
 
 const PayrollOutsourcedServicesPage = () => {
 	const businessServicesData = {
@@ -40,7 +40,7 @@ const PayrollOutsourcedServicesPage = () => {
 
 	return (
 		<>
-			<Header />
+			<Header/>
 			<ServicesHero
 				heroImage={businessServicesData.heroImage} heroHeading={businessServicesData.heroHeading}
 			/>
@@ -53,7 +53,7 @@ const PayrollOutsourcedServicesPage = () => {
 				cardData={businessServicesData.cardData}
 				shortcutService={'Payroll Outsourced Services'}
 			/>
-			<Footer />
+			<Footer/>
 		</>
 	);
 };
