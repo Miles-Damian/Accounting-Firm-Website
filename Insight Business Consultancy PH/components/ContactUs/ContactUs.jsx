@@ -4,81 +4,116 @@ import {useSearchParams} from "react-router-dom";
 /* ============================================================
    INLINE DROPDOWN COMPONENT (compact & scrollable)
    ============================================================ */
-const DropdownCheckbox = ({
-							  handleSelectedServices,
-							  showServiceTypes,
-							  setShowServiceTypes,
-							  resetSelection,
-							  selectedServices,
-							  serviceCheckboxMap,
-						  }) => (
-	<div className="w-full">
-		<label className="font-montserrat text-sm md:text-base mb-1 block text-[#003a22] font-semibold">
-			Select Services
+   const DropdownCheckbox = ({
+	handleSelectedServices,
+	showServiceTypes,
+	setShowServiceTypes,
+	resetSelection,
+	selectedServices,
+	serviceCheckboxMap,
+  }) => {
+	const [openCategory, setOpenCategory] = useState(null);
+  
+	const toggleCategory = (category) => {
+	  setOpenCategory((prev) => (prev === category ? null : category));
+	};
+  
+	return (
+	  <div className="w-full">
+		<label className="font-montserrat text-sm md:text-base mb-2 block text-[#003a22] font-semibold">
+		  Select Services
 		</label>
-
-		{/* Toggle button */}
+  
+		{/* Main Dropdown Toggle */}
 		<button
-			type="button"
-			onClick={() => setShowServiceTypes(!showServiceTypes)}
-			className="w-full p-4 border-2 rounded-lg bg-white placeholder-[#003a22] text-left focus:outline-none focus:ring-2 focus:ring-[#003a22] transition-transform duration-300 hover:scale-105 hover:shadow-lg flex justify-between items-center"
+		  type="button"
+		  onClick={() => setShowServiceTypes(!showServiceTypes)}
+		  className="w-full px-4 py-3 border-2 rounded-lg bg-white text-left
+					 focus:outline-none focus:ring-2 focus:ring-[#003a22]
+					 transition-transform duration-300 hover:scale-[1.01] hover:shadow-md flex justify-between items-center"
 		>
-      <span>
-        {selectedServices.some((s) => s.items.length > 0)
-			? "Selected Services"
-			: "Choose Services"}
-      </span>
-			<i
-				className={`fa-solid fa-chevron-${
-					showServiceTypes ? "up" : "down"
-				} text-gray-500`}
-			></i>
+		  <span className="text-[15px]">
+			{selectedServices.some((s) => s.items.length > 0)
+			  ? "Selected Services"
+			  : "Choose Services"}
+		  </span>
+		  <i
+			className={`fa-solid fa-chevron-${
+			  showServiceTypes ? "up" : "down"
+			} text-gray-600`}
+		  ></i>
 		</button>
-
-		{/* Scrollable container */}
+  
+		{/* Accordion List */}
 		{showServiceTypes && (
-			<div
-				className="w-full p-4 mt-3 overflow-y-auto transition-all duration-300 bg-white border-2 border-gray-200 rounded-lg shadow-inner max-h-60">
-				{selectedServices.map((service, i) => (
-					<div key={i} className="mb-3">
-						<p className="font-semibold text-[#003a22] text-xs mb-1">
-							{service.type}
-						</p>
-						<div className="grid grid-cols-1 gap-1 pl-2 sm:grid-cols-2">
-							{serviceCheckboxMap[service.type]?.map((item) => (
-								<label
-									key={item}
-									className="flex items-center gap-2 text-xs text-gray-700 hover:text-[#004524] transition-colors"
-								>
-									<input
-										type="checkbox"
-										name={item}
-										checked={service.items.includes(item)}
-										onChange={handleSelectedServices}
-										className="accent-[#003a22]"
-									/>
-									{item
-										.replace(/-/g, " ")
-										.replace(/\b\w/g, (l) => l.toUpperCase())}
-								</label>
-							))}
-						</div>
-					</div>
-				))}
-				<div className="flex justify-end mt-3">
-					<button
-						type="button"
-						onClick={resetSelection}
-						className="text-sm text-red-600 hover:underline"
-					>
-						Clear All
-					</button>
-				</div>
-			</div>
-		)}
-	</div>
-);
+		  <div className="w-full p-4 mt-2 overflow-y-auto bg-white border-2 border-gray-200 rounded-lg shadow-inner max-h-72">
+			{selectedServices.map((service, i) => {
+			  const selectedCount = service.items.length;
+			  return (
+				<div key={i} className="pb-2 mb-3 border-b">
+				  {/* Category Header */}
+				  <button
+					type="button"
+					onClick={() => toggleCategory(service.type)}
+					className="flex justify-between items-center w-full font-semibold text-[#003a22] text-sm hover:text-[#004524] transition-colors"
+				  >
+					<span className="flex-1 text-left pr-4 leading-snug whitespace-normal break-words text-[12px] sm:text-[12px]">
+  						{service.type}
+					</span>
 
+  
+					<div className="flex items-center flex-shrink-0 gap-1">
+					  {selectedCount > 0 && (
+						<span className="text-xs bg-[#e6f8ed] text-[#004524] px-2 py-[1px] rounded-full font-medium">
+						  {selectedCount}
+						</span>
+					  )}
+					  <i
+						className={`fa-solid fa-${
+						  openCategory === service.type ? "minus" : "plus"
+						} text-gray-600 text-sm`}
+					  ></i>
+					</div>
+				  </button>
+  
+				  {/* Sub-items */}
+				  {openCategory === service.type && (
+					<div className="grid grid-cols-1 pl-3 mt-2 gap-y-1 sm:grid-cols-2">
+					  {serviceCheckboxMap[service.type]?.map((item) => (
+						<label
+						  key={item}
+						  className="flex items-center gap-2 text-[13px] text-gray-700 hover:text-[#004524] transition-colors"
+						>
+						  <input
+							type="checkbox"
+							name={item}
+							checked={service.items.includes(item)}
+							onChange={handleSelectedServices}
+							className="accent-[#003a22]"
+						  />
+						  {item}
+						</label>
+					  ))}
+					</div>
+				  )}
+				</div>
+			  );
+			})}
+  
+			<div className="flex justify-end mt-3">
+			  <button
+				type="button"
+				onClick={resetSelection}
+				className="text-sm text-red-600 hover:underline"
+			  >
+				Clear All
+			  </button>
+			</div>
+		  </div>
+		)}
+	  </div>
+	);
+  };  
 /* ============================================================
    MAIN CONTACT US COMPONENT
    ============================================================ */
