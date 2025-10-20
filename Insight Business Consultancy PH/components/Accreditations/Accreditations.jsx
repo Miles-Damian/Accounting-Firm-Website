@@ -1,5 +1,5 @@
 import React, {useEffect, useRef, useState} from "react";
-
+import { Link } from "react-router-dom";
 const Card = ({title, items, isVisible, delay}) => (
 	<div
 		className={`flex flex-col rounded-xl bg-white shadow-md transform transition-all duration-700 
@@ -138,12 +138,14 @@ const Accreditations = () => {
 					}`}
 					style={{transitionDelay: "800ms"}}
 				>
-					<a
-						href="#"
-						className="inline-block rounded-full bg-[#4ce699] px-8 py-3 text-base font-semibold text-gray-900 shadow-md transition-transform duration-300 hover:scale-110 hover:bg-[#3bd588]"
+
+					<Link
+  						to="/faq"
+  						className="inline-block rounded-full bg-[#4ce699] px-8 py-3 text-base font-semibold text-gray-900 shadow-md transition-transform duration-300 hover:scale-110 hover:bg-[#3bd588]"
 					>
-						Learn More
-					</a>
+  						Learn More
+					</Link>
+
 				</div>
 			</div>
 		</section>
