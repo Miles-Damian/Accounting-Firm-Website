@@ -419,7 +419,7 @@ const ContactUs = () => {
 					<button
 						type="submit"
 						disabled={isLoading}
-						className="mt-4 bg-[#003a22] text-white font-semibold rounded-full px-6 py-3 shadow-md hover:bg-[#025232] hover:scale-105 hover:shadow-xl transition-all duration-300"
+						className="mt-4 bg-[#003a22] text-white font-semibold rounded-full px-6 py-3 shadow-md hover:bg-[#025232] hover:scale-105 hover:shadow-xl transition-all duration-300 cursor-pointer"
 					>
 						{isLoading ? "Sending..." : "Submit Inquiry"}
 					</button>

@@ -1,4 +1,5 @@
 import React, {useEffect, useRef, useState} from "react";
+import { Link } from "react-router-dom";
 
 const LicenseSection = () => {
 	const [isVisible, setIsVisible] = useState(false);
@@ -66,10 +67,13 @@ const LicenseSection = () => {
 
 			{/* CTA Button */}
 			<div className={`mt-16 transition-all duration-700 delay-300 ${fadeUp}`}>
-				<button
-					className="bg-[#004524] hover:bg-[#006d3b] text-white text-lg font-semibold px-8 py-3 rounded-full shadow-md transition-transform hover:scale-105">
-					INQUIRE NOW
-				</button>
+			<Link
+  				to="/contact"
+  				className="bg-[#004524] hover:bg-[#006d3b] text-white text-lg font-semibold px-8 py-3 rounded-full shadow-md transform transition duration-300 ease-in-out hover:scale-105 cursor-pointer inline-block"
+			>
+  				INQUIRE NOW
+			</Link>
+
 			</div>
 		</section>
 	);

@@ -379,7 +379,7 @@ const InquireNow = () => {
 					<button
 						type="submit"
 						disabled={isLoading}
-						className="mt-4 bg-[#003a22] text-white font-semibold rounded-full px-8 py-4 shadow-md hover:bg-[#025232] hover:scale-[1.03] hover:shadow-xl transition-all duration-300"
+						className="mt-4 bg-[#003a22] text-white font-semibold rounded-full px-8 py-4 shadow-md hover:bg-[#025232] hover:scale-[1.03] hover:shadow-xl transition-all duration-300 cursor-pointer"
 					>
 						{isLoading ? "Sending..." : "Submit Inquiry"}
 					</button>

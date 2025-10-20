@@ -99,28 +99,34 @@ export default function HomeHero({
 						compliance, and digital support so you can focus on growth.
 					</motion.p>
 
-					{/* BUTTONS */}
-					<motion.div
-						className="flex flex-wrap items-center gap-4 mt-8"
-						initial={{opacity: 0, scale: 0.95}}
-						animate={{opacity: 1, scale: 1}}
-						transition={{duration: 0.6, delay: 0.75}}
-					>
-						{/* ✅ INQUIRE NOW button with green border style */}
-						<motion.button
-							type="button"
-							whileHover={{scale: 1.05, y: -2}}
-							whileTap={{scale: 0.95}}
-							onClick={() => navigate("/contact")}
-							className="relative inline-flex items-center justify-center rounded-full border-2 border-[#004524]
-                bg-[#7FE881] text-[#004524] font-semibold tracking-wide px-8 py-3 
-                shadow-[4px_4px_0px_#004524] transition-all duration-300
-                hover:bg-[#69D36C] hover:shadow-[6px_6px_0px_#00391F]
-                focus:outline-none focus-visible:ring focus-visible:ring-green-300/50"
-						>
-							INQUIRE NOW
-						</motion.button>
-					</motion.div>
+{/* BUTTONS */}
+<motion.div
+  className="flex flex-wrap items-center gap-4 mt-8"
+  initial={{ opacity: 0, scale: 0.95 }}
+  animate={{ opacity: 1, scale: 1 }}
+  transition={{ duration: 0.6, delay: 0.75 }}
+>
+  {/* ✅ INQUIRE NOW button with fixed motion animation */}
+  <motion.button
+  type="button"
+  whileHover={{ scale: 1.05, y: -2 }}
+  whileTap={{ scale: 0.96, y: 0 }}
+  transition={{
+    type: "spring",
+    stiffness: 150, // ↓ lower stiffness = smoother animation
+    damping: 14,    // ↑ higher damping = less bounce
+    mass: 0.8,      // optional: controls “weight”
+  }}
+  onClick={() => navigate("/contact")}
+  className="relative inline-flex items-center justify-center rounded-full border-2 border-[#004524]
+             bg-[#7FE881] text-[#004524] font-semibold tracking-wide px-8 py-3 
+             shadow-[4px_4px_0px_#004524] hover:shadow-[6px_6px_0px_#00391F]
+             focus:outline-none focus-visible:ring focus-visible:ring-green-300/50 cursor-pointer"
+>
+  INQUIRE NOW
+</motion.button>
+</motion.div>
+
 				</motion.div>
 
 				{/* RIGHT: CAROUSEL */}
@@ -279,7 +285,7 @@ export default function HomeHero({
 							whileHover={{scale: 1.05}}
 							whileTap={{scale: 0.95}}
 							onClick={() => navigate("/about")}
-							className="px-6 py-3 text-sm font-semibold text-white transition-all duration-300 rounded-full shadow-md bg-emerald-500 shadow-emerald-900/30 hover:bg-emerald-600 hover:shadow-emerald-700/50 focus:outline-none focus-visible:ring focus-visible:ring-emerald-500/50 md:text-base"
+							className="px-6 py-3 text-sm font-semibold text-white transition-all duration-300 rounded-full shadow-md cursor-pointer bg-emerald-500 shadow-emerald-900/30 hover:bg-emerald-600 hover:shadow-emerald-700/50 focus:outline-none focus-visible:ring focus-visible:ring-emerald-500/50 md:text-base"
 						>
 							VIEW MORE
 						</motion.button>
