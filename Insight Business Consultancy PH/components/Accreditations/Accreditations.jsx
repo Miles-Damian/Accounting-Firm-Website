@@ -108,7 +108,7 @@ const Accreditations = () => {
 						items={[
 							{
 								text: "Board of Accountancy (BOA) Accredited CPAs",
-								logo: "https://ibcph.com/images/logo/PRC.png"
+								logo: "https://ibcph.com/images/logo/BOA.jpeg"
 							},
 							{text: "PRC Licensed CPAs", logo: "https://ibcph.com/images/logo/PRC.png"},
 						]}

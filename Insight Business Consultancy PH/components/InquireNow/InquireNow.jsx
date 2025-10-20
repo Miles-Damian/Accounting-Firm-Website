@@ -398,24 +398,32 @@ const InquireNow = () => {
 				</form>
 			</div>
 
-			{/* Right Facebook Page */}
-			<div
-				className={`flex-1 flex flex-col justify-center items-center transition-all duration-1000 ease-in-out ${
-					isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"
-				}`}
-			>
-				<h2 className="text-[#003a22] text-3xl font-bold text-center mb-6">
-					FACEBOOK PAGE
-				</h2>
-				<iframe
-					src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FLuzonNMofficial%2F&tabs=timeline&width=430&height=650&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
-					className="w-full max-w-[430px] h-[650px] rounded-2xl border-4 border-emerald-900 shadow-md hover:-translate-y-1 hover:shadow-lg transition-transform duration-300"
-					frameBorder="0"
-					allowFullScreen
-					allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-					title="Facebook Page"
-				></iframe>
-			</div>
+		{/* Right Facebook Page */}
+<div
+	className={`flex-1 w-full flex flex-col justify-center items-center transition-all duration-1000 ease-in-out ${
+		isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"
+	}`}
+>
+	<h2 className="text-[#003a22] text-3xl font-bold text-center mb-6">
+		FACEBOOK PAGE
+	</h2>
+
+	{/* Responsive iframe wrapper */}
+	<div className="w-full max-w-[500px] overflow-hidden rounded-2xl border-4 border-emerald-900 shadow-md hover:-translate-y-1 hover:shadow-lg transition-transform duration-300">
+		<iframe
+			src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fprofile.php%3Fid%3D61581819928948%23&tabs=timeline&width=500&height=650&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
+			width="100%"
+			height="650"
+			style={{ border: "none", overflow: "hidden" }}
+			scrolling="no"
+			frameBorder="0"
+			allowFullScreen
+			allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+			title="Facebook Page"
+		></iframe>
+	</div>
+</div>
+
 		</section>
 	);
 };
