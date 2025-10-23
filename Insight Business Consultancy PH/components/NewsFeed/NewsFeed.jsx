@@ -35,24 +35,49 @@ const NewsCard = ({ img, alt, category, title, desc, delay, isVisible }) => (
 );
 
 /* ============================================================
-   🧭 MAIN SECTION — uses your Google Sheet (Nocode API)
+   🧭 MAIN SECTION — Fetches Data Directly from Google Sheets API
    ============================================================ */
 const NewsSection = () => {
   const [news, setNews] = useState([]);
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
 
-  // ✅ Fetch from Nocode API (Google Sheet)
+  // 🧩 Replace these with your own values
+  const SHEET_ID = "1NkWITWVhtpe2OAOMiLtqqQJ3yDG_gu6U1LHB4fqh85w"; // Example: 1NkWITWhpte2OAOMiLtqqQJ3yDG_gu6U1LB4fhq85sw
+  const API_KEY = "AIzaSyA3ZxIGIhVx59xVzaUUnOKkIf1YlIaOl4c"; // Your key from Google Cloud Console
+  const SHEET_NAME = "Sheet1"; // Must match your tab name exactly
+
+  // ✅ Fetch Data from Google Sheets
   useEffect(() => {
-    fetch("https://v1.nocodeapi.com/kurt123/google_sheets/OQqhWMzzPoBmeypY?tabId=Sheet1")
-      .then((response) => response.json())
-      .then((result) => {
-        console.log("✅ Fetched Data:", result);
-        if (result.data && Array.isArray(result.data)) {
-          setNews(result.data.slice(0, 3)); // show top 3
+    const fetchSheetData = async () => {
+      try {
+        const response = await fetch(
+          `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/${SHEET_NAME}?key=${API_KEY}`
+        );
+
+        const data = await response.json();
+        console.log("✅ Fetched Data:", data);
+
+        // 🧩 Convert rows into readable objects
+        if (data.values && data.values.length > 1) {
+          const [headers, ...rows] = data.values;
+
+          const formattedData = rows.map((row) => {
+            const item = {};
+            headers.forEach((header, i) => {
+              item[header.toLowerCase()] = row[i] || "";
+            });
+            return item;
+          });
+
+          setNews(formattedData.slice(0, 3)); // Display only top 3 news
         }
-      })
-      .catch((error) => console.error("❌ Error fetching data:", error));
+      } catch (error) {
+        console.error("❌ Error fetching data:", error);
+      }
+    };
+
+    fetchSheetData();
   }, []);
 
   // ✅ Scroll-in Animation
@@ -84,7 +109,7 @@ const NewsSection = () => {
         {news.length > 0 ? (
           news.map((item, index) => (
             <NewsCard
-              key={item.row_id || index}
+              key={index}
               img={item.image_converted || item.image}
               alt={item.alt || "News image"}
               category={item.category}
