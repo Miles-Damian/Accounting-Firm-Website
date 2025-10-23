@@ -43,8 +43,8 @@ const NewsSection = () => {
   const sectionRef = useRef(null);
 
   // 🧩 Replace these with your own values
-  const SHEET_ID = "1NkWITWVhtpe2OAOMiLtqqQJ3yDG_gu6U1LHB4fqh85w"; // Example: 1NkWITWhpte2OAOMiLtqqQJ3yDG_gu6U1LB4fhq85sw
-  const API_KEY = "AIzaSyA3ZxIGIhVx59xVzaUUnOKkIf1YlIaOl4c"; // Your key from Google Cloud Console
+  const SHEET_ID = "1IQ9uBsKV1rPJupbfaH2bF_p_cZvuKe757Xryhu5em8c"; // Example: 1NkWITWhpte2OAOMiLtqqQJ3yDG_gu6U1LB4fhq85sw
+  const API_KEY = "AIzaSyDRFHnZ-e6xMs_hdRcHaxCjaCtH_n6EA3U"; // Your key from Google Cloud Console
   const SHEET_NAME = "Sheet1"; // Must match your tab name exactly
 
   // ✅ Fetch Data from Google Sheets
