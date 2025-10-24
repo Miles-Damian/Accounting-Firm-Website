@@ -139,7 +139,7 @@ const Footer = () => {
 						{/* FACEBOOK */}
 						<div className="relative group">
 							<a
-								href="https://facebook.com/insightconsultancy"
+								href="https://facebook.com/profile.php?id=61581819928948"
 								target="_blank"
 								rel="noopener noreferrer"
 							>

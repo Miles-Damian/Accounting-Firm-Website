@@ -461,7 +461,7 @@ const ContactUs = () => {
 						{
 							icon: "fa-brands fa-facebook text-[#1877f2]",
 							text: (
-								<a href="#" className="text-lg text-blue-600 hover:underline">
+								<a href="https://facebook.com/profile.php?id=61581819928948" className="text-lg text-blue-600 hover:underline">
 									Facebook Page
 								</a>
 							),
