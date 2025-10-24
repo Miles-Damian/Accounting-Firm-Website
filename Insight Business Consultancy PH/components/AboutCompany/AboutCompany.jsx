@@ -1,5 +1,5 @@
 // src/components/AboutCompany/AboutCompany.jsx
-import React, {useEffect, useRef, useState} from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const AboutCompany = () => {
 	const [isVisible, setIsVisible] = useState(false);
@@ -10,7 +10,7 @@ const AboutCompany = () => {
 			(entries) => {
 				if (entries[0].isIntersecting) setIsVisible(true);
 			},
-			{threshold: 0.2}
+			{ threshold: 0.2 }
 		);
 		if (sectionRef.current) observer.observe(sectionRef.current);
 		return () => {
@@ -23,7 +23,6 @@ const AboutCompany = () => {
 			ref={sectionRef}
 			className="container grid items-center grid-cols-1 gap-12 px-4 py-16 mx-auto lg:grid-cols-2 pt-[115px] lg:pt-[120px]"
 		>
-
 			{/* Text Section */}
 			<div
 				className={`flex flex-col gap-6 text-center lg:text-left transition-all duration-700 ${
@@ -37,16 +36,19 @@ const AboutCompany = () => {
 					INSIGHT BUSINESS CONSULTANCY INC.
 				</h1>
 				<p className="text-base leading-relaxed text-gray-600 md:text-lg">
-					a trusted network of seasoned professionals composed of accountants, lawyers, and IT specialists
-					dedicated to delivering comprehensive business solutions for entrepreneurs and growing companies in
-					the Philippines. With years of combined expertise, our team ensures that every client receives
-					reliable guidance—from business registration and compliance to strategic growth and digital
-					transformation. Whether you’re starting a new venture or expanding your operations, INSIGHT is your
-					dependable partner in building a sustainable and future-ready business.
+					A trusted network of seasoned professionals composed of accountants,
+					lawyers, and IT specialists dedicated to delivering comprehensive
+					business solutions for entrepreneurs and growing companies in the
+					Philippines. With years of combined expertise, our team ensures that
+					every client receives reliable guidance—from business registration and
+					compliance to strategic growth and digital transformation. Whether
+					you’re starting a new venture or expanding your operations, INSIGHT is
+					your dependable partner in building a sustainable and future-ready
+					business.
 				</p>
 			</div>
 
-			{/* Hexagon Image */}
+			{/* Hexagon Image with Enhanced Contrast */}
 			<div
 				className={`relative flex items-center justify-center transition-all duration-700 ${
 					isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"
@@ -76,13 +78,17 @@ const AboutCompany = () => {
 					>
 						{/* Image */}
 						<div
-							className="w-[90%] h-[90%] bg-cover bg-center shadow-xl transition-transform duration-500 hover:scale-105 hover:-translate-y-2"
+							className="relative w-[90%] h-[90%] bg-cover bg-center shadow-xl transition-transform duration-500 hover:scale-105 hover:-translate-y-2"
 							style={{
-								backgroundImage: "url('https://ibcph.com/images/bg/building.jpg')",
+								backgroundImage:
+									"url('https://ibcph.com/images/bg/building-filter.png')",
 								clipPath:
 									"polygon(25% 6.7%, 75% 6.7%, 100% 50%, 75% 93.3%, 25% 93.3%, 0% 50%)",
 							}}
-						></div>
+						>
+							{/* Contrast Overlay */}
+							<div className="absolute inset-0 bg-black/20 mix-blend-multiply rounded-[inherit]"></div>
+						</div>
 					</div>
 				</div>
 			</div>
