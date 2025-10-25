@@ -19,10 +19,8 @@ import BirOneTImeTransactionServicesPage
 	from '../pages/BirOneTimeTransactionServicesPage/BirOneTimeTransactionServicesPage.jsx'
 import SpecializedRegistrationServicesPage
 	from '../pages/SpecializedRegistrationServicesPage/SpecializedRegistrationServicesPage.jsx'
-import BusinessSupportServicesPage from '../pages/BusinessSupportServicesPage/BusinessSupportServicesPage.jsx'
-import AlienRegistrationPage from '../pages/AlienRegistrationPage/AlienRegistrationPage.jsx'
-import CertificationPage from '../pages/CertificationPage/CertificationPage.jsx'
-import CitizenshipPage from '../pages/CitizenshipPage/CitizenshipPage.jsx'
+import WebsiteDevelopmentPage from '../pages/WebsiteDevelopmentPage/WebsiteDevelopmentPage.jsx'
+import ImmigrationPage from '../pages/ImmigrationPage/ImmigrationPage.jsx'
 import SpecialPermitsPage from '../pages/SpecialPermitsPage/SpecialPermitsPage.jsx'
 
 const router = createBrowserRouter([
@@ -42,10 +40,8 @@ const router = createBrowserRouter([
 			{path: '/services/payroll-outsourced', element: <PayrollOutsourcedServicesPage/>},
 			{path: '/services/bir-transactions', element: <BirOneTImeTransactionServicesPage/>},
 			{path: '/services/specialized-registration', element: <SpecializedRegistrationServicesPage/>},
-			{path: '/services/business-support', element: <BusinessSupportServicesPage/>},
-			{path: '/services/alien-registration', element: <AlienRegistrationPage/>},
-			{path: '/services/certification', element: <CertificationPage/>},
-			{path: '/services/citizenship', element: <CitizenshipPage/>},
+			{path: '/services/website-development', element: <WebsiteDevelopmentPage/>},
+			{path: '/services/immigration-page', element: <ImmigrationPage/>},
 			{path: '/services/special-permits', element: < SpecialPermitsPage/>},
 		]
 	}

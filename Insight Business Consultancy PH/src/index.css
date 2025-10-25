@@ -46,3 +46,24 @@ body {
             0% 50%
     );
 }
+
+/* Show toggle button and hide desktop nav below 1086px */
+@media (max-width: 1086px) {
+    .custom-show {
+      display: flex !important;
+    }
+    .custom-nav {
+      display: none !important;
+    }
+  }
+  
+  /* Hide toggle button and show desktop nav above 1086px */
+  @media (min-width: 1086px) {
+    .custom-show {
+      display: none !important;
+    }
+    .custom-nav {
+      display: flex !important;
+    }
+  }
+  

@@ -7,7 +7,7 @@ import {
 	FaUserClock,
 	FaFileSignature,
 	FaRegBuilding,
-	FaRocket
+	FaDesktop
 } from "react-icons/fa";
 
 import { FaPersonWalkingLuggage, FaFlag } from "react-icons/fa6";
@@ -52,29 +52,17 @@ const services = [
 		src: 'specialized-registration'
 	},
 	{
-		icon: <FaRocket className="text-4xl text-black"/>,
-		title: "Business Support Services",
+		icon: <FaDesktop className="text-4xl text-black"/>,
+		title: "Website Development Services",
 		desc: "Website development and social media marketing to grow your brand.",
-		src: 'business-support'
+		src: 'website-development'
 	},
 	{
-		icon: <FaPersonWalkingLuggage className="text-4xl text-black"/>,
-		title: "Alien Registration Services",
-		desc: "Assisting foreign nationals with Alien Registration and immigration compliance.",
-		src: 'alien-registration'
-	},
-	{
-		icon: <PiCertificateFill className="text-4xl text-black"/>,
-		title: "Certification Services",
-		desc: "Assisting clients in securing essential business and government certifications.",
-		src: 'certification'
-	},
-	{
-		icon: <FaFlag className="text-4xl text-black"/>,
-		title: "Citizenship Services",
-		desc: "Guiding you through every step of your Philippine citizenship journey.",
-		src: 'citizenship'
-	},
+		icon: <FaPersonWalkingLuggage className="text-4xl text-black" />,
+		title: "Immigration Services",
+		desc: "Providing comprehensive assistance with alien registration, citizenship, and certification services for foreign and local clients.",
+		src: "immigration-page"
+	  },	  
 	{
 		icon: <FaFileSignature className="text-4xl text-black"/>,
 		title: "Special Permit Services",

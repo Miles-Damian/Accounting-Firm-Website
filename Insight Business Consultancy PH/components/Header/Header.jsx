@@ -50,7 +50,7 @@ const Header = () => {
 					</div>
 
 					{/* Mobile menu toggle */}
-					<button onClick={toggleSidebar} className="flex transition-transform duration-300 lg:hidden">
+					<button onClick={toggleSidebar} className="flex transition-transform duration-300 custom-show">
 						<i
 							className={`fa-solid ${
 								isSidebarToggled ? "fa-xmark rotate-90" : "fa-bars rotate-0"
@@ -60,7 +60,7 @@ const Header = () => {
 
 
 					{/* ---------- DESKTOP NAVIGATION ---------- */}
-					<ul className="hidden mr-10 lg:flex lg:flex-row lg:items-center lg:gap-11">
+					<ul className="hidden mr-10 custom-nav lg:flex lg:flex-row lg:items-center lg:gap-11">
 						{/* HOME */}
 						<li>
 							<NavLink
@@ -166,10 +166,8 @@ const Header = () => {
 											["/services/payroll-outsourced", "Payroll Outsourced Services"],
 											["/services/bir-transactions", "BIR One-Time Transactions"],
 											["/services/specialized-registration", "Specialized Registrations & Compliance"],
-											["/services/business-support", "Business Support Services"],
-											["/services/alien-registration", "Alien Registration Services"],
-											["/services/certification", "Certification Services"],
-											["/services/citizenship", "Citizenship Services"],
+											["/services/website-development", "Website Development Services"],
+											["/services/immigration-page", "Immigration Services"],
 											["/services/special-permits", "Special Permits Services"],
 										].map(([to, label]) => (
 											<li key={to} className="w-full text-center hover:bg-gray-200">
@@ -259,7 +257,7 @@ const Header = () => {
 						{isSidebarToggled && (
 							<motion.ul
 								className="absolute right-0 flex flex-col w-full min-h-[100dvh]
- p-4 space-y-3 bg-white rounded-b-lg top-full lg:hidden"
+ p-4 space-y-3 bg-white rounded-b-lg top-full custom-show"
 								initial={{opacity: 0, x: "100%"}}
 								animate={{opacity: 1, x: 0}}
 								exit={{opacity: 0, x: "100%"}}
@@ -356,10 +354,8 @@ const Header = () => {
 													["/services/payroll-outsourced", "Payroll Outsourced Services"],
 													["/services/bir-transactions", "BIR One-Time Transactions"],
 													["/services/specialized-registration", "Specialized Registrations & Compliance"],
-													["/services/business-support", "Business Support Services"],
-													["/services/alien-registration", "Alien Registration Services"],
-													["/services/certification", "Certification Services"],
-													["/services/citizenship", "Citizenship Services"],
+													["/services/website-development", "Website Development Services"],
+													["/services/immigration-page", "Immigration Services"],
 													["/services/special-permits", "Special Permits Services"],
 												].map(([to, label]) => (
 													<li key={to}>
@@ -473,7 +469,7 @@ const Header = () => {
 
 										{/* Facebook */}
 										<a
-											href="https://www.facebook.com/"
+											href="https://www.facebook.com/profile.php?id=61581819928948"
 											target="_blank"
 											rel="noopener noreferrer"
 											className="flex items-center justify-center w-8 h-8 text-white rounded-full bg-[#004524] hover:opacity-80 transition-opacity"

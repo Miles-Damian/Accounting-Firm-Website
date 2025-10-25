@@ -146,79 +146,86 @@ const ContactUs = () => {
 	/* ============================================================
 	   SERVICES AND SUBSERVICES
 	   ============================================================ */
-	const serviceCheckboxMap = {
+	   const serviceCheckboxMap = {
 		"Business Registration Services": [
-			"SEC Registration",
-			"DTI Registration",
-			"BIR Registration",
-			"Business Permit",
-			"SSS/PhilHealth/Pag-IBIG Registration",
-			"Other Government Registrations",
+		  "SEC Registration",
+		  "DTI Registration",
+		  "BIR Registration",
+		  "Business Permit",
+		  "SSS/PhilHealth/Pag-IBIG Registration",
+		  "Other Government Registrations",
 		],
 		"Accounting & Bookkeeping Services": [
-			"Financial Statement Preparation",
-			"Computerized Accounting System",
-			"Financial Forecasting",
-			"Loose-Leaf Books of Account",
+		  "Financial Statement Preparation",
+		  "Computerized Accounting System",
+		  "Financial Forecasting",
+		  "Loose-Leaf Books of Account",
 		],
 		"Tax & Regulatory Compliance": [
-			"BIR Filings",
-			"SEC Filing (GIS & AFS)",
-			"SSS/PhilHealth/Pag-IBIG Compliance",
+		  "BIR Filings",
+		  "SEC Filing (GIS & AFS)",
+		  "SSS/PhilHealth/Pag-IBIG Compliance",
 		],
 		"Payroll Outsourced Services": [
-			"Payroll Processing",
-			"Automated Tracking",
-			"Compensation Filing",
+		  "Payroll Processing",
+		  "Automated Tracking",
+		  "Compensation Filing",
 		],
 		"BIR One Time Transactions": ["Sales", "Donation", "Estate"],
 		"Specialized Registration & Compliance": [
-			"SEC Amendments",
-			"AMLC Registration",
-			"DOLE Registration",
-			"IPO Registration",
-			"PEZA Registration",
-			"BSP Registration",
+		  "SEC Amendments",
+		  "AMLC Registration",
+		  "DOLE Registration",
+		  "IPO Registration",
+		  "PEZA Registration",
+		  "BSP Registration",
 		],
-		"Business Support Services": [
-			"Website Development",
-			"Social Media Marketing",
+	  
+		// ✅ Updated category name
+		"Website Development": [
+		  "Custom Website Design",
+		  "Domain & Web Hosting Setup",
+		  "Search Engine Optimization (SEO)",
+		  "Website Maintenance & Support",
+		  "Digital Marketing Integration",
 		],
-
-		// ✅ Newly added categories
-		"Alien Registration": [
-			"Annual Report (A.R)",
-			"ACR I-CARD Issuance",
-			"Voluntary Application for ACR I-CARD",
-			"Renewal ACR I-CARD",
-			"Re-Issuance of ACR I-CARD",
-			"ACR I-CARD Waiver",
-			"Cancellation of ACR I-CARD",
-			"Philippine-Born Registration",
+	  
+		// ✅ Merged and updated Immigration Services (20 sub-services)
+		"Immigration Services": [
+		  // ===== Alien Registration =====
+		  "Annual Report (A.R)",
+		  "ACR I-CARD Issuance",
+		  "Voluntary Application for ACR I-CARD",
+		  "Renewal of ACR I-CARD",
+		  "Re-Issuance of ACR I-CARD",
+		  "ACR I-CARD Waiver",
+		  "Cancellation of ACR I-CARD",
+		  "Philippine-Born Registration",
+	  
+		  // ===== Citizenship =====
+		  "Application for Retention / Re-acquisition of Phil. Citizenship",
+		  "Inclusion of Dependents under R.A. 9225",
+		  "Recognition as Filipino Citizen",
+		  "Affirmation of Recognition as Filipino Citizen",
+		  "Cancellation of Alien Certificate of Registry (ACR)",
+	  
+		  // ===== Certification =====
+		  "Certification for Not the Same Person",
+		  "ACR I-CARD Certification",
+		  "BI Clearance Certification",
+		  "Pending Visa Application Certification",
+		  "Certified True Copy Certification",
+		  "Travel Records Certification",
+		  "Certificate of Non-Registration / Registration",
 		],
-		"Certification": [
-			"Certification for Not the Same Person",
-			"ACR I-CARD Certification",
-			"BI Clearance Certification",
-			"Pending Visa Application Certification",
-			"Certified True Copy Certification",
-			"Travel Records Certification",
-			"Certificate of Non-Registration / Registration",
-		],
-		"Citizenship": [
-			"Application for Retention / Re-acquisition of Phil. Citizenship",
-			"Inclusion of Dependents under R.A. 9225",
-			"Recognition as Filipino Citizen",
-			"Affirmation of Recognition as Filipino Citizen",
-			"Cancellation of Alien Certificate of Registry (ACR)",
-		],
+	  
 		"Special Permits": [
-			"Special Study Permit",
-			"Provisional Work Permit",
-			"Special Work Permit – Commercial",
-			"Special Work Permit – Artists & Athletes",
+		  "Special Study Permit",
+		  "Provisional Work Permit",
+		  "Special Work Permit – Commercial",
+		  "Special Work Permit – Artists & Athletes",
 		],
-	};
+	  };	  
 
 	const formRef = useRef();
 	const [isLoading, setIsLoading] = useState(false);

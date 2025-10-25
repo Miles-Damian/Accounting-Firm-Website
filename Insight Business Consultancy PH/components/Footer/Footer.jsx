@@ -74,9 +74,8 @@ const Footer = () => {
 						<li>Tax & Regulatory Compliance</li>
 						<li>BIR One-Time Transactions</li>
 						<li>Specialized Registrations & Compliance</li>
-						<li>Alien Registration Services</li>
-						<li>Certification Services</li>
-						<li>Citizenship Services</li>
+						<li>Website Development Services</li>
+						<li>Immigration Services</li>
 						<li>Special Permit Services</li>
 					</ul>
 				</div>

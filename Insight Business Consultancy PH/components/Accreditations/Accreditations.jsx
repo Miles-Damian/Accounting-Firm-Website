@@ -68,13 +68,13 @@ const Accreditations = () => {
 							: "opacity-0 -translate-y-10"
 					}`}
 				>
-					<h2 className="text-3xl font-bold leading-snug tracking-tight text-gray-900 sm:text-4xl">
+					<h2 className="text-1xl font-bold leading-snug tracking-tight text-gray-900 sm:text-2xl">
 						At Insight Business Consultancy Inc., we make business simple. From
 						legal registration and compliance to accounting, payroll, and
 						digital support, we provide comprehensive consultancy services
 						designed for entrepreneurs, SMEs, and corporations.
 					</h2>
-					<p className="max-w-2xl mx-auto mt-4 text-lg text-gray-600">
+					<p className="max-w-2xl mx-auto mt-4 text-[13px] sm:text-lg text-gray-600">
 						With our expertise and trusted accreditations, you can focus on
 						growing your business while we take care of the details.
 					</p>
@@ -111,6 +111,8 @@ const Accreditations = () => {
 								logo: "https://ibcph.com/images/logo/BOA.jpeg"
 							},
 							{text: "PRC Licensed CPAs", logo: "https://ibcph.com/images/logo/PRC.png"},
+							{text: "Integrated Bar of The Philippines", logo: "https://ibcph.com/images/logo/IBP.png"},
+							{text: "Chartered Financial Analyst", logo: "https://ibcph.com/images/logo/CFA.png"},
 						]}
 						isVisible={isVisible}
 						delay={400}

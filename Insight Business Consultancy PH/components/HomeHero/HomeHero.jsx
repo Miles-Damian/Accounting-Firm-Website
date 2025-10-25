@@ -274,22 +274,6 @@ export default function HomeHero({
 						</div>
 					</div>
 
-					{/* ✅ OLD VIEW MORE BUTTON (kept same as before) */}
-					<motion.div
-						className="absolute bottom-[-56px] left-1/2 z-40 -translate-x-1/2"
-						initial={{opacity: 0, y: 20}}
-						animate={{opacity: 1, y: 0}}
-						transition={{delay: 1.2, duration: 0.6}}
-					>
-						<motion.button
-							whileHover={{scale: 1.05}}
-							whileTap={{scale: 0.95}}
-							onClick={() => navigate("/about")}
-							className="px-6 py-3 text-sm font-semibold text-white transition-all duration-300 rounded-full shadow-md cursor-pointer bg-emerald-500 shadow-emerald-900/30 hover:bg-emerald-600 hover:shadow-emerald-700/50 focus:outline-none focus-visible:ring focus-visible:ring-emerald-500/50 md:text-base"
-						>
-							VIEW MORE
-						</motion.button>
-					</motion.div>
 				</motion.div>
 			</div>
 		</section>
