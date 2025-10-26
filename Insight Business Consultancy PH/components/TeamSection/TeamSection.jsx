@@ -81,15 +81,12 @@ const TeamSection = () => {
             transition={{ duration: 0.8, delay: index * 0.2, ease: "easeOut" }}
             className="relative w-full cursor-pointer group [perspective:1200px]"
           >
-            {/* Card Wrapper */}
+            {/* Card Wrapper - FIXED: Added hover animation */}
             <div
-              className={`relative w-full h-[340px] sm:h-[400px] md:h-[480px] lg:h-[520px] transition-transform duration-700 ease-out [transform-style:preserve-3d]
-                hover:shadow-2xl ${
-                  flipped === index ? "[transform:rotateY(180deg)]" : ""
-                }`}
+              className="relative w-full h-[340px] sm:h-[400px] md:h-[480px] lg:h-[520px] transition-all duration-700 ease-out hover:-translate-y-2 hover:shadow-2xl"
               style={{
-                willChange: "transform",
-                transform: flipped === index ? "rotateY(180deg)" : "none",
+                transformStyle: "preserve-3d",
+                transform: flipped === index ? "rotateY(180deg)" : "rotateY(0deg)",
               }}
             >
               {/* Front Side */}
