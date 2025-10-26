@@ -10,9 +10,9 @@ const teamMembers = [
     bgImg: `/images/portraits/p-1.webp`,
   },
   {
-    name: "Shaun-Hirshenshaun-Cusi, CPA",
-    position: "Regulatory Compliance Director",
-    desc: "Shaun brings extensive expertise in managing regulatory compliances across various industries. His proactive approach ensures that businesses remain compliant and operate efficiently, minimizing regulatory delays and enabling smooth business operations.",
+    name: "Shaun Hirshenshaun Cusi, CPA",
+    position: "Technology risk management Director",
+    desc: "Shaun has led crisis management and business continuity programs across Asia, enhancing organizational resilience. His expertise spans technology risk, cyber preparedness, and enterprise-wide recovery frameworks.",
     bgImg: `/images/portraits/p-2.webp`,
   },
 ];
