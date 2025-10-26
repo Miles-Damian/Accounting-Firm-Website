@@ -23,34 +23,10 @@ const WebsiteDevelopmentPage = () => {
           "Empower your business growth with our complete web development service from design to deployment."
       },
       {
-        src: "https://ibcph.com/images/stock/web-dev.jpg",
-        title: "Custom Website Design",
-        caption:
-          "Crafting visually appealing and user-friendly website designs that reflect your brand identity and engage your audience."
-      },
-      {
-        src: "https://ibcph.com/images/stock/hosting.jpg",
-        title: "Domain & Web Hosting Setup",
-        caption:
-          "End-to-end assistance in securing domains, configuring hosting, and managing server settings for optimal performance."
-      },
-      {
-        src: "https://ibcph.com/images/stock/seo.jpg",
-        title: "Search Engine Optimization (SEO)",
-        caption:
-          "Improve your site’s visibility on Google with keyword optimization, metadata, and analytics tracking."
-      },
-      {
         src: "https://ibcph.com/images/stock/website-maintenance.jpg",
         title: "Website Maintenance & Support",
         caption:
           "Regular updates, backups, and performance monitoring to keep your website running smoothly and securely."
-      },
-      {
-        src: "https://ibcph.com/images/stock/socmed-marketing.webp",
-        title: "Digital Marketing Integration",
-        caption:
-          "Boost your reach with social media marketing, Google Ads, and analytics integration to track audience growth."
       },
     ]
   };
