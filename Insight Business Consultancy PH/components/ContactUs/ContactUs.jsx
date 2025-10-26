@@ -182,12 +182,9 @@ const ContactUs = () => {
 		],
 	  
 		// ✅ Updated category name
-		"Website Development": [
-		  "Custom Website Design",
-		  "Domain & Web Hosting Setup",
-		  "Search Engine Optimization (SEO)",
+		"Website Services": [
+		  "Website Development",
 		  "Website Maintenance & Support",
-		  "Digital Marketing Integration",
 		],
 	  
 		// ✅ Merged and updated Immigration Services (20 sub-services)
