@@ -53,9 +53,9 @@ const services = [
 	},
 	{
 		icon: <FaDesktop className="text-4xl text-black"/>,
-		title: "Website Development Services",
+		title: "Website Services",
 		desc: "Website development and social media marketing to grow your brand.",
-		src: 'website-development'
+		src: 'website-services'
 	},
 	{
 		icon: <FaPersonWalkingLuggage className="text-4xl text-black" />,
