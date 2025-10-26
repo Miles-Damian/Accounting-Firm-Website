@@ -17,10 +17,16 @@ const WebsiteDevelopmentPage = () => {
       "From small business pages to enterprise-level solutions, we create responsive, secure, and SEO-ready websites that deliver measurable results.",
     cardData: [
       {
+        src: "/images/stock/web-development.webp",
+        title: "Website Development",
+        caption:
+          "Empower your business growth with our complete web development service from design to deployment."
+      },
+      {
         src: "https://ibcph.com/images/stock/web-dev.jpg",
         title: "Custom Website Design",
         caption:
-          "Crafting visually appealing and user-friendly websites that reflect your brand identity and engage your audience."
+          "Crafting visually appealing and user-friendly website designs that reflect your brand identity and engage your audience."
       },
       {
         src: "https://ibcph.com/images/stock/hosting.jpg",
@@ -45,7 +51,7 @@ const WebsiteDevelopmentPage = () => {
         title: "Digital Marketing Integration",
         caption:
           "Boost your reach with social media marketing, Google Ads, and analytics integration to track audience growth."
-      }
+      },
     ]
   };
 
