@@ -34,6 +34,9 @@ const LicenseSection = () => {
     // 2️⃣ Professional Accreditations
     "https://ibcph.com/images/logo/BOA.jpeg",
     "https://ibcph.com/images/logo/PRC.png",
+    "https://ibcph.com/images/logo/IBP.png",
+    "https://ibcph.com/images/logo/CFA.png",
+
 
     // 3️⃣ Software Certifications
     "https://ibcph.com/images/logo/quickbooks.png",
@@ -59,7 +62,7 @@ const LicenseSection = () => {
       {/* ✅ Animated Logo Grid */}
       <div
         className={`grid justify-center place-items-center gap-10 transition-all duration-700 ${fadeUp}
-        grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6`}
+        grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-7`}
       >
         {logos.map((src, idx) => {
           // Determine animation direction: top row left → bottom row right
