@@ -8,7 +8,7 @@ import { useEffect } from "react";
 const WebsiteDevelopmentPage = () => {
   const businessServicesData = {
     heroImage: "https://ibcph.com/images/bg/Website-Development.jpg",
-    heroHeading: "WEBSITE DEVELOPMENT SERVICES",
+    heroHeading: "WEBSITE SERVICES",
     subSectionHeading1:
       "We design and build professional websites tailored to your brand, audience, and business goals.",
     subSectionSubHeading1:

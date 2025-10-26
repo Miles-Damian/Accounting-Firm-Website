@@ -40,7 +40,7 @@ const router = createBrowserRouter([
 			{path: '/services/payroll-outsourced', element: <PayrollOutsourcedServicesPage/>},
 			{path: '/services/bir-transactions', element: <BirOneTImeTransactionServicesPage/>},
 			{path: '/services/specialized-registration', element: <SpecializedRegistrationServicesPage/>},
-			{path: '/services/website-development', element: <WebsiteDevelopmentPage/>},
+			{path: '/services/website-services', element: <WebsiteDevelopmentPage/>},
 			{path: '/services/immigration-page', element: <ImmigrationPage/>},
 			{path: '/services/special-permits', element: < SpecialPermitsPage/>},
 		]

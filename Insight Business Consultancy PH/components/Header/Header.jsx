@@ -1,6 +1,6 @@
-import {useState, useEffect} from "react";
-import {motion, AnimatePresence} from "motion/react";
-import {NavLink, useLocation} from "react-router-dom";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "motion/react";
+import { NavLink, useLocation } from "react-router-dom";
 
 const Header = () => {
 	const [isSidebarToggled, setIsSidebarToggled] = useState(false);
@@ -23,14 +23,13 @@ const Header = () => {
 		return () => window.removeEventListener("scroll", handleScroll);
 	}, []);
 
-	const UnderlinedText = ({isActive, children}) => (
+	const UnderlinedText = ({ isActive, children }) => (
 		<span
-			className={`relative after:absolute after:left-0 after:-bottom-[3px] after:h-[2px] after:bg-[#004524] after:rounded-full after:w-full after:origin-left after:scale-x-0 after:opacity-0 after:transition-all after:duration-300 group-hover:after:scale-x-100 group-hover:after:opacity-100 ${
-				isActive ? "after:scale-x-100 after:opacity-100" : ""
-			}`}
+			className={`relative after:absolute after:left-0 after:-bottom-[3px] after:h-[2px] after:bg-[#004524] after:rounded-full after:w-full after:origin-left after:scale-x-0 after:opacity-0 after:transition-all after:duration-300 group-hover:after:scale-x-100 group-hover:after:opacity-100 ${isActive ? "after:scale-x-100 after:opacity-100" : ""
+				}`}
 		>
-      <b>{children}</b>
-    </span>
+			<b>{children}</b>
+		</span>
 	);
 
 	return (
@@ -52,9 +51,8 @@ const Header = () => {
 					{/* Mobile menu toggle */}
 					<button onClick={toggleSidebar} className="flex transition-transform duration-300 custom-show">
 						<i
-							className={`fa-solid ${
-								isSidebarToggled ? "fa-xmark rotate-90" : "fa-bars rotate-0"
-							} fa-2x transition-all duration-300 ease-in-out`}
+							className={`fa-solid ${isSidebarToggled ? "fa-xmark rotate-90" : "fa-bars rotate-0"
+								} fa-2x transition-all duration-300 ease-in-out`}
 						></i>
 					</button>
 
@@ -65,16 +63,15 @@ const Header = () => {
 						<li>
 							<NavLink
 								to="/"
-								className={({isActive}) =>
-									`group flex items-center gap-2 text-base font-medium font-inter transition-all duration-300 ${
-										isActive ? "text-green-800 font-semibold" : ""
+								className={({ isActive }) =>
+									`group flex items-center gap-2 text-base font-medium font-inter transition-all duration-300 ${isActive ? "text-green-800 font-semibold" : ""
 									}`
 								}
 							>
 								<motion.i
 									className="fa-solid fa-house text-md transition-transform duration-300 group-hover:scale-125 group-hover:text-[#004524]"
-									whileHover={{rotate: -15, scale: 1.3, color: "#004524"}}
-									whileTap={{scale: 0.9}}
+									whileHover={{ rotate: -15, scale: 1.3, color: "#004524" }}
+									whileTap={{ scale: 0.9 }}
 								/>
 								<UnderlinedText isActive={location.pathname === "/"}>
 									<p className="lg:text-[18px]">HOME</p>
@@ -86,16 +83,15 @@ const Header = () => {
 						<li>
 							<NavLink
 								to="/about"
-								className={({isActive}) =>
-									`group flex items-center gap-2 text-base font-medium font-inter transition-all duration-300 ${
-										isActive ? "text-green-800 font-semibold" : ""
+								className={({ isActive }) =>
+									`group flex items-center gap-2 text-base font-medium font-inter transition-all duration-300 ${isActive ? "text-green-800 font-semibold" : ""
 									}`
 								}
 							>
 								<motion.i
 									className="fa-solid fa-people-group text-md transition-transform duration-300 group-hover:rotate-6 group-hover:scale-125 group-hover:text-[#00b894]"
-									whileHover={{rotate: 10, scale: 1.3, color: "#00b894"}}
-									whileTap={{scale: 0.9}}
+									whileHover={{ rotate: 10, scale: 1.3, color: "#00b894" }}
+									whileTap={{ scale: 0.9 }}
 								/>
 								<UnderlinedText isActive={location.pathname === "/about"}>
 									<p className="lg:text-[18px]">ABOUT&nbsp;US</p>
@@ -106,27 +102,25 @@ const Header = () => {
 						{/* SERVICES (Dropdown - desktop) */}
 						<li className="relative">
 							<div
-								className={`group flex items-center gap-[4px] text-base font-medium font-inter transition-all duration-300 ${
-									location.pathname.startsWith("/services")
-										? "text-green-800 font-semibold"
-										: ""
-								}`}
+								className={`group flex items-center gap-[4px] text-base font-medium font-inter transition-all duration-300 ${location.pathname.startsWith("/services")
+									? "text-green-800 font-semibold"
+									: ""
+									}`}
 							>
 								<motion.i
 									className="fa-solid fa-universal-access text-md transition-transform duration-300 group-hover:rotate-12 group-hover:scale-125 group-hover:text-[#004524]"
-									whileHover={{rotate: 15, scale: 1.2, color: "#004524"}}
-									whileTap={{scale: 0.95}}
+									whileHover={{ rotate: 15, scale: 1.2, color: "#004524" }}
+									whileTap={{ scale: 0.95 }}
 								/>
 								<button
 									id="services-dropdown-btn"
 									onClick={toggleServices}
 									onMouseEnter={() => setIsServicesToggled(true)}
 									onMouseLeave={() => setIsServicesToggled(false)}
-									className={`flex items-center gap-[3px] text-base font-inter transition-all duration-200 ${
-										location.pathname.startsWith("/services")
-											? "font-semibold text-green-800"
-											: ""
-									}`}
+									className={`flex items-center gap-[3px] text-base font-inter transition-all duration-200 ${location.pathname.startsWith("/services")
+										? "font-semibold text-green-800"
+										: ""
+										}`}
 								>
 									<UnderlinedText
 										isActive={location.pathname.startsWith("/services")}
@@ -139,11 +133,11 @@ const Header = () => {
 											rotate: isServicesToggled ? 180 : 0,
 											color:
 												isServicesToggled ||
-												location.pathname.startsWith("/services")
+													location.pathname.startsWith("/services")
 													? "#004524"
 													: "#000000",
 										}}
-										transition={{duration: 0.2}}
+										transition={{ duration: 0.2 }}
 									/>
 								</button>
 							</div>
@@ -152,10 +146,10 @@ const Header = () => {
 								{isServicesToggled && (
 									<motion.ul
 										className="bg-white rounded-xl absolute left-1/2 -translate-x-1/2 top-full flex flex-col overflow-hidden shadow-[0_2px_6px_rgba(0,0,0,0.1)]"
-										initial={{opacity: 0, y: -10}}
-										animate={{opacity: 1, y: 0}}
-										exit={{opacity: 0, y: -10}}
-										transition={{duration: 0.2, ease: "easeOut"}}
+										initial={{ opacity: 0, y: -10 }}
+										animate={{ opacity: 1, y: 0 }}
+										exit={{ opacity: 0, y: -10 }}
+										transition={{ duration: 0.2, ease: "easeOut" }}
 										onMouseEnter={() => setIsServicesToggled(true)}
 										onMouseLeave={() => setIsServicesToggled(false)}
 									>
@@ -166,16 +160,15 @@ const Header = () => {
 											["/services/payroll-outsourced", "Payroll Outsourced Services"],
 											["/services/bir-transactions", "BIR One-Time Transactions"],
 											["/services/specialized-registration", "Specialized Registrations & Compliance"],
-											["/services/website-development", "Website Development Services"],
+											["/services/website-services", "Website Services"],
 											["/services/immigration-page", "Immigration Services"],
 											["/services/special-permits", "Special Permits Services"],
 										].map(([to, label]) => (
 											<li key={to} className="w-full text-center hover:bg-gray-200">
 												<NavLink
 													to={to}
-													className={({isActive}) =>
-														`flex items-center justify-center h-10 px-4 text-base whitespace-nowrap transition-colors ${
-															isActive ? "text-green-700 font-semibold" : ""
+													className={({ isActive }) =>
+														`flex items-center justify-center h-10 px-4 text-base whitespace-nowrap transition-colors ${isActive ? "text-green-700 font-semibold" : ""
 														}`
 													}
 												>
@@ -192,16 +185,15 @@ const Header = () => {
 						<li>
 							<NavLink
 								to="/faq"
-								className={({isActive}) =>
-									`group flex items-center gap-2 text-base font-medium font-inter transition-all duration-300 ${
-										isActive ? "text-green-800 font-semibold" : ""
+								className={({ isActive }) =>
+									`group flex items-center gap-2 text-base font-medium font-inter transition-all duration-300 ${isActive ? "text-green-800 font-semibold" : ""
 									}`
 								}
 							>
 								<motion.i
 									className="fa-solid fa-circle-question text-md transition-transform duration-300 group-hover:-rotate-12 group-hover:scale-125 group-hover:text-[#00b894]"
-									whileHover={{rotate: -12, scale: 1.2, color: "#00b894"}}
-									whileTap={{scale: 0.9}}
+									whileHover={{ rotate: -12, scale: 1.2, color: "#00b894" }}
+									whileTap={{ scale: 0.9 }}
 								/>
 								<UnderlinedText isActive={location.pathname === "/faq"}>
 									<p className="lg:text-[18px]">FAQ </p>
@@ -213,16 +205,15 @@ const Header = () => {
 						<li>
 							<NavLink
 								to="/contact"
-								className={({isActive}) =>
-									`group flex items-center gap-2 text-base font-medium font-inter transition-all duration-300 ${
-										isActive ? "text-green-800 font-semibold" : ""
+								className={({ isActive }) =>
+									`group flex items-center gap-2 text-base font-medium font-inter transition-all duration-300 ${isActive ? "text-green-800 font-semibold" : ""
 									}`
 								}
 							>
 								<motion.i
 									className="fa-solid fa-phone text-md transition-transform duration-300 group-hover:rotate-12 group-hover:scale-125 group-hover:text-[#004524]"
-									whileHover={{rotate: 12, scale: 1.2, color: "#004524"}}
-									whileTap={{scale: 0.9}}
+									whileHover={{ rotate: 12, scale: 1.2, color: "#004524" }}
+									whileTap={{ scale: 0.9 }}
 								/>
 								<UnderlinedText isActive={location.pathname === "/contact"}>
 									<p className="lg:text-[18px]">CONTACT</p>
@@ -234,16 +225,15 @@ const Header = () => {
 						<li>
 							<NavLink
 								to="/careers"
-								className={({isActive}) =>
-									`group flex items-center gap-2 text-base font-medium font-inter transition-all duration-300 ${
-										isActive ? "text-green-800 font-semibold" : ""
+								className={({ isActive }) =>
+									`group flex items-center gap-2 text-base font-medium font-inter transition-all duration-300 ${isActive ? "text-green-800 font-semibold" : ""
 									}`
 								}
 							>
 								<motion.i
 									className="fa-solid fa-briefcase text-md transition-transform duration-300 group-hover:-rotate-12 group-hover:scale-125 group-hover:text-[#00b894]"
-									whileHover={{rotate: -12, scale: 1.2, color: "#00b894"}}
-									whileTap={{scale: 0.9}}
+									whileHover={{ rotate: -12, scale: 1.2, color: "#00b894" }}
+									whileTap={{ scale: 0.9 }}
 								/>
 								<UnderlinedText isActive={location.pathname === "/careers"}>
 									<p className="lg:text-[18px]">CAREERS</p>
@@ -258,25 +248,24 @@ const Header = () => {
 							<motion.ul
 								className="absolute right-0 flex flex-col w-full min-h-[100dvh]
  p-4 space-y-3 bg-white rounded-b-lg top-full custom-show"
-								initial={{opacity: 0, x: "100%"}}
-								animate={{opacity: 1, x: 0}}
-								exit={{opacity: 0, x: "100%"}}
-								transition={{duration: 0.3, ease: "easeInOut"}}
+								initial={{ opacity: 0, x: "100%" }}
+								animate={{ opacity: 1, x: 0 }}
+								exit={{ opacity: 0, x: "100%" }}
+								transition={{ duration: 0.3, ease: "easeInOut" }}
 							>
 								{/* HOME */}
 								<li>
 									<NavLink
 										to="/"
 										onClick={() => setIsSidebarToggled(false)}
-										className={({isActive}) =>
-											`group flex items-center gap-2 text-xl sm:text-2xl leading-tight transition-all duration-300 ${
-												isActive ? "text-green-800 font-semibold" : ""
+										className={({ isActive }) =>
+											`group flex items-center gap-2 text-xl sm:text-2xl leading-tight transition-all duration-300 ${isActive ? "text-green-800 font-semibold" : ""
 											}`
 										}
 									>
 										<motion.i
 											className="text-lg sm:text-xl fa-solid fa-house transition-transform duration-300 group-hover:scale-125 group-hover:text-[#004524]"
-											whileHover={{scale: 1.2, color: "#004524"}}
+											whileHover={{ scale: 1.2, color: "#004524" }}
 										/>
 										<UnderlinedText isActive={location.pathname === "/"}>
 											HOME
@@ -289,15 +278,14 @@ const Header = () => {
 									<NavLink
 										to="/about"
 										onClick={() => setIsSidebarToggled(false)}
-										className={({isActive}) =>
-											`group flex items-center gap-2 text-xl sm:text-2xl leading-tight transition-all duration-300 ${
-												isActive ? "text-green-800 font-semibold" : ""
+										className={({ isActive }) =>
+											`group flex items-center gap-2 text-xl sm:text-2xl leading-tight transition-all duration-300 ${isActive ? "text-green-800 font-semibold" : ""
 											}`
 										}
 									>
 										<motion.i
 											className="text-lg sm:text-xl fa-solid fa-people-group transition-transform duration-300 group-hover:scale-125 group-hover:text-[#00b894]"
-											whileHover={{scale: 1.2, color: "#00b894"}}
+											whileHover={{ scale: 1.2, color: "#00b894" }}
 										/>
 										<UnderlinedText isActive={location.pathname === "/about"}>
 											ABOUT&nbsp;US
@@ -308,23 +296,21 @@ const Header = () => {
 								{/* ✅ SERVICES */}
 								<li className="relative">
 									<div
-										className={`group flex items-center gap-[4px] text-xl sm:text-2xl leading-tight transition-all duration-300 ${
-											location.pathname.startsWith("/services")
-												? "text-green-800 font-semibold"
-												: ""
-										}`}
+										className={`group flex items-center gap-[4px] text-xl sm:text-2xl leading-tight transition-all duration-300 ${location.pathname.startsWith("/services")
+											? "text-green-800 font-semibold"
+											: ""
+											}`}
 									>
 										<motion.i
 											className="text-lg sm:text-xl fa-solid fa-universal-access transition-transform duration-300 group-hover:scale-125 group-hover:text-[#004524]"
-											whileHover={{scale: 1.2, color: "#004524"}}
+											whileHover={{ scale: 1.2, color: "#004524" }}
 										/>
 										<button
 											onClick={() => setIsMobileServicesOpen((v) => !v)}
-											className={`flex items-center gap-[4px] ml-[2px] transition-all duration-200 ${
-												location.pathname.startsWith("/services")
-													? "font-semibold text-green-800"
-													: "font-semibold text-black"
-											}`}
+											className={`flex items-center gap-[4px] ml-[2px] transition-all duration-200 ${location.pathname.startsWith("/services")
+												? "font-semibold text-green-800"
+												: "font-semibold text-black"
+												}`}
 										>
 											SERVICES
 											<motion.i
@@ -333,7 +319,7 @@ const Header = () => {
 													rotate: isMobileServicesOpen ? 180 : 0,
 													color: isMobileServicesOpen ? "#004524" : "#000000",
 												}}
-												transition={{duration: 0.2}}
+												transition={{ duration: 0.2 }}
 											/>
 										</button>
 									</div>
@@ -342,10 +328,10 @@ const Header = () => {
 										{isMobileServicesOpen && (
 											<motion.ul
 												className="flex flex-col gap-[2px] pl-8"
-												initial={{opacity: 0, height: 0}}
-												animate={{opacity: 1, height: "auto"}}
-												exit={{opacity: 0, height: 0}}
-												transition={{duration: 0.2, ease: "easeOut"}}
+												initial={{ opacity: 0, height: 0 }}
+												animate={{ opacity: 1, height: "auto" }}
+												exit={{ opacity: 0, height: 0 }}
+												transition={{ duration: 0.2, ease: "easeOut" }}
 											>
 												{[
 													["/services/business-registration", "Business Registration Services"],
@@ -354,19 +340,18 @@ const Header = () => {
 													["/services/payroll-outsourced", "Payroll Outsourced Services"],
 													["/services/bir-transactions", "BIR One-Time Transactions"],
 													["/services/specialized-registration", "Specialized Registrations & Compliance"],
-													["/services/website-development", "Website Development Services"],
+													["/services/website-services", "Website Services"],
 													["/services/immigration-page", "Immigration Services"],
 													["/services/special-permits", "Special Permits Services"],
 												].map(([to, label]) => (
 													<li key={to}>
 														<NavLink
 															to={to}
-															className={({isActive}) =>
+															className={({ isActive }) =>
 																`text-xs leading-snug break-words whitespace-normal sm:text-sm transition-all duration-200
-                       ${
-																	isActive
-																		? "text-[#004524] font-semibold border-b-2 border-[#004524]"
-																		: "text-black hover:text-[#004524]"
+                       ${isActive
+																	? "text-[#004524] font-semibold border-b-2 border-[#004524]"
+																	: "text-black hover:text-[#004524]"
 																}`
 															}
 															onClick={() => {
@@ -388,15 +373,14 @@ const Header = () => {
 									<NavLink
 										to="/faq"
 										onClick={() => setIsSidebarToggled(false)}
-										className={({isActive}) =>
-											`group flex items-center gap-2 text-xl sm:text-2xl leading-tight transition-all duration-300 ${
-												isActive ? "text-green-800 font-semibold" : ""
+										className={({ isActive }) =>
+											`group flex items-center gap-2 text-xl sm:text-2xl leading-tight transition-all duration-300 ${isActive ? "text-green-800 font-semibold" : ""
 											}`
 										}
 									>
 										<motion.i
 											className="text-lg sm:text-xl fa-solid fa-circle-question transition-transform duration-300 group-hover:scale-125 group-hover:text-[#00b894]"
-											whileHover={{scale: 1.2, color: "#00b894"}}
+											whileHover={{ scale: 1.2, color: "#00b894" }}
 										/>
 										<UnderlinedText isActive={location.pathname === "/faq"}>
 											FAQ
@@ -409,15 +393,14 @@ const Header = () => {
 									<NavLink
 										to="/contact"
 										onClick={() => setIsSidebarToggled(false)}
-										className={({isActive}) =>
-											`group flex items-center gap-2 text-xl sm:text-2xl leading-tight transition-all duration-300 ${
-												isActive ? "text-green-800 font-semibold" : ""
+										className={({ isActive }) =>
+											`group flex items-center gap-2 text-xl sm:text-2xl leading-tight transition-all duration-300 ${isActive ? "text-green-800 font-semibold" : ""
 											}`
 										}
 									>
 										<motion.i
 											className="text-lg sm:text-xl fa-solid fa-phone transition-transform duration-300 group-hover:scale-125 group-hover:text-[#004524]"
-											whileHover={{scale: 1.2, color: "#004524"}}
+											whileHover={{ scale: 1.2, color: "#004524" }}
 										/>
 										<UnderlinedText isActive={location.pathname === "/contact"}>
 											CONTACT
@@ -430,15 +413,14 @@ const Header = () => {
 									<NavLink
 										to="/careers"
 										onClick={() => setIsSidebarToggled(false)}
-										className={({isActive}) =>
-											`group flex items-center gap-2 text-xl sm:text-2xl leading-tight transition-all duration-300 ${
-												isActive ? "text-green-800 font-semibold" : ""
+										className={({ isActive }) =>
+											`group flex items-center gap-2 text-xl sm:text-2xl leading-tight transition-all duration-300 ${isActive ? "text-green-800 font-semibold" : ""
 											}`
 										}
 									>
 										<motion.i
 											className="text-lg sm:text-xl fa-solid fa-briefcase transition-transform duration-300 group-hover:scale-125 group-hover:text-[#00b894]"
-											whileHover={{scale: 1.2, color: "#00b894"}}
+											whileHover={{ scale: 1.2, color: "#00b894" }}
 										/>
 										<UnderlinedText isActive={location.pathname === "/careers"}>
 											CAREERS
@@ -450,7 +432,7 @@ const Header = () => {
 								<div className="flex items-center justify-center pt-4 pb-20 mt-auto text-center">
 									{/* Copyright */}
 									<p className="text-[11px] text-gray-500 mb-3 leading-snug">
-										© {new Date().getFullYear()} Insight Business Consultancy. <br/>
+										© {new Date().getFullYear()} Insight Business Consultancy. <br />
 										All rights reserved.
 									</p>
 
@@ -499,10 +481,10 @@ const Header = () => {
 			<AnimatePresence>
 				{showTopBar && (
 					<motion.div
-						initial={{opacity: 0, y: -20}}
-						animate={{opacity: 1, y: 0}}
-						exit={{opacity: 0, y: -20}}
-						transition={{duration: 0.3}}
+						initial={{ opacity: 0, y: -20 }}
+						animate={{ opacity: 1, y: 0 }}
+						exit={{ opacity: 0, y: -20 }}
+						transition={{ duration: 0.3 }}
 						className="flex justify-between items-center py-1.5 px-10 bg-[#004817] text-white text-sm
                  max-[1425px]:text-xs max-[1425px]:px-8 max-[1425px]:gap-4
                  max-[1173px]:text-[11px] max-[1193px]:px-5 max-[1193px]:gap-3
