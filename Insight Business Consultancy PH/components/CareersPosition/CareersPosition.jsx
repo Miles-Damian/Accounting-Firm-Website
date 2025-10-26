@@ -15,7 +15,7 @@ const CareersPosition = () => {
 		{
 			id: 'web-developer', // <-- ADD ID
 			bgSrc: '/images/stock/web-dev.webp',
-			title: 'Web Development',
+			title: 'Web Developer',
 			description: `Join our team as a Web Developer and be part of our growing digital success. We offer an innovative work environment where you can enhance your skills, collaborate on exciting projects, and grow your career in web development.`
 		}
 	];
