@@ -86,38 +86,39 @@ const CareerApplyPage = () => {
 
 					{/* --- BUTTON LAYOUT FIX --- */}
 					{/* We wrap the buttons and title in a relative container */}
-					<div className="relative flex justify-center items-center mb-4">
-
-						{/* Left Button */}
-						{careersData.length > 1 && (
-							<button
-								onClick={handlePrev}
-								className="absolute left-0 -translate-x-4 lg:-translate-x-12 bg-white/50 text-black p-2 rounded-full shadow-md hover:bg-white transition-all focus:outline-none"
-								aria-label="Previous job"
-							>
-								<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">
-									<path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
-								</svg>
-							</button>
-						)}
+					<div className="flex justify-center items-center mb-4">
 
 						{/* Title */}
-						<h1 className="font-inter text-3xl text-center text-[#668557] font-bold lg:text-4xl capitalize">
+						<h1 className="relative font-inter text-2xl text-center text-[#668557] font-bold lg:text-4xl capitalize">
+							{/* Left Button */}
+							{careersData.length > 1 && (
+								<button
+									onClick={handlePrev}
+									className="cursor-pointer absolute left-0 -translate-x-12 lg:-translate-x-16 top-1/2 -translate-y-1/2 bg-white/50 text-black p-2 rounded-full shadow-md hover:bg-white transition-all focus:outline-none"
+									aria-label="Previous job"
+								>
+									<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">
+										<path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+									</svg>
+								</button>
+							)}
+
+							{/* Right Button */}
+							{careersData.length > 1 && (
+								<button
+									onClick={handleNext}
+									className="cursor-pointer absolute right-0 translate-x-12 lg:translate-x-16 top-1/2 -translate-y-1/2 bg-white/50 text-black p-2 rounded-full shadow-md hover:bg-white transition-all focus:outline-none"
+									aria-label="Next job"
+								>
+									<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">
+										<path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+									</svg>
+								</button>
+							)}
+
 							{selectedJob?.title}
 						</h1>
 
-						{/* Right Button */}
-						{careersData.length > 1 && (
-							<button
-								onClick={handleNext}
-								className="absolute right-0 translate-x-4 lg:translate-x-12 bg-white/50 text-black p-2 rounded-full shadow-md hover:bg-white transition-all focus:outline-none"
-								aria-label="Next job"
-							>
-								<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">
-									<path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-								</svg>
-							</button>
-						)}
 					</div>
 					{/* --- END BUTTON LAYOUT FIX --- */}
 
