@@ -49,7 +49,7 @@ const CareerApplyPage = () => {
 
 	const location = useLocation();
 
-	const [selectedJob, setSelectedJob] = useState(careersData[0]);
+	const [selectedJob, setSelectedJob] = useState(careersData[1]);
 
 	useEffect(() => {
 		if(!location.state) {
@@ -68,10 +68,34 @@ const CareerApplyPage = () => {
 		});
 	}, [location.state?.job?.id]); 
 
+	const getCurrentJobIndex = (selectedJob) => {
+		for(let i = 0; i < careersData.length; i++) {
+			if (careersData[i].id === selectedJob.id) {
+				return i;
+			}
+		}
+
+		return -1;
+	};
+
 	const handleNext = () => {
+		setSelectedJob(prevSelectedJob => {
+			if (getCurrentJobIndex(selectedJob) === careersData.length - 1) {
+				return careersData[0];
+			}
+
+			return careersData[getCurrentJobIndex(selectedJob) + 1];
+		});
 	};
 
 	const handlePrev = () => {
+		setSelectedJob(prevSelectedJob => {
+			if (getCurrentJobIndex(selectedJob) === 0) {
+				return careersData[careersData.length-1];
+			}
+
+			return careersData[getCurrentJobIndex(selectedJob) - 1];
+		});
 	};
 
 	// console.log(location.state?.job?.id);
