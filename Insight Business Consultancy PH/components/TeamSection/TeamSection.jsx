@@ -10,9 +10,9 @@ const teamMembers = [
     bgImg: `/images/portraits/p-1.webp`,
   },
   {
-    name: "Shaun-Hirshenshaun-Cusi, CPA",
-    position: "Regulatory Compliance Director",
-    desc: "Shaun brings extensive expertise in managing regulatory compliances across various industries. His proactive approach ensures that businesses remain compliant and operate efficiently, minimizing regulatory delays and enabling smooth business operations.",
+    name: "Shaun Hirshenshaun Cusi, CPA",
+    position: "Technology risk management Director",
+    desc: "Shaun has led crisis management and business continuity programs across Asia, enhancing organizational resilience. His expertise spans technology risk, cyber preparedness, and enterprise-wide recovery frameworks.",
     bgImg: `/images/portraits/p-2.webp`,
   },
 ];
@@ -81,15 +81,12 @@ const TeamSection = () => {
             transition={{ duration: 0.8, delay: index * 0.2, ease: "easeOut" }}
             className="relative w-full cursor-pointer group [perspective:1200px]"
           >
-            {/* Card Wrapper */}
+            {/* Card Wrapper - FIXED: Added hover animation */}
             <div
-              className={`relative w-full h-[340px] sm:h-[400px] md:h-[480px] lg:h-[520px] transition-transform duration-700 ease-out [transform-style:preserve-3d]
-                hover:shadow-2xl ${
-                  flipped === index ? "[transform:rotateY(180deg)]" : ""
-                }`}
+              className="relative w-full h-[340px] sm:h-[400px] md:h-[480px] lg:h-[520px] transition-all duration-700 ease-out hover:-translate-y-2 hover:shadow-2xl"
               style={{
-                willChange: "transform",
-                transform: flipped === index ? "rotateY(180deg)" : "none",
+                transformStyle: "preserve-3d",
+                transform: flipped === index ? "rotateY(180deg)" : "rotateY(0deg)",
               }}
             >
               {/* Front Side */}
